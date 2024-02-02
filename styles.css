@@ -1,0 +1,56 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: #000000;
+    color: #CC3333; /* Web-safe red */
+    padding: 1em;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    padding: 1em 0;
+    text-align: center;
+}
+
+hr {
+    border: 0; /* Remove the default border */
+    height: 1px; /* Set the height to create a horizontal line */
+    background-color: #ddd; /* Set the line color to a light gray */
+    margin: 20px 0; /* Add some spacing above and below the line */
+}
+
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    margin: 0 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #CC3333; /* Web-safe red on hover */
+}
+
+
+
+.home-section,
+.donate-section,
+.downloads-section,
+.contact-section,
+.about-section {
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle box shadow */
+}
