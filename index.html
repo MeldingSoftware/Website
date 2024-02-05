@@ -23,6 +23,8 @@
     <section id="home" class="home-section">
         <h2>Welcome to Melding Software</h2>
         <p>Your source for useful PC scripts.</p>
+		<p>Melding Software provides free software to help you get the most out of your PC.</p>
+		<p>MacOS scripts will be added in the future.</p>
     </section>
 
     <section id="donate" class="donate-section">
@@ -37,20 +39,40 @@
     <section id="downloads" class="downloads-section">
         <h2>Downloads</h2>
         <p>Explore and download my scripts to optimize your PC.</p>
+		<p>Choose and download from my selection of PowerShell scripts. Extract the folder and run the script from anywhere, even a flash drive!
+		Some scripts require an internet connection. The script will be notated if it's required.</p>
+		<p>&nbsp;</p>
+		<p>Instructions:</p>
+		<p>1. Download and extract the folder</p>
+		<p>2. Run the "Run Me.bat" file.</p>
+		<p>3. Click Yes when UAC is prompted.</p>
 		
 		<hr>
 
-        <!-- Download Links -->
-        <div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/New%20PC%20Setup.zip" download>New PC Setup download</a>
-        <p>Streamline the setup process for your new PC with this comprehensive script. It automates essential configurations and settings to get your system ready for optimal performance.</p>
-		<img src="NewPCSetup.JPG" alt="New PC Setup Image">
+		<h3>New PC Setup</h3>
+		<h4 class="sub-heading">Windows</h4>
+		<div class="download-item">
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/New%20PC%20Setup.zip'">Download</button>
+		<p>*REQUIRES INTERNET*</p>
+		<p>Streamline the setup process for your new PC with this comprehensive GUI script.
+		Automate installing Apps/running tasks, install Windows updates, cleanup, and restart automatically.
+		When you've checked everything you need, go to the Tasks tab, and hit the RUN button. </p>
 		</div>
+		
+		<!-- Add the image with the appropriate source (src) attribute -->
+		<img src="NewPCSetup.JPG" alt="New PC Setup Image">
+
 		
 		<hr>
 		
+		<h3>Maintenance</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance.zip" download>Maintenance download</a>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance.zip'">Download</button>
+		</div>
+		<p>*REQUIRES INTERNET*</p>
         <p>Automated maintenance.</p>
 		<ul>
             <li>Create Maintenance Directory</li>
@@ -78,59 +100,91 @@
 		
 		<hr>
 		
+		<h3>DISM and SFC</h3>
+		<h4 class="sub-heading">Windows</h4>
+		<!-- Download button and description -->
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/DISM%20and%20SFC.zip" download>DISM and SFC download</a>
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/DISM%20and%20SFC.zip'">Download</button>
+		</div>
+		<p>*REQUIRES INTERNET*</p>
         <p>Run DISM and SFC to check and repair Windows corruption.</p>
-		</div>
-		
+	
 		<hr>
 		
+		<h3>Wi-Fi Info</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info.zip" download>Wi-Fi Info download</a>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info.zip'">Download</button>
+		</div>
         <p>Get a list of Wi-Fi SSID names and passwords that have been used on the computer. Then saves it in a txt file in the script directory for an easy get away. ;)</p>
-		</div>
 		
 		<hr>
 		
+		<h3>Update Fix</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix.zip" download>Update Fix download</a>
-        <p>For when you're having issues with downloading Windows Updates.</p>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix.zip'">Download</button>
 		</div>
+        <p>For when you're having issues with downloading Windows Updates.
+		If you still have issues with Windows Updates, try to run the DISM and SFC script.
+		And if you still have issues, you may need to manually download and install the update.</p>
 		
 		<hr>
-      
+		
+		<h3>Print Spooler Fix</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix.zip" download>Print Spooler Fix download</a>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix.zip'">Download</button>
+		</div>
         <p>When your printer gets stuck and doesn't print. Clears the print spooler.</p>
-		</div>
 		
 		<hr>
 		
+		<h3>Installed Apps</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps.zip" download>Installed Apps download</a>
-        <p>When your printer gets stuck and doesn't print. Clears the print spooler.</p>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps.zip'">Download</button>
 		</div>
-		
+        <p>Create a list of the installed Apps and their information.
+		Saves the data in a folder on the Desktop.
+		Creates 2 sets of files. One can be opened in Excel (nicer format), and the other can be opened with Notepad (not everyone has Excel). 
+		Useful if you need to reinstall your software, you'll have a list.</p>
+
 		<hr>
 		
+		<h3>Largest Files</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files.zip" download>Largest Files download</a>
-        <p>Checks and creates a list of the top 10 largest files on your drive.</p>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files.zip'">Download</button>
 		</div>
-		
+        <p>Creates a list of the top 10 largest files on your device and saves it to the script location.
+		Figure out what's taking up all your storage space. </p>
+	
 		<hr>
        
+		<h3>Remove Bloatware</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Remove%20Bloatware.zip" download>Remove Bloatware download</a>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Remove%20Bloatware.zip'">Download</button>
+		</div> 
         <p>Removes the bloatware that comes with Windows. This is included in the New PC Setup script.</p>
-		</div>
-		
+	
 		<hr>
         
+		<h3>Group Policy Editor</h3>
+		<h4 class="sub-heading">Windows</h4>
 		<div class="download-item">
-        <a href="https://github.com/MeldingSoftware/Scripts/raw/main/Group%20Policy%20Editor.zip" download>Group Policy Editor download</a>
-        <p>Removes the bloatware that comes with Windows. This is included in the New PC Setup script.</p>
+		<!-- Download button and description -->
+		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Group%20Policy%20Editor.zip'">Download</button>
 		</div>
+        <p>Only comes with Windows 10/11 Pro or Enterprise editions. 
+		Use this script to get Group Policy Editor for Windows 10/11 Home.</p>
 		
         <!-- Add more download links as needed -->
     </section>
@@ -146,7 +200,7 @@
 	<!-- About Section -->
 	<section id="about" class="about-section">
 		<h2>About</h2>
-		<p>Welcome to Melding Software! I'm dedicated to providing efficient scripts to enhance your PC experience. Explore our collection of scripts and optimize your system with ease.</p>
+		<p>Welcome to Melding Software! I'm dedicated to providing efficient scripts to enhance your PC experience. Explore my collection of scripts and optimize your system with ease.</p>
 		<p>Founder: Kevin King</p>
 	</section>
 

@@ -41,8 +41,6 @@ nav a:hover {
     color: #CC3333; /* Web-safe red on hover */
 }
 
-
-
 .home-section,
 .donate-section,
 .downloads-section,
@@ -53,4 +51,20 @@ nav a:hover {
     padding: 20px;
     border-radius: 8px; /* Optional: adds rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle box shadow */
+}
+
+/* Style for the Download button */
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #CC0000;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h4.sub-heading {
+    margin-top: 0; /* Reset default margin for h4 */
 }
