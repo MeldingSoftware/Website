@@ -7,8 +7,6 @@ body {
     background-color: #f7f7f7;
     color: #333;
 }
-
-
 	
 header {
 	background-color: #001325;
@@ -33,11 +31,10 @@ nav {
 
 hr {
     border: 0; /* Remove the default border */
-    height: 1px; /* Set the height to create a horizontal line */
+    height: 2px; /* Set the height to create a horizontal line */
     background-color: #ddd; /* Set the line color to a light gray */
     margin: 20px 0; /* Add some spacing above and below the line */
 }
-
 
 nav a {
     color: #fff;
@@ -63,6 +60,7 @@ nav a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle box shadow */
 }
 
+
 /* Style for the Download button */
 .download-button {
     display: inline-block;
@@ -82,3 +80,29 @@ h3 {
 .sub-heading {
 	margin-top: 0;
 }
+
+.downloads-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap to next line */
+}
+
+.script-column {
+    flex: 1 0 45%; /* Each column takes up 45% of the available space, with a little gap */
+    margin: 0 2.5%; /* Gap between columns */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding-bottom: 20px; /* Space at the bottom of each column */
+}
+
+.windows-scripts,
+.mac-scripts {
+    display: flex;
+    flex-direction: column;
+}
+
+.windows-scripts .download-item,
+.mac-scripts .download-item {
+    margin-bottom: 20px; /* Space between each download item */
+}
+
+
+
