@@ -12,7 +12,7 @@
 
     <header>
     <div class="logo">
-        <img src="MSLogo.jpg" alt="MS Logo Image">
+        <img src="MSLogo.png" alt="MS Logo Image">
     </div>
     <div class="banner">
         <img src="MSBanner.jpg" alt="MS Banner Image">
@@ -29,15 +29,23 @@
 
     <section id="home" class="home-section">
         <h2>Welcome to Melding Software</h2>
-        <p>Your source for useful PC scripts.</p>
-		<p>Melding Software provides free software to help you get the most out of your PC.</p>
-		<p>MacOS scripts will be added in the future.</p>
+        <p>Welcome to Melding Software, your source for essential PC scripts designed to enhance your computing experience. 
+		Our mission is to empower users like you with free, reliable software that optimizes your PC.
+		At Melding Software, we understand the importance of a well-functioning computer. 
+		That's why we offer a range of scripts tailored to meet your needs, whether you're looking to streamline your PC setup, maintain system health, or improve efficiency.</p>
+		
+		<p>Explore our collection of scripts, including our popular New PC Setup App for Windows, designed to simplify and automate the process of setting up a new computer.
+		For Windows users, our New PC Setup script provides a comprehensive solution for configuring your system, installing essential software, and optimizing performance.
+		We're currently devoping a New PC Setup App for MacOS.
+		With Melding Software, you can trust that you're getting high-quality software that is easy to use and delivers results. 
+		Join us in our mission to make PC maintenance and optimization accessible to all. Download our scripts today and experience the difference Melding Software can make for your PC.
+		</p>
     </section>
 
     <section id="donate" class="donate-section">
-        <h2>Support My Work</h2>
-        <p>If you find my scripts helpful, consider making a donation to support my development efforts.</p>
-        <p>A one man army to produce free software. Donations are greatly appreciated.</p>
+        <h2>Support Our Work</h2>
+        <p>If you find the software helpful, consider making a donation to support our development efforts.<br>
+        All of our software is completely free. Donations are greatly appreciated.</p>
 
 		<!-- The container div where the PayPal Donation button will be rendered -->
         <div id="donate-button"></div>
@@ -45,14 +53,23 @@
 
     <section id="downloads" class="downloads-section">
         <h2>Downloads</h2>
-        <p>Explore and download my scripts to optimize your PC.</p>
-		<p>Choose and download from my selection of PowerShell scripts. Extract the folder and run the script from anywhere, even a flash drive!
-		Some scripts require an internet connection. The script will be notated if it's required.</p>
+        <p>Explore and download our scripts to optimize your PC.<br>
+		Choose and download from our selection of PowerShell and Terminal scripts.<br> 
+		Extract the folder and run the script from anywhere, even a flash drive!<br>
+		Some scripts require an internet connection. Check the descriptions.</p>
+		
 		<p>&nbsp;</p>
+		
 		<p>Instructions for Windows:</p>
-		<p>	1. Download and extract the folder.<br>
+		<p>	1. Download and extract.<br>
 			2. Run the "Run Me.bat" file.<br>
 			3. Click Yes when UAC is prompted.</p>
+			
+		<p>&nbsp;</p>
+		
+		<p>Instructions for MacOS:</p>
+		<p>	1. Download and extract.<br>
+			2. Run the .command file.</p>
 		
 		<hr>
 
@@ -62,138 +79,295 @@
 		<!-- Download button and description -->
 		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/New%20PC%20Setup.zip'">Download</button>
 		<p>*REQUIRES INTERNET*</p>
-		<p>Streamline the setup process for your new PC with this comprehensive GUI script.
-		Automate installing Apps/running tasks, install Windows updates, cleanup, and restart automatically.
-		When you've checked everything you need, go to the Tasks tab, and hit the RUN button. </p>
+		<p>Streamline the setup process for your new PC with this comprehensive GUI script.<br>
+		Automate installing Apps/running tasks.<br>
+		Install Windows updates, cleanup, and restart automatically.<br>
+		When you've checked everything you need, click Tasks tab, and hit the RUN button. </p>
 		</div>
-		
+		<p>&nbsp;</p>
 		<!-- Add the image with the appropriate source (src) attribute -->
 		<img src="NewPCSetup.jpg" alt="New PC Setup Image">
 
 		
 		<hr>
 		
-		<h3>Maintenance</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance.zip'">Download</button>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Maintenance</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance.zip'">Download</button>
+						<p>*REQUIRES INTERNET*</p>
+						<p>Automated maintenance.</p>
+						<ul>
+						<li>Create Maintenance Directory</li>
+						<li>Disables Sleep setting</li>
+						<li>Optimize Startup (Manually)</li>
+						<li>BatteryInfoView (For laptops)</li>
+						<li>Chkdsk On Next Boot</li>
+						<li>DISM And SFC</li>
+						<li>Clear Recent Items</li>
+						<li>Delete Users Temp Files</li>
+						<li>Delete Windows Temp Files</li>
+						<li>Remove Windows.old Folder</li>
+						<li>Remove Config.Msi Folder</li>
+						<li>Remove Intel Folder</li>
+						<li>Remove PerfLogs Folder</li>
+						<li>Disk Cleanup</li>
+						<li>Empty Recycle Bin</li>
+						<li>Windows Updates</li>
+						<li>App Updates</li>
+						<li>Optimize Drives</li>
+						<li>Re-enables Sleep setting</li>
+						<li>Restart</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+					
+			<div class="script-column">
+				<div class="mac-scripts">
+					<h3>Maintenance</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance%20Mac.zip'">Download</button>
+						<p>*REQUIRES INTERNET*</p>
+						<p>Automated maintenance.</p>
+						<ul>
+						<li>Save Results To Desktop</li>
+						<li>Check MacOS File System For Errors</li>
+						<li>Verify And Repair Disk</li>
+						<li>Check Startup Items</li>
+						<li>Check Launch Agents and Daemons</li>
+						<li>Check For Updates </li>
+						<li>Install Updates</li>
+						<li>Restart</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
 		</div>
-		<p>*REQUIRES INTERNET*</p>
-        <p>Automated maintenance.</p>
-		<ul>
-            <li>Create Maintenance Directory</li>
-            <li>Disables Sleep setting</li>
-            <li>Optimize Startup (Manually)</li>
-            <li>BatteryInfoView (For laptops)</li>
-            <li>Chkdsk On Next Boot</li>
-            <li>DISM And SFC</li>
-            <li>Clear Recent Items</li>
-            <li>Delete Users Temp Files</li>
-            <li>Delete Windows Temp Files</li>
-            <li>Remove Windows.old Folder</li>
-            <li>Remove Config.Msi Folder</li>
-            <li>Remove Intel Folder</li>
-            <li>Remove PerfLogs Folder</li>
-            <li>Disk Cleanup</li>
-            <li>Empty Recycle Bin</li>
-            <li>Windows Updates</li>
-            <li>App Updates</li>
-            <li>Optimize Drives</li>
-            <li>Re-enables Sleep setting</li>
-            <li>Restart</li>
-        </ul>
-		</div>
-		
+				
 		<hr>
 		
-		<h3>DISM and SFC</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<!-- Download button and description -->
-		<div class="download-item">
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/DISM%20and%20SFC.zip'">Download</button>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>DISM and SFC</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/DISM%20and%20SFC.zip'">Download</button>
+						<p>*REQUIRES INTERNET*</p>
+						<p>Run DISM and SFC to check and repair Windows corruption.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="script-column">
+				<div class="mac-scripts">
+					<h3>Repair Tool</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Repair%20Tool%20Mac.zip'">Download</button>
+						<p>Checks MacOS file system for errors. <br>
+						Verify and repair disk.</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<p>*REQUIRES INTERNET*</p>
-        <p>Run DISM and SFC to check and repair Windows corruption.</p>
-	
+			
 		<hr>
 		
-		<h3>Wi-Fi Info</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info.zip'">Download</button>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Wi-Fi Info</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info.zip'">Download</button>
+						<p>Get a list of Wi-Fi SSID names and passwords that have been used on the computer.<br>
+						Then saves it in a txt file in the script directory for an easy get away. ;)</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Wi-Fi Info</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info%20Mac.zip'">Download</button>
+						<p>Get the current Wi-Fi SSID name and password.<br>
+						Then saves it in a txt file in the script directory for an easy getaway. ;)<br>
+						Requires the Admin password. </p>
+					</div>
+				</div>
+			</div>
 		</div>
-        <p>Get a list of Wi-Fi SSID names and passwords that have been used on the computer. Then saves it in a txt file in the script directory for an easy get away. ;)</p>
-		
+				
 		<hr>
 		
-		<h3>Update Fix</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix.zip'">Download</button>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Update Fix</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix.zip'">Download</button>
+						<p>For when you're having issues with downloading Windows Updates.<br>
+						If you still have issues with Windows Updates, try to run the DISM and SFC script.<br>
+						And if you still have issues, you may need to manually download and install the update.</p>
+					</div>
+				</div>
+			</div>
+				
+			<div class="script-column">
+				<div class="mac-scripts">	
+				<h3>Update Fix</h3>
+				<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix%20Mac.zip'">Download</button>
+						<p>For when you're having issues with downloading Mac Updates.<br>
+						If you still have issues with Mac Updates, try to run the Repair Tool script.<br>
+					</div>		
+				</div>
+			</div>
 		</div>
-        <p>For when you're having issues with downloading Windows Updates.
-		If you still have issues with Windows Updates, try to run the DISM and SFC script.
-		And if you still have issues, you may need to manually download and install the update.</p>
-		
+							
 		<hr>
 		
-		<h3>Print Spooler Fix</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix.zip'">Download</button>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Print Spooler Fix</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix.zip'">Download</button>
+						<p>When your printer gets stuck and doesn't print. Clears the print spooler.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="script-column">
+				<div class="mac-scripts">	
+					<h3>Print Spooler Fix</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix%20Mac.zip'">Download</button>
+						<p>When your printer gets stuck and doesn't print. Clears the print spooler.</p>
+					</div>	
+				</div>
+			</div>
 		</div>
-        <p>When your printer gets stuck and doesn't print. Clears the print spooler.</p>
-		
+					
+		<hr>			
+					
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Installed Apps</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps.zip'">Download</button>
+						<p>Create a list of the installed Apps and their information.<br>
+						Saves the data in a folder on the Desktop.<br>
+						Creates 2 sets of files.<br>
+						One can be opened in Excel (nicer format), and the other can be opened with Notepad.<br> 
+						Useful if you need to reinstall your software, you'll have a list.</p>
+					</div>
+				</div>
+			</div>
+					
+			<div class="script-column">
+				<div class="mac-scripts">	
+					<h3>Installed Apps</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps%20Mac.zip'">Download</button>
+						<p>Create a list of the installed Apps and their information.<br>
+						Saves results to the Desktop.<br> 
+						Useful if you need to reinstall your software, you'll have a list.</p>
+					</div>		
+				</div>
+			</div>
+		</div>
+					
 		<hr>
 		
-		<h3>Installed Apps</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps.zip'">Download</button>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Largest Files</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files.zip'">Download</button>
+						<p>Creates a list of the top 10 largest files on your device.<br>
+						Saves it to the script location.<br>
+						Figure out what's taking up all your storage space. </p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="script-column">
+				<div class="mac-scripts">
+					<h3>Largest Files</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files%20Mac.zip'">Download</button>
+						<p>Creates a list of the top 10 largest files on your device.<br>
+						Saves results to the Desktop.<br>
+						Figure out what's taking up all your storage space. </p>
+					</div>	
+				</div>
+			</div>
 		</div>
-        <p>Create a list of the installed Apps and their information.
-		Saves the data in a folder on the Desktop.
-		Creates 2 sets of files. One can be opened in Excel (nicer format), and the other can be opened with Notepad (not everyone has Excel). 
-		Useful if you need to reinstall your software, you'll have a list.</p>
-
-		<hr>
-		
-		<h3>Largest Files</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files.zip'">Download</button>
-		</div>
-        <p>Creates a list of the top 10 largest files on your device and saves it to the script location.
-		Figure out what's taking up all your storage space. </p>
-	
+			
 		<hr>
        
-		<h3>Remove Bloatware</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Remove%20Bloatware.zip'">Download</button>
-		</div> 
-        <p>Removes the bloatware that comes with Windows. This is included in the New PC Setup script.</p>
-	
+	   	<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Remove Bloatware</h3>
+					<h4 class="sub-heading">Windows</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Remove%20Bloatware.zip'">Download</button> 
+						<p>Removes the bloatware that comes with Windows.<br>
+						This is included in the New PC Setup script.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="script-column">
+				<div class="mac-scripts">
+					<h3>System Info</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/System%20Info%20Mac.zip'">Download</button> 
+						<p>Get the system hardware information.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+			
 		<hr>
         
-		<h3>Group Policy Editor</h3>
-		<h4 class="sub-heading">Windows</h4>
-		<div class="download-item">
-		<!-- Download button and description -->
-		<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Group%20Policy%20Editor.zip'">Download</button>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<h3>Group Policy Editor</h3>
+					<h4 class="sub-heading">MacOS</h4>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Group%20Policy%20Editor.zip'">Download</button>
+						<p>Only comes with Windows 10/11 Pro or Enterprise editions.<br>
+						Use this script to get Group Policy Editor for Windows 10/11 Home.</p>
+					</div>
+				</div>
+			</div>
 		</div>
-        <p>Only comes with Windows 10/11 Pro or Enterprise editions. 
-		Use this script to get Group Policy Editor for Windows 10/11 Home.</p>
 		
         <!-- Add more download links as needed -->
+		
     </section>
 
     <!-- Additional Sections (Contact, About) -->
@@ -207,8 +381,15 @@
 	<!-- About Section -->
 	<section id="about" class="about-section">
 		<h2>About</h2>
-		<p>Welcome to Melding Software! I'm dedicated to providing efficient scripts to enhance your PC experience. Explore my collection of scripts and optimize your system with ease.</p>
-		<p>Founder: Kevin King</p>
+		<p>Melding Software is a passion project founded by Kevin King with a mission to simplify and enhance the PC experience for users around the world. 
+		Our journey began with a simple idea: to create software that makes setting up and maintaining a PC easier than ever before.
+		Driven by a desire to empower users with tools that optimize their computing experience, we have developed a range of scripts and applications that cater to the diverse needs of PC users. 
+		Whether you're a tech enthusiast looking to customize your setup or a casual user seeking to improve performance, Melding Software has something for you.
+		At Melding Software, we believe that technology should be accessible to everyone.</p> 
+		<p>That's why all our software is free to download and use, ensuring that anyone can benefit from our tools. 
+		We are committed to continuously improving and expanding our offerings, so stay tuned for exciting updates and new releases.
+		Thank you for joining us on this journey. Together, we can transform the way people interact with their PCs and make computing a more enjoyable and efficient experience for all.</p>
+
 	</section>
 
     <!-- Copyright Notice at the bottom of the content -->
