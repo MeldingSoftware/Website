@@ -1,0 +1,457 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* White text color */
+	overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hamburger {
+    display: none;  /* Hidden by default */
+    font-size: 30px;  /* Icon size */
+    cursor: pointer;
+    color: #ffffff; /* Color of the hamburger icon */
+}
+
+/* Font */
+h2 {
+    font-size: 40px; /* Change the font size as needed */
+	color: #ff6053;
+}
+
+h3 {
+    font-size: 35px; /* Change the font size as needed */
+	margin-bottom: 0;
+	color: #ff6053;
+}
+
+h4 {
+    font-size: 30px; /* Change the font size as needed */
+	margin-bottom: 0;
+	color: #ff6053;
+
+}
+
+p {
+    font-size: 22px; /* Change the font size as needed */
+}
+
+li {
+	font-size: 22px; /* Change the font size as needed */
+}
+
+a {
+    color: #ff6053; /* Sets the color of the link */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.red-text {
+	color: #ff6053;
+	font-size: 22px;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+	width: 100%;
+	text-size: 20px;
+    text-decoration: none;
+    padding: 0.3em;
+    margin: 0 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #ff6053;
+}
+
+.social-media-links {
+    display: flex;
+    align-items: center;
+}
+
+.follow-us-logo {
+    margin-left: 200px; /* This will push the icons to the right */
+}
+
+.facebook {
+    margin-left: 20px; /* This will push the icons to the right */
+}
+
+.instagram {
+    margin-left: 10px; /* This will push the icons to the right */
+}
+
+.x {
+    margin-left: 10px; /* This will push the icons to the right */
+}
+
+.logo {
+        width: auto;
+        max-width: 260px;  // Adjust this value based on how it fits on mobile devices
+        height: auto;
+		margin-left: 40px;
+}
+
+.home-section,
+.donate-section,
+.downloads-section,
+.contact-section,
+.about-section,
+.legal-section {
+	scroll-margin-top: 65px;
+	margin: 20px;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+	padding: 20px;
+	padding-top: 1px;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Optional: adds a subtle white box shadow */
+}	
+
+.home-section {
+    margin-top: 44px; /* Adjust the value as needed */
+}
+
+.sub-heading {
+	margin-top: 0;
+}
+
+.downloads-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap to next line */	
+}
+
+.container {
+    display: flex;
+}
+
+.text {
+    float: left;
+}
+
+.script-column {
+    flex: 1 0 50%; /* Each column takes up 50% of the available space */
+    margin: 0 0%; /* Adjusted margin for the gap between columns */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding-bottom: 20px; /* Space at the bottom of each column */
+}
+
+
+.windows-scripts {
+    margin: 0;
+    padding: 0;
+}
+
+.mac-scripts {
+    margin: 0;
+    padding: 0;  
+}
+
+/* Style for the Download button */
+.download-button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjusted padding */
+    background-color: #ff6053;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6053;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s ease; /* Smooth fade transition */
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Style for the image */
+.image-with-shadow {
+	box-shadow: 0 2px 4px rgba(255, 255, 255, 1); /* Add a shadow effect */
+}
+
+.image {
+margin-left: 150px;
+margin-top: 20px;
+}
+
+.win-logo {
+display: inline-block;
+vertical-align: middle;
+margin-left: 5px;
+}
+
+/* Apple logo positioning */
+.apple-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    position: relative;
+}
+
+.divider {
+    height: 2px;
+    border: none;
+    background: linear-gradient(to right, #ff0000, #ff6600, #ffcc00, #ff6600, #ff0000, #ff0000);
+    background-size: 300% 100%;
+    animation: fire 3s linear infinite;
+}
+
+@keyframes fire {
+    0%, 100% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 0% 0;
+    }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Hide mobile links on all views by default */
+.mobile-links, .mobile-social-links {
+    display: none;
+}
+
+/* Ensure desktop links are visible by default */
+.desktop-links, .desktop-social-links {
+    display: flex;
+    align-items: center; /* if you want to vertically align items center */
+}
+
+body.no-scroll {
+    overflow: hidden !important;  // Use important to ensure overriding any other style
+    position: fixed;  // Can also help in completely stopping the scroll
+    width: 100%;  // Maintain full width
+}
+
+/* Base styles that apply universally, not inside a media query */
+.mobile-social-links {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.social-icons {
+	margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;  // Center horizontally
+    align-items: center;  // Align vertically
+    flex-wrap: nowrap;  // Prevent wrapping
+}
+
+.social-media-links a {
+    flex-shrink: 0;  // Prevent shrinking of the anchor tags
+}
+
+.mobile-links {
+    margin-top: 60px;
+	margin-right: 24px;
+	margin-bottom: 100px;
+}
+
+/* For screens smaller than 768px (typical mobile phones) */
+@media (max-width: 768px) {
+	.downloads-container {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+	
+	nav .hamburger {
+		display: block;
+		position: absolute;
+		right: 10px;  // Adjust based on design needs
+	}
+	
+	/* Hide desktop links and social media links on mobile */
+    .desktop-links, .desktop-social-links {
+        display: none;
+    }
+	
+	/* Display mobile navigation links in the overlay */
+    .menu-overlay.active .mobile-links {
+        display: flex;  // Ensures the mobile links are visible and laid out correctly
+        flex-direction: column;  // Stacks the links vertically
+        align-items: center;  // Centers the links horizontally
+    }
+	
+	.mobile-social-links {
+        padding: 0 15px;  // Adjust padding for smaller screens
+        box-sizing: border-box;
+    }
+
+.mobile-social-links .follow-us-logo {
+    display: block;
+    margin: 40px auto 5px;
+    width: auto;
+    max-width: 138px;
+    height: auto;
+    transform: translateX(-7px);  // Slightly shift to the left by 7px
+}
+
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transform: translateX(-15px);  // Match the shift of the "Follow Us" logo
+}
+
+
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+	
+	.script-column {
+		flex: 1 0 auto;
+		margin: 0;
+	}
+	
+	.mac-scripts {
+		margin-top: 20px; /* Add space between Windows and Mac scripts */
+	}
+
+    .text {
+		width: 100%;
+        margin-right: 0; /* Reset margin for smaller screens */
+        margin-bottom: 20px; /* Add some space between items */
+    }
+
+    .image {
+        margin-left: 0; /* Reset margin for smaller screens */
+        width: 100%; /* Make the image fill the width of the container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+}
+
+.menu-overlay.active ~ nav .hamburger,
+.menu-overlay.active ~ nav .logo {
+    pointer-events: none;  /* Disable pointer events for hamburger and logo when overlay is active */
+}
+
+.menu-overlay.active {
+    display: block;  /* Ensure the overlay is visible when active */
+    pointer-events: auto;  /* Enable pointer events for the overlay itself */
+}
+
+/* Styles when overlay is active - ensure this part is correctly triggered by JavaScript */
+.menu-overlay.active .mobile-links,
+.menu-overlay.active .mobile-social-links {
+    display: block;  /* Ensure this is set to 'block' */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for overlay */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;  /* Solid black background */
+    z-index: 1001;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.menu-overlay .nav-links a, .menu-overlay .social-media-links a {
+    display: block;
+    margin: 10px;
+    color: #ffffff; /* Ensuring white color is set */
+    text-decoration: none;
+    font-size: 1.5em;
+    text-align: center;
+    z-index: 1002; /* Explicit higher z-index for visibility */
+}
+
+.menu-overlay button {
+    background: none;
+    border: none;
+    color: #ffffff; /* Ensure the color is white */
+    cursor: pointer;
+    position: absolute; /* Position it relative to the overlay */
+    right: 20px; /* Distance from the right side of the overlay */
+    font-size: 35px; /* Large enough to be easily clickable */
+    line-height: 35px; /* Aligns the height with the font size */
+    padding: 10px; /* Add padding to increase clickable area */
+    z-index: 1003; /* Ensure it's above all other content in the overlay */
+}  
+
+#donate-button {
+    width: 150px; /* Set the width of the button */
+    height: 45px; /* Set the height of the button */
+    font-size: 13px; /* Set the font size of the button text */
+}
+
+#refreshContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #f5f5f5;
+    text-align: center;
+    line-height: 50px;
+    color: #333;
+    font-size: 14px;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+}
