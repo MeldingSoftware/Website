@@ -301,8 +301,15 @@ body.no-scroll {
 	margin-bottom: 100px;
 }
 
-/* For screens smaller than 768px (typical mobile phones) */
-@media (max-width: 768px) {
+.desktop-social-links {
+    flex-grow: 1;  /* Takes up any available space */
+    justify-content: center;  /* Centers content horizontally in the available space */
+    width: 100%;  /* Ensures the container can expand as needed */
+	margin-right: 400px;
+    }
+
+/* For screens smaller than 975, 1340, 768px (typical mobile phones) */
+@media (max-width: 975px) {
 	.downloads-container {
 		flex-direction: column;
 		flex-wrap: nowrap;
@@ -315,7 +322,7 @@ body.no-scroll {
 	}
 	
 	/* Hide desktop links and social media links on mobile */
-    .desktop-links, .desktop-social-links {
+    .desktop-links {
         display: none;
     }
 	
@@ -331,24 +338,24 @@ body.no-scroll {
         box-sizing: border-box;
     }
 
-.mobile-social-links .follow-us-logo {
+	.mobile-social-links .follow-us-logo {
     display: block;
     margin: 40px auto 5px;
     width: auto;
     max-width: 138px;
     height: auto;
     transform: translateX(-7px);  // Slightly shift to the left by 7px
-}
+	}
 
 
-.social-icons {
+	.social-icons {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
     transform: translateX(-15px);  // Match the shift of the "Follow Us" logo
-}
+	}
 
 
     .container {
@@ -375,7 +382,12 @@ body.no-scroll {
         width: 100%; /* Make the image fill the width of the container */
         height: auto; /* Maintain aspect ratio */
     }
+}
 
+/* For screens smaller than 1000, 1340, 768px (typical mobile phones) */
+@media (max-width: 768px) {
+	.desktop-social-links {
+	display: none;	
 }
 
 .menu-overlay.active ~ nav .hamburger,
