@@ -30,7 +30,7 @@ window.addEventListener('resize', function() {
     var closeButton = document.querySelector('.close-button');
 
     // Assuming 768px as the breakpoint for mobile to desktop transition
-    if (window.innerWidth > 975) {
+    if (window.innerWidth > 768) {
         // Close the overlay and hide both the hamburger and close button when transitioning to desktop view
         if (overlay.classList.contains('active')) {
             overlay.style.display = 'none';
