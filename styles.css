@@ -256,9 +256,6 @@ img {
     align-items: center; /* if you want to vertically align items center */
 }
 
-.desktop-links {
-	margin-left: 125px;
-}
 
 body.no-scroll {
     overflow: hidden !important;  // Use important to ensure overriding any other style
@@ -300,6 +297,88 @@ body.no-scroll {
     margin-top: 60px;
 	margin-right: 24px;
 	margin-bottom: 100px;
+}
+
+
+
+/* For screens smaller than 1350 */
+@media (max-width: 1350px) {
+	.downloads-container {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+	
+	nav .hamburger {
+		display: block;
+		position: absolute;
+		right: 10px;  // Adjust based on design needs
+	}
+	
+	/* Hide desktop links and social media links on mobile */
+    .desktop-links {
+        display: none;
+    }
+	
+	.desktop-social-links {
+		margin-right: 557px;
+	}
+	
+	/* Display mobile navigation links in the overlay */
+    .menu-overlay.active .mobile-links {
+        display: flex;  // Ensures the mobile links are visible and laid out correctly
+        flex-direction: column;  // Stacks the links vertically
+        align-items: center;  // Centers the links horizontally
+    }
+	
+	.mobile-social-links {
+        padding: 0 15px;  // Adjust padding for smaller screens
+        box-sizing: border-box;
+    }
+
+.mobile-social-links .follow-us-logo {
+    display: block;
+    margin: 40px auto 5px;
+    width: auto;
+    max-width: 138px;
+    height: auto;
+    transform: translateX(-7px);  // Slightly shift to the left by 7px
+}
+
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transform: translateX(-15px);  // Match the shift of the "Follow Us" logo
+}
+
+
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+	
+	.script-column {
+		flex: 1 0 auto;
+		margin: 0;
+	}
+	
+	.mac-scripts {
+		margin-top: 20px; /* Add space between Windows and Mac scripts */
+	}
+
+    .text {
+		width: 100%;
+        margin-right: 0; /* Reset margin for smaller screens */
+        margin-bottom: 20px; /* Add some space between items */
+    }
+
+    .image {
+        margin-left: 0; /* Reset margin for smaller screens */
+        width: 100%; /* Make the image fill the width of the container */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
 
 /* For screens smaller than 768px (typical mobile phones) */
@@ -376,7 +455,6 @@ body.no-scroll {
         width: 100%; /* Make the image fill the width of the container */
         height: auto; /* Maintain aspect ratio */
     }
-
 }
 
 .menu-overlay.active ~ nav .hamburger,
