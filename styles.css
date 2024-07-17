@@ -29,29 +29,29 @@ nav {
 
 /* Font */
 h2 {
-    font-size: 40px; /* Change the font size as needed */
+    font-size: 30px; /* Change the font size as needed */
 	color: #ff6053;
 }
 
 h3 {
-    font-size: 35px; /* Change the font size as needed */
+    font-size: 25px; /* Change the font size as needed */
 	margin-bottom: 0;
 	color: #ff6053;
 }
 
 h4 {
-    font-size: 30px; /* Change the font size as needed */
+    font-size: 20px; /* Change the font size as needed */
 	margin-bottom: 0;
 	color: #ff6053;
 
 }
 
 p {
-    font-size: 22px; /* Change the font size as needed */
+    font-size: 18px; /* Change the font size as needed */
 }
 
 li {
-	font-size: 22px; /* Change the font size as needed */
+	font-size: 18px; /* Change the font size as needed */
 }
 
 a {
