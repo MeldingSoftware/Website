@@ -30,7 +30,7 @@ window.addEventListener('resize', function() {
     var closeButton = document.querySelector('.close-button');
 
     // Assuming 768px as the breakpoint for mobile to desktop transition
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 900) {
         // Close the overlay and hide both the hamburger and close button when transitioning to desktop view
         if (overlay.classList.contains('active')) {
             overlay.style.display = 'none';
@@ -43,28 +43,6 @@ window.addEventListener('resize', function() {
         hamburger.style.display = 'block';
     }
 });
-
-// CLOSE OVERYLAY WHEN EXCEEDING MOBILE SIZE
-window.addEventListener('resize', function() {
-    var overlay = document.getElementById('menuOverlay');
-    var hamburger = document.querySelector('nav .hamburger');
-    var closeButton = document.querySelector('.close-button');
-
-    // Assuming 1350px as the breakpoint for mobile to desktop transition
-    if (window.innerWidth > 1225) {
-        // Close the overlay and hide both the hamburger and close button when transitioning to desktop view
-        if (overlay.classList.contains('active')) {
-            overlay.style.display = 'none';
-            overlay.classList.remove('active');
-            closeButton.style.display = 'none';
-        }
-        hamburger.style.display = 'none';  // Ensure hamburger is hidden in desktop view
-    } else {
-        // Make sure the hamburger is visible when in mobile view
-        hamburger.style.display = 'block';
-    }
-});
-
 
 // PAYPAL
 

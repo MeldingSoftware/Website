@@ -20,13 +20,6 @@ nav {
     z-index: 1000;
 }
 
-.hamburger {
-    display: none;  /* Hidden by default */
-    font-size: 30px;  /* Icon size */
-    cursor: pointer;
-    color: #ffffff; /* Color of the hamburger icon */
-}
-
 /* Font */
 h2 {
     font-size: 30px; /* Change the font size as needed */
@@ -34,7 +27,7 @@ h2 {
 }
 
 h3 {
-    font-size: 25px; /* Change the font size as needed */
+    font-size: 24px; /* Change the font size as needed */
 	margin-bottom: 0;
 	color: #ff6053;
 }
@@ -46,17 +39,20 @@ h4 {
 
 }
 
-p {
-    font-size: 18px; /* Change the font size as needed */
-}
-
-li {
-	font-size: 18px; /* Change the font size as needed */
+p, li {
+    font-size: 16.5px; /* Change the font size as needed */
 }
 
 a {
     color: #ff6053; /* Sets the color of the link */
     text-decoration: none; /* Removes underline from the link */
+}
+
+.hamburger {
+    display: none;  /* Hidden by default */
+    font-size: 30px;  /* Icon size */
+    cursor: pointer;
+    color: #ffffff; /* Color of the hamburger icon */
 }
 
 .red-text {
@@ -92,71 +88,8 @@ a {
     color: #ff6053;
 }
 
-.desktop-social-links a {
-    margin-right: 20px; /* Adjust this value to increase or decrease space between icons */
-}
-
-.desktop-social-links a:last-child {
-    margin-right: 0; /* Removes margin from the last icon to avoid extra spacing on the right */
-}
-
-.mobile-social-links .social-icons a {
-    display: inline-block;  /* Ensures that the anchor tags are treated as inline elements with block-like features */
-    margin-right: 20px;  /* Consistent spacing between icons */
-    vertical-align: middle;  /* Aligns icons vertically for better visual coherence */
-}
-
-.mobile-social-links .social-icons a:last-child {
-    margin-right: 0;  /* Ensures no extra space after the last icon */
-}
-
-.social-media-links {
-    display: flex;
-    align-items: center;
-}
-
-/* Hide mobile links on all views by default */
-.mobile-social-links {
-    display: none;
-}
-
-/* Ensure desktop links are visible by default */
-.desktop-social-links {
-    display: flex;
-	justify-content: center;
-    align-items: center; /* if you want to vertically align items center */
-	margin-left: 290px;
-	width: 100%;
-}
-
-/* Base styles that apply universally, not inside a media query */
-.mobile-social-links {
-    display: flex;
-    align-items: center;
-    width: 100%;
-	margin-left: -27px;
-}
-
 .mobile-links {
 	margin-left: -1px;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.social-media-links {
-    display: flex;
-    justify-content: center;  // Center horizontally
-    align-items: center;  // Align vertically
-    flex-wrap: nowrap;  // Prevent wrapping
-}
-
-.social-media-links a {
-    flex-shrink: 0;  // Prevent shrinking of the anchor tags
 }
 
 .mobile-links {
@@ -256,9 +189,16 @@ a {
 	box-shadow: 0 2px 4px rgba(255, 255, 255, 1); /* Add a shadow effect */
 }
 
-.image {
-margin-left: 150px;
-margin-top: 20px;
+.melder-image {
+    margin-left: 200px;
+    margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.applite-image {
+    margin-left: 340px; /* Adjust this value as needed for Applite */
+    margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .win-logo {
@@ -303,8 +243,27 @@ body.no-scroll {
     width: 100%;  // Maintain full width
 }
 
-/* For screens smaller than 1225 */
-@media (max-width: 1225px) {
+/* For screens smaller than 1200px (typical mobile phones) */
+@media (max-width: 1200px) {
+	.downloads-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    }
+	
+    .container {
+        flex-direction: column; /* Stacks child elements vertically on smaller screens */
+    }
+	
+	.script-column, .mac-scripts, .text, .image {
+    margin: 0;
+    width: 100%;  /* Ensures these elements use the full width */
+    height: auto;  /* Maintains aspect ratio for images */
+    margin-bottom: 20px;  /* Adds space between stacked items */
+    }
+}
+
+/* For screens smaller than 900px (typical mobile phones) */
+@media (max-width: 900px) {
     /* Adjustments for mobile layout */
     .downloads-container {
         flex-direction: column;
@@ -317,10 +276,6 @@ body.no-scroll {
         right: 10px;  /* Ensures alignment with the edge of the nav bar */
         top: 10px;  /* Aligns with the top of the nav bar */
     }
-	
-	.desktop-social-links {
-		margin-right: 580px;
-	}
     
     /* Hide desktop navigation links on smaller screens */
     .desktop-links {
@@ -334,38 +289,6 @@ body.no-scroll {
         align-items: center;
     }
 
-    /* Mobile social links styling and layout */
-    .mobile-social-links {
-        display: flex;
-        justify-content: center;  /* Centers icons horizontally */
-        align-items: center;
-        padding: 0 15px;  /* Provides padding within the container */
-        width: 100%;  /* Ensures full width usage */
-    }
-
-    /* Styling for social icons container */
-    .social-icons {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;  /* Center the icons */
-        align-items: center;
-        margin: 0 auto;  /* Centers the container and removes default margin */
-        padding: 0 20px;  /* Optional padding for visual balance */
-    }
-
-    /* Adjusting margins between individual icons */
-    .social-icons a {
-        margin: 0 10px;  /* Custom spacing between icons */
-    }
-
-    .social-icons a:first-child {
-        margin-left: 0;  /* No left margin for the first icon */
-    }
-
-    .social-icons a:last-child {
-        margin-right: 0;  /* No right margin for the last icon */
-    }
-
     /* Other mobile adjustments */
     .container {
         flex-direction: column; /* Stacks child elements vertically on smaller screens */
@@ -381,91 +304,7 @@ body.no-scroll {
     .mac-scripts {
         margin-top: 20px;  /* Adds space specifically above Mac scripts section */
     }
-}
-
-/* Ensure desktop social links are visible and properly positioned */
-.desktop-social-links {
-    display: flex;
-    justify-content: center;  /* Center the social links horizontally */
-    align-items: center;  /* Align vertically */
-}
-
-
-
-/* For screens smaller than 768px (typical mobile phones) */
-@media (max-width: 768px) {
-    /* Adjustments for mobile layout */
-    .downloads-container {
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-    
-    nav .hamburger {
-        display: block;
-        position: absolute;
-        right: 10px;  /* Ensures alignment with the edge of the nav bar */
-        top: 10px;  /* Aligns with the top of the nav bar */
-    }
-    
-    /* Hide desktop navigation links on smaller screens */
-    .desktop-links, .desktop-social-links {
-        display: none;
-    }
-
-    /* Display mobile navigation links in the overlay */
-    .menu-overlay.active .mobile-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Mobile social links styling and layout */
-    .mobile-social-links {
-        display: flex;
-        justify-content: center;  /* Centers icons horizontally */
-        align-items: center;
-        padding: 0 15px;  /* Provides padding within the container */
-        width: 100%;  /* Ensures full width usage */
-    }
-
-    /* Styling for social icons container */
-    .social-icons {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;  /* Center the icons */
-        align-items: center;
-        margin: 0 auto;  /* Centers the container and removes default margin */
-        padding: 0 20px;  /* Optional padding for visual balance */
-    }
-
-    /* Adjusting margins between individual icons */
-    .social-icons a {
-        margin: 0 10px;  /* Custom spacing between icons */
-    }
-
-    .social-icons a:first-child {
-        margin-left: 0;  /* No left margin for the first icon */
-    }
-
-    .social-icons a:last-child {
-        margin-right: 0;  /* No right margin for the last icon */
-    }
-
-    /* Other mobile adjustments */
-    .container {
-        flex-direction: column; /* Stacks child elements vertically on smaller screens */
-    }
-
-    .script-column, .mac-scripts, .text, .image {
-        margin: 0;
-        width: 100%;  /* Ensures these elements use the full width */
-        height: auto;  /* Maintains aspect ratio for images */
-        margin-bottom: 20px;  /* Adds space between stacked items */
-    }
-
-    .mac-scripts {
-        margin-top: 20px;  /* Adds space specifically above Mac scripts section */
-    }
+	
 }
 
 .menu-overlay.active ~ nav .hamburger,
@@ -479,8 +318,7 @@ body.no-scroll {
 }
 
 /* Styles when overlay is active - ensure this part is correctly triggered by JavaScript */
-.menu-overlay.active .mobile-links,
-.menu-overlay.active .mobile-social-links {
+.menu-overlay.active .mobile-links {
     display: block;  /* Ensure this is set to 'block' */
     flex-direction: column;
     align-items: center;
@@ -502,7 +340,7 @@ body.no-scroll {
     color: #fff;
 }
 
-.menu-overlay .nav-links a, .menu-overlay .social-media-links a {
+.menu-overlay .nav-links a {
     display: block;
     margin: 10px;
     color: #ffffff; /* Ensuring white color is set */
