@@ -19,6 +19,10 @@
 	<meta name="author" content="Kevin King">
     <link rel="stylesheet" href="styles.css">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+	<!-- Link to the external JavaScript file with defer attribute -->
+	<script src="javascript.js" defer></script>
+	
 </head>
 
 <body>
@@ -103,10 +107,30 @@
 		
         <p>If you find the software helpful, consider making a donation to support our development efforts.<br>
         All of our software is completely free. Donations are greatly appreciated.</p>
-		</div>
+		</div>	
 		
-		<!-- The container div where the PayPal Donation button will be rendered -->
-        <div id="donate-button"></div>
+		<p></p>
+		
+		<!-- BUY ME A COFFEE -->
+		<div id="bmc-button-container">
+        <script 
+            type="text/javascript" 
+            src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+            data-name="bmc-button" 
+            data-slug="MeldingSoftware" 
+            data-color="#FF5F5F" 
+            data-emoji="" 
+            data-font="Cookie" 
+            data-text="Buy me a coffee" 
+            data-outline-color="#000000" 
+            data-font-color="#ffffff" 
+            data-coffee-color="#FFDD00">
+        </script>
+		
+		<p></p>
+		
+		<img class="image-with-shadow" src="images/BMC_QR.png" alt="Buy Me A Coffee QR">
+		
     </section>
 
     <section id="downloads" class="downloads-section">
@@ -608,9 +632,84 @@
 				</div>
 			</div>
 		</div>
+			
+				<div class="divider"></div>
+        
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<div class="fade-in">
+					<h3>Media Player</h3>
+					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
+					</div>
+					<p></p>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Media%20Player.zip'">Download</button>
+						<div class="fade-in">
+						<p>Load and plays a video or audio file.<br>
+						Features playback buttons, progress bar, volume slider, playback timer, fullscreen toggle,<br>
+						and hides cursor/buttons after 2 seconds of inactivity.<br>
+						Included is a K-Lite Codec Pack shortcut. If the display is black during video playback,<br> 
+						you may be missing a codec. Install K-Lite Codec Pack Standard and try again.</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		
+		<div class="script-column">
+			<div class="mac-scripts">
+				<div class="fade-in">
+					<h3>Media Player</h3>
+					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
+				</div>
+				<p></p>			
+				<div class="download-item"> 
+					<!-- <button class="download-button" onclick="window.location.href='URL'">Download</button>  -->
+						<div class="fade-in">
+						<p>UNDER CONSTRUCTION</p>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	
+		<div class="divider"></div>
 		
-			<div class="divider"></div>
+		<div class="downloads-container">
+			<div class="script-column">
+				<div class="windows-scripts">
+					<div class="fade-in">
+					<h3>Mouse Jiggler</h3>
+					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
+					</div>
+					<p></p>
+					<div class="download-item">
+						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Mouse%20Jiggler.zip'">Download</button>
+						<div class="fade-in">
+						<p>Mouse pointer moves automatically every 5 seconds. Press Esc to exit.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<div class="script-column">
+			<div class="mac-scripts">
+				<div class="fade-in">
+					<h3>Mouse Jiggler</h3>
+					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
+				</div>
+				<p></p>			
+				<div class="download-item"> 
+					<!-- <button class="download-button" onclick="window.location.href='URL'">Download</button>  -->
+						<div class="fade-in">
+						<p>UNDER CONSTRUCTION</p>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+
+		<div class="divider"></div>
         
 		<div class="downloads-container">
 			<div class="script-column">
@@ -640,25 +739,27 @@
 				<div class="download-item"> 
 					<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Fun%20Commands%20Mac.zip'">Download</button>
 					<div class="fade-in">
-					<p>*REQUIRES INTERNET*<br>
-						Fun commands for Mac.</p>
-					<ul>
-					<li>Games</li>
-					<li>The Matrix Rain</li>
-					<li>Make It Snow</li>
-					<li>ASCII Star Wars</li>
-					<li>ASCII Train</li>
-					<li>Random Quote</li>
-					<li>Create A Banner</li>
-					<li>Check Birthstones and Flowers</li>
-					<li>Learn Historical Events</li>
-					<li>Cowsay</li>
-					<li>Let Your Terminal Speak</li>
-					</ul>
-					</div>
-				</div>	
+						<p>*REQUIRES INTERNET*<br>
+							Fun commands for Mac.</p>
+						<ul>
+						<li>Games</li>
+						<li>The Matrix Rain</li>
+						<li>Make It Snow</li>
+						<li>ASCII Star Wars</li>
+						<li>ASCII Train</li>
+						<li>Random Quote</li>
+						<li>Create A Banner</li>
+						<li>Check Birthstones and Flowers</li>
+						<li>Learn Historical Events</li>
+						<li>Cowsay</li>
+						<li>Let Your Terminal Speak</li>
+						</ul>
+						</div>
+					</div>	
+				</div>
 			</div>
 		</div>
+	
 
     </section>
 
@@ -722,11 +823,6 @@
         <p>&copy; 2024 Melding Software. All rights reserved.</p>
     </div>
 
-	<!-- Link to the PayPal SDK script -->
-	<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-
-	<!-- Link to the external JavaScript file with defer attribute -->
-	<script src="javascript.js" defer></script>
 
 </body>
 </html>

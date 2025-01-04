@@ -367,12 +367,6 @@ body.no-scroll {
     z-index: 1003; /* Ensure it's above all other content in the overlay */
 }  
 
-#donate-button {
-    width: 150px; /* Set the width of the button */
-    height: 45px; /* Set the height of the button */
-    font-size: 13px; /* Set the font size of the button text */
-}
-
 #refreshContainer {
     position: fixed;
     top: 0;
