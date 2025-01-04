@@ -367,6 +367,34 @@ body.no-scroll {
     z-index: 1003; /* Ensure it's above all other content in the overlay */
 }  
 
+.donate-section {
+    overflow: hidden;	
+}
+
+/* Row for images, button, and paragraph */
+.donation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Space between row items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Center the Buy Me a Coffee button and paragraph */
+#bmc-button-container {
+    text-align: center;
+}
+
+/* Style the paragraph near the button */
+.donation-row p {
+    text-align: center;
+}
+
+.copyright-notice {
+    padding-left: 20px; /* Adjust the value as needed */
+}
+
+
 #refreshContainer {
     position: fixed;
     top: 0;
