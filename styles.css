@@ -390,10 +390,18 @@ body.no-scroll {
     text-align: center;
 }
 
+.center-column p {
+    margin-bottom: 60px; /* Adjust this value to control the spacing */
+}
+
+#bmc-button-container {
+    margin-top: 60px; /* Optional: Add space above the button if needed */
+}
+
+
 .copyright-notice {
     padding-left: 20px; /* Adjust the value as needed */
 }
-
 
 #refreshContainer {
     position: fixed;
