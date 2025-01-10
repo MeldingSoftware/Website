@@ -670,5 +670,62 @@ body.no-scroll {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
+/* Ensure table stays within section */
+.downloads-table-container {
+    width: 100%; /* Full width of the parent container */
+    overflow-x: auto; /* Enable horizontal scrolling if the content overflows */
+}
 
+.downloads-table {
+    width: 100%; /* Ensure the table spans the full width */
+    border-collapse: collapse; /* Merge table borders */
+    margin-bottom: 40px; /* Space between tables */
+}
 
+.downloads-table th,
+.downloads-table td {
+    border: 1px solid #555; /* Dark border */
+    padding: 12px;
+    text-align: left; /* Left-align content */
+}
+
+.downloads-table th {
+    background-color: #444; /* Dark gray for headers */
+    color: #fff; /* White text */
+    text-align: center; /* Center-align table headers */
+}
+
+.downloads-table td {
+    background-color: #222; /* Dark background for cells */
+    color: #ddd; /* Light gray text */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word;
+}
+
+.downloads-table tr:nth-child(even) td {
+    background-color: #333; /* Alternate row background */
+}
+
+/* Adjust column widths */
+.downloads-table th:nth-child(1),
+.downloads-table td:nth-child(1) {
+    width: 10%; /* Scripts column */
+}
+
+.downloads-table th:nth-child(2),
+.downloads-table td:nth-child(2) {
+    width: 80%; /* Description column */
+}
+
+.downloads-table th:nth-child(3),
+.downloads-table td:nth-child(3) {
+    width: 10%; /* Download column */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .downloads-table th, .downloads-table td {
+        font-size: 14px; /* Reduce font size for smaller screens */
+        padding: 8px; /* Reduce padding */
+    }
+}
