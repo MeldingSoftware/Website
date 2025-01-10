@@ -243,6 +243,7 @@ body.no-scroll {
     width: 100%;  // Maintain full width
 }
 
+
 /* For screens smaller than 1200px (typical mobile phones) */
 @media (max-width: 1200px) {
 	.downloads-container {
@@ -265,6 +266,11 @@ body.no-scroll {
 /* For screens smaller than 900px (typical mobile phones) */
 @media (max-width: 900px) {
     /* Adjustments for mobile layout */
+	.gallery-container {
+    width: 100%; /* Full width for the Gallery section */
+    margin-top: 20px; /* Adds space above the Gallery when stacked */
+    }
+	
     .downloads-container {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -383,6 +389,7 @@ body.no-scroll {
 /* Center the Buy Me a Coffee button and paragraph */
 #bmc-button-container {
     text-align: center;
+	margin-top: 60px; /* Optional: Add space above the button if needed */
 }
 
 /* Style the paragraph near the button */
@@ -393,11 +400,6 @@ body.no-scroll {
 .center-column p {
     margin-bottom: 60px; /* Adjust this value to control the spacing */
 }
-
-#bmc-button-container {
-    margin-top: 60px; /* Optional: Add space above the button if needed */
-}
-
 
 .copyright-notice {
     padding-left: 20px; /* Adjust the value as needed */
@@ -417,3 +419,256 @@ body.no-scroll {
     z-index: 1000;
     display: none; /* Initially hidden */
 }
+
+/* Center only table headings */
+.table-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* General table styling */
+.downloads-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px; /* Space between tables */
+}
+
+.downloads-table th, .downloads-table td {
+    border: 1px solid #555; /* Dark border */
+    padding: 12px;
+    text-align: left; /* Left-align all content */
+}
+
+.downloads-table th {
+    background-color: #444; /* Dark gray for headers */
+    color: #fff; /* White text */
+    text-align: center; /* Center-align table headers */
+}
+
+.downloads-table td {
+    background-color: #222; /* Dark background for cells */
+    color: #ddd; /* Light gray text */
+}
+
+.downloads-table tr:nth-child(even) td {
+    background-color: #333; /* Alternate row background */
+}
+
+/* Adjust column widths */
+.downloads-table th:nth-child(1),
+.downloads-table td:nth-child(1) {
+    width: 10%; /* Reduced width for Scripts column */
+}
+
+.downloads-table th:nth-child(2),
+.downloads-table td:nth-child(2) {
+    width: 80%; /* Expanded width for Description column */
+}
+
+.downloads-table th:nth-child(3),
+.downloads-table td:nth-child(3) {
+    width: 10%; /* Reduced width for Download column */
+}
+
+/* Center-align buttons */
+.downloads-table td button {
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Styling for download button */
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6053;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.download-button:hover {
+    background-color: #e25549; /* Darker shade on hover */
+}
+
+.table-logo {
+    display: block;
+    margin: 10px auto 20px; /* Center-align the logo and add spacing */
+    max-width: 100px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Center the script names in the Scripts column */
+.downloads-table td:nth-child(1) {
+    text-align: center; /* Center-align text in the first column */
+}
+
+/* Text size adjustments for Home section */
+.very-large-text {
+    font-size: 48px; /* Extra-large text for Crafting solutions */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.large-text {
+    font-size: 32px; /* Large text for the source description */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.medium-text {
+    font-size: 24px; /* Medium-sized text for ongoing updates */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.small-text {
+    font-size: 18px; /* Regular size for GitHub link */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Centering the powered-by image */
+#home img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Gallery Section */
+.gallery-container {
+    float: right;
+    width: 100%; /* Ensure the gallery spans the available width */
+    text-align: center;
+    margin-left: 20px;
+    margin-top: -480px; /* Adjusts vertical alignment */
+}
+
+.gallery-container h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equally spaced columns */
+    gap: 10px; /* Space between images */
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 100%; /* Fill the grid cell */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 2 / 1; /* Explicitly set a 2:1 aspect ratio */
+    object-fit: contain; /* Ensure the full image is visible */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Fullscreen Gallery Overlay */
+.gallery-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.gallery-controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1001;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#prevImage {
+    left: -60px; /* Move the left arrow further to the left */
+}
+
+#nextImage {
+    right: -60px; /* Move the right arrow further to the right */
+}
+
+#fullImage {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close-gallery {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Show the overlay when active */
+.gallery-overlay.active {
+    display: flex;
+}
+
+/* Gallery Section */
+.gallery-container {
+    margin-top: 20px; /* Adds spacing above the gallery */
+    text-align: center;
+}
+
+.gallery-container h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #ff6053;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equally spaced columns */
+    gap: 10px; /* Space between images */
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 100%; /* Fill the grid cell */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 2 / 1; /* Explicitly set a 2:1 aspect ratio */
+    object-fit: contain; /* Ensure the full image is visible */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+

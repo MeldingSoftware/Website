@@ -146,3 +146,66 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// GALLERY
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryOverlay = document.getElementById("galleryOverlay");
+    const fullImage = document.getElementById("fullImage");
+    const closeGallery = document.getElementById("closeGallery");
+    const prevImage = document.getElementById("prevImage");
+    const nextImage = document.getElementById("nextImage");
+
+    let currentImageIndex = 0;
+    let currentGallery = [];
+    let currentGalleryName = "";
+
+    // Open Gallery
+    const galleryImages = document.querySelectorAll(".gallery-grid img");
+    galleryImages.forEach((image, index) => {
+        image.addEventListener("click", () => {
+            currentGalleryName = image.dataset.gallery; // Determine the gallery type
+            currentGallery = Array.from(
+                document.querySelectorAll(`.gallery-grid img[data-gallery="${currentGalleryName}"]`)
+            );
+            currentImageIndex = currentGallery.indexOf(image);
+
+            openGallery(image.src);
+        });
+    });
+
+    function openGallery(src) {
+        fullImage.src = src;
+        galleryOverlay.classList.add("active");
+    }
+
+    // Close Gallery
+    closeGallery.addEventListener("click", closeGalleryOverlay);
+    galleryOverlay.addEventListener("click", (e) => {
+        if (e.target === galleryOverlay || e.target === closeGallery) {
+            closeGalleryOverlay();
+        }
+    });
+
+    function closeGalleryOverlay() {
+        galleryOverlay.classList.remove("active");
+        currentImageIndex = 0;
+        currentGallery = [];
+        currentGalleryName = "";
+    }
+
+    // Navigate Gallery
+    prevImage.addEventListener("click", () => {
+        if (currentGallery.length > 0) {
+            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+            fullImage.src = currentGallery[currentImageIndex].src;
+        }
+    });
+
+    nextImage.addEventListener("click", () => {
+        if (currentGallery.length > 0) {
+            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+            fullImage.src = currentGallery[currentImageIndex].src;
+        }
+    });
+});
+

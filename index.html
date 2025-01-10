@@ -63,36 +63,21 @@
 	</nav>
 
     <section id="home" class="home-section">
-		<div class="fade-in">
+    <div class="fade-in">
         <h2>Welcome to Melding Software</h2>
-		</div>
-		
-		<div class="fade-in">
-        <p>Your source for free PC software designed to enhance your computing experience. 
-		Our mission is to empower users like you with free, reliable software that optimizes your PC.
-		At Melding Software, we understand the importance of a well-functioning computer. 
-		That's why we offer a range of scripts tailored to meet your needs, whether you're looking to streamline your PC setup, maintain system health, or improve efficiency.</p>
-		
-		<p>Explore our collection of scripts, including our popular Melder GUI script for Windows, designed to simplify and automate the process of setting up a new computer.
-		For Windows users, our Melder script provides a comprehensive solution for configuring your system, installing essential software, and optimizing performance.
-		With Melding Software, you can trust that you're getting high-quality software that is easy to use and delivers results. 
-		Join us in our mission to make PC maintenance and optimization accessible to all. Download our scripts today and experience the difference Melding Software can make for your PC.
-		</p>
-		
-		<p>
-		Melding Software would like to continue adding new software tools. This page will used as a one stop shop of our collection of free PC software. Please stop by in the future for 
-		newly added downloads. 
-		</p>
-		
-		<p>
-		Visit our free open source GitHub: <a href="https://github.com/MeldingSoftware">Melding Software GitHub</a>
-		</p>
-		
-		<p>&nbsp;</p>
-		
-		<img class src="images/PoweredBy.png" alt="Powered By Image">	
-		</div>
-    </section>
+    </div>
+    
+    <div class="fade-in">
+        <p class="very-large-text">Crafting Solutions</p>
+        <p class="large-text">Your source for free PC software designed to enhance your computing experience.</p>
+        <p class="medium-text">Melding Software will continue to add new software tools.</p>
+        <p class="small-text">Visit our free open source GitHub: <a href="https://github.com/MeldingSoftware">Melding Software GitHub</a></p>
+        
+        <p>&nbsp;</p>
+        
+        <img class="src" src="images/PoweredBy.png" alt="Powered By Image">	
+    </div>
+	</section>
 
     <section id="donate" class="donate-section">
 		<div class="fade-in">
@@ -132,634 +117,235 @@
 	</section>
 
     <section id="downloads" class="downloads-section">
-		<div class="fade-in">
+    <div class="fade-in">
         <h2>Downloads</h2>
         <p>Explore and download our scripts to optimize your PC.<br>
-		Extract the folder and run the script from anywhere, even a flash drive!<br>
-		Some scripts require an internet connection. Check the descriptions.</p>
-		
-	<p></p>
-		
-	<div class="red-text">
-    Instructions for Windows scripts:<br>
+        Extract the folder and run the script from anywhere, even a flash drive!<br>
+        Some scripts require an internet connection.<br>
+        Check the Read Me file for more info after downloading.</p>
+
+        <p></p>
+        <div class="red-text">
+            Instructions for Windows scripts:<br>
+        </div>
+        <p style="margin: 0; padding: 0;">
+            1. Download and extract.<br>
+            2. Run the "Run Me.bat" file.<br>
+            3. Click Yes when UAC is prompted.<br>
+            For Windows 11, there will be a popup,<br>
+            "Windows protected your PC".<br>
+            Click on "More info", then "Run anyway".<br>
+            This is due to it being a downloaded script.
+        </p>
+        <p></p>
+
+        <div class="red-text">
+            Instructions for MacOS scripts:<br>
+        </div>
+        <p style="margin: 0; padding: 0; margin-bottom: 20px;">
+            1. Download and extract.<br>
+            2. Run the Run Me First.command file.<br>
+            3. Run the newly created .command file.
+        </p>
+    </div>
+	
+	<div class="divider"></div>	
+
+    <!-- Windows Gallery Section -->
+	<div class="gallery-container" id="windowsGallery">
+		<h3>Gallery For Windows Scripts</h3>
+		<div class="gallery-grid" data-gallery="windows">
+			<img src="images/Melder.jpg" alt="Melder" data-gallery="windows">
+			<img src="images/MediaPlayer.png" alt="MediaPlayer" data-gallery="windows">
+			<img src="images/ComingSoon3.jpg" alt="Coming Soon" data-gallery="windows">
+			<img src="images/ComingSoon4.jpg" alt="Coming Soon" data-gallery="windows">
+		</div>
 	</div>
-	<p style="margin: 0; padding: 0;">
-	1. Download and extract.<br>
-	2. Run the "Run Me.bat" file.<br>
-	3. Click Yes when UAC is prompted.<br>
-	For Windows 11, there will be a popup,<br>
-	"Windows protected your PC".<br>
-	Click on "More info", then "Run anyway".<br>
-	This is due to it being a downloaded script.</p>
-
-	<p></p>
-
-	<div class="red-text">
-    Instructions for MacOS scripts:<br>
+	
+	<p>&nbsp;</p>
+		
+	<div class="fade-in">		
+	<h2 class="table-heading">Windows Scripts</h2>
 	</div>
-	<p style="margin: 0; padding: 0; margin-bottom: 20px;">
-	1. Download and extract.<br>
-	2. Run the Run Me First.command file.<br>
-	3. Run the newly created .command file.</p>
-		
-		<div class="divider"></div>	
-		
-		<div class="container">
-			<div class="fade-in">
-				<div class="text">
-					<h3>Melder</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4> 
-					
+	<div class="fade-in">
+	<img class="table-logo" src="images/WindowsLogo.png" alt="Windows Logo">
+	</div>
+	<div class="fade-in">
+	<table class="downloads-table">
+    <thead>
+        <tr>
+            <th>Scripts</th>
+            <th>Description</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Group Policy Editor</td>
+            <td>Adds Group Policy Editor to Windows 10/11 Home editions.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Group%20Policy%20Editor.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Installed Apps</td>
+            <td>Creates a list of installed apps, useful for reinstallation. Saves data to the Desktop.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Largest Files</td>
+            <td>Lists the top 10 largest files on your device to identify storage hogs.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Maintenance</td>
+            <td>Automated maintenance for Windows, including updates, cleanup, and optimization.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance.zip'">Download</button></td>
+        </tr>
+		<tr>
+            <td>Melder</td>
+            <td>Streamline your PC setup with a GUI tool to automate app installs, updates, cleanup, and restarts.</td>
+            <td><button class="download-button" onclick="window.location.href='https://www.dropbox.com/scl/fi/7bopz639s88zc2rft79ae/Melder.zip?rlkey=9lwb16ii3ftptgmlkdu2eaek4&st=ixmraqph&dl=1'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Media Player</td>
+            <td>Plays video or audio files with a modern UI. Includes playback buttons and volume slider.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Media%20Player.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Mouse Jiggler</td>
+            <td>Moves the mouse pointer automatically every 5 seconds. Press Esc to exit.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Mouse%20Jiggler.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Print Spooler Fix</td>
+            <td>Clears the print spooler when a printer gets stuck and doesn't print.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Repair Tool</td>
+            <td>Runs DISM and SFC to check and repair Windows corruption.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Repair%20Tool.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Start My Day</td>
+            <td>Start your day with knowledge, including weather, news, sports, and more. API setup required.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Start%20My%20Day.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>System Info</td>
+            <td>Generates detailed system information, including battery details for laptops.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/System%20Info.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Update Fix</td>
+            <td>Fixes issues with downloading Windows Updates. Includes additional recovery options.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Wi-Fi Info</td>
+            <td>Lists Wi-Fi SSID names and passwords previously used on the PC. Saves results as a text file.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info.zip'">Download</button></td>
+        </tr>
+    </tbody>
+	</table>
+	</div>
+
+	<p>&nbsp;</p>
+
+	<div class="divider"></div>	
 	
-		<p></p>
-		
-		<div class="download-item">
-			<button class="download-button" onclick="window.location.href='https://www.dropbox.com/scl/fi/7bopz639s88zc2rft79ae/Melder.zip?rlkey=9lwb16ii3ftptgmlkdu2eaek4&st=ixmraqph&dl=1'">Download</button>
-		</div>
-					<p>*REQUIRES INTERNET*<br>
-					Streamline the setup of your new PC.<br>
-					GUI script.<br>
-					Automate installing Apps/running tasks.<br>
-					Install Windows updates, cleanup, and restart automatically.<br>
-					Can't find something you're looking for?<br> 
-					Try out our Search tab!<br>
-					After checking every box you need, click the Tasks tab,<br>
-					and hit the RUN button.</p>
-				</div>
-			</div>
-				<div class="image melder-image">
-					<img class="image-with-shadow" src="images/Melder.jpg" alt="Melder Image">
-				</div>
-		</div>
+	<!-- Mac Gallery Section -->
+	<div class="gallery-container" id="macGallery">
+    <h3>Gallery For Mac Scripts</h3>
+    <div class="gallery-grid" data-gallery="mac">
+        <img src="images/ComingSoon1.jpg" alt="Picture 1" data-gallery="mac">
+        <img src="images/ComingSoon2.jpg" alt="Picture 2" data-gallery="mac">
+        <img src="images/ComingSoon3.jpg" alt="Picture 3" data-gallery="mac">
+        <img src="images/ComingSoon4.jpg" alt="Picture 4" data-gallery="mac">
+    </div>
+	</div>
 
-		<p></p>
-	
-		<div class="divider"></div>	
-		
-		<div class="container">
-			<div class="fade-in">
-				<div class="text">
-					<h3>Applite<br></h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-		
-		
-		<p><a href="https://aerolite.dev/applite/index.html">Applite Website</a></p>
-		
-					<p>Download, update, and uninstall your Mac apps with a single click.</p>
-					<ul>
-					<li>Download and manage with a single click</li>
-					<li>Clean and simple UI</li>
-					<li>Free and open-source</li>
-					</ul>		
-				</div>
-			</div>
-				<div class="image applite-image">
-					<img class="image-with-shadow" src="images/Applite.png" alt="Applite Image">
-				</div>
+	<!-- Fullscreen Gallery Overlay -->
+	<div class="gallery-overlay" id="galleryOverlay">
+		<div class="gallery-controls">
+			<button id="prevImage">&lt;</button>
+			<img id="fullImage" src="" alt="Full Image">
+			<button id="nextImage">&gt;</button>
 		</div>
-	
-		<p></p>
-		
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-				<div class="fade-in">
-					<h3>Maintenance</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance.zip'">Download</button>		
-						<div class="fade-in">
-						<p>*REQUIRES INTERNET*<br>
-						Automated maintenance.</p>
-						<ul>
-						<li>Save Results To Desktop</li>
-						<li>Disables Sleep Setting</li>
-						<li>Optimize Startup (Manually)</li>
-						<li>Chkdsk On Next Boot</li>
-						<li>DISM And SFC</li>
-						<li>Delete Temp Files</li>
-						<li>Disk Cleanup</li>
-						<li>Windows Updates</li>
-						<li>App Updates</li>
-						<li>Optimize Drives</li>
-						<li>Create a Restore Point</li>
-						<li>Re-enables Sleep Setting</li>
-						<li>Restart</li>
-						</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-					
-			<div class="script-column">
-				<div class="mac-scripts">
-					<div class="fade-in">
-					<h3>Maintenance</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>*REQUIRES INTERNET*<br>
-						Automated maintenance.</p>
-						<ul>
-						<li>Save Results To Desktop</li>
-						<li>Check MacOS File System For Errors</li>
-						<li>Verify And Repair Disk</li>
-						<li>Check Startup Items</li>
-						<li>Check Launch Agents and Daemons</li>
-						<li>Check For Updates </li>
-						<li>Install Updates</li>
-						<li>Restart</li>
-						</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-				
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Repair Tool</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Repair%20Tool.zip'">Download</button>
-						<div class="fade-in">
-						<p>*REQUIRES INTERNET*<br>
-						Runs DISM and SFC to check and repair Windows corruption.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="script-column">
-				<div class="mac-scripts">
-					<div class="fade-in">
-					<h3>Repair Tool</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Repair%20Tool%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>Checks MacOS file system for errors. <br>
-						Verify and repair disk.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-			
-		<div class="divider"></div>
-		
-			<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Start My Day</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Start%20My%20Day.zip'">Download</button>
-						<div class="fade-in">
-						
-						<p>*REQUIRES INTERNET*<br>
-						Start your day with knowledge! API script.<br>
-						Requires a little bit of work to have it fully setup.<br>
-						Read the Read Me for the setup process.<br>
+		<button id="closeGallery" class="close-gallery">X</button>
+	</div>
 
-						<ul>
-						<li>Day and Date</li>
-						<li>This Day in History (requires setup)</li>
-						<li>Quote of the Day (requires setup)</li>
-						<li>Weather</li>
-						<li>News</li>
-						<li>Sports (requires setup)</li>
-						<li>Lotto (requires setup)</li>
-						<li>Stocks (can be adjusted)</li>
-						<li>Crypto (can be adjusted)</li>
-						</ul>
-						
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="script-column">
-				<div class="mac-scripts">
-					<div class="fade-in">
-					<h3>Start My Day</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Start%20My%20Day%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>*REQUIRES INTERNET*<br>
-						Start your day with knowledge! API script.<br>
-						Requires a little bit of work to have it fully setup.<br>
-						Read the Read Me for the setup process.<br>
+	<p>&nbsp;</p>
 
-						<ul>
-						<li>Day and Date</li>
-						<li>This Day in History (requires setup)</li>
-						<li>Quote of the Day (requires setup)</li>
-						<li>Weather</li>
-						<li>News</li>
-						<li>Sports (requires setup)</li>
-						<li>Lotto (requires setup)</li>
-						<li>Stocks (can be adjusted)</li>
-						<li>Crypto (can be adjusted)</li>
-						</ul>
-						
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-			
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Wi-Fi Info</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info.zip'">Download</button>
-						<div class="fade-in">
-						<p>Get a list of Wi-Fi SSID names and passwords that have been used on the PC.<br>
-						Then saves it in a txt file in the script directory for an easy getaway. ;)</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Wi-Fi Info</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>Get the current Wi-Fi SSID name and password.<br>
-						Then saves it in a txt file in the script directory for an easy getaway. ;)<br>
-						Requires the Admin password. </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-				
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Update Fix</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix.zip'">Download</button>
-						<div class="fade-in">
-						<p>For when you're having issues with downloading Windows Updates.</p>
-						
-						<p>Still getting update issues?<br>
-						Try the Windows 10/11 Installation Assistant or Create Windows 10/11 Installation Media.<br>
-						Keep your files and Apps and install the latest Windows updates.</p>
-						
-						<p><a href="https://www.microsoft.com/en-us/software-download/windows10">Windows 10</a>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="https://www.microsoft.com/en-us/software-download/windows11">Windows 11</a></p>
-
-						</div>
-					</div>
-				</div>
-			</div>
-				
-			<div class="script-column">
-				<div class="mac-scripts">
-				<div class="fade-in">
-				<h3>Update Fix</h3>
-				<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-				</div>
-				<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>For when you're having issues with downloading Mac Updates.<br>
-						If you still have issues with Mac Updates, try to run the Repair Tool script.<br>
-						</div>
-					</div>		
-				</div>
-			</div>
-		</div>
-							
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Print Spooler Fix</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix.zip'">Download</button>
-						<div class="fade-in">
-						<p>When your printer gets stuck and doesn't print. Clears the print spooler.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="script-column">
-				<div class="mac-scripts">
-					<div class="fade-in">
-					<h3>Print Spooler Fix</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>When your printer gets stuck and doesn't print. Clears the print spooler.</p>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-					
-		<div class="divider"></div>			
-					
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Installed Apps</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps.zip'">Download</button>
-						<div class="fade-in">
-						<p>Create a list of the installed Apps and their information.<br>
-						Saves the data in a folder on the Desktop.<br>
-						Creates 2 sets of files.<br>
-						One can be opened in Excel (nicer format), and the other can be opened with<br>
-						Notepad. Useful if you need to reinstall your software, you'll have a list.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-					
-			<div class="script-column">
-				<div class="mac-scripts">
-					<div class="fade-in">
-					<h3>Installed Apps</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>Create a list of the installed Apps and their information.<br>
-						Saves results to the Desktop.<br> 
-						Useful if you need to reinstall your software, you'll have a list.</p>
-						</div>
-					</div>		
-				</div>
-			</div>
-		</div>
-					
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Largest Files</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files.zip'">Download</button>
-						<div class="fade-in">
-						<p>Creates a list of the top 10 largest files on your device.<br>
-						Saves it to the script location.<br>
-						Figure out what's taking up all your storage space. </p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="script-column">
-				<div class="mac-scripts">
-					<div class="fade-in">
-					<h3>Largest Files</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files%20Mac.zip'">Download</button>
-						<div class="fade-in">
-						<p>Creates a list of the top 10 largest files on your device.<br>
-						Saves results to the Desktop.<br>
-						Figure out what's taking up all your storage space. </p>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-			
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-						<h3>System Info</h3>
-						<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/System%20Info.zip'">Download</button>
-						<div class="fade-in">
-						<p>Create a System Info directory on the Desktop.<br>
-						Get system info and output it into a txt file.<br>
-						Get battery info for laptops and output it into an html file.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-       	
-			<div class="script-column">
-				<div class="mac-scripts">
-					<div class="fade-in">
-					<h3>System Info</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/System%20Info%20Mac.zip'">Download</button> 
-						<div class="fade-in">
-						<p>Get the system hardware information.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-			
-				<div class="divider"></div>
-        
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Media Player</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Media%20Player.zip'">Download</button>
-						<div class="fade-in">
-						<p>Load and plays a video or audio file.<br>
-						Features playback buttons, progress bar, volume slider, playback timer, fullscreen toggle,<br>
-						and hides cursor/buttons after 2 seconds of inactivity.<br>
-						Included is a K-Lite Codec Pack shortcut. If the display is black during video playback,<br> 
-						you may be missing a codec. Install K-Lite Codec Pack Standard and try again.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-		<div class="script-column">
-			<div class="mac-scripts">
-				<div class="fade-in">
-					<h3>Media Player</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-				</div>
-				<p></p>			
-				<div class="download-item"> 
-					<!-- <button class="download-button" onclick="window.location.href='URL'">Download</button>  -->
-						<div class="fade-in">
-						<p>UNDER CONSTRUCTION</p>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-	
-		<div class="divider"></div>
-		
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Mouse Jiggler</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Mouse%20Jiggler.zip'">Download</button>
-						<div class="fade-in">
-						<p>Mouse pointer moves automatically every 5 seconds. Press Esc to exit.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-		<div class="script-column">
-			<div class="mac-scripts">
-				<div class="fade-in">
-					<h3>Mouse Jiggler</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-				</div>
-				<p></p>			
-				<div class="download-item"> 
-					<!-- <button class="download-button" onclick="window.location.href='URL'">Download</button>  -->
-						<div class="fade-in">
-						<p>UNDER CONSTRUCTION</p>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-
-		<div class="divider"></div>
-        
-		<div class="downloads-container">
-			<div class="script-column">
-				<div class="windows-scripts">
-					<div class="fade-in">
-					<h3>Group Policy Editor</h3>
-					<h4 class="sub-heading">For Windows <img src="images/WindowsLogo.png" alt="Windows Logo" class="win-logo"></h4>
-					</div>
-					<p></p>
-					<div class="download-item">
-						<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Group%20Policy%20Editor.zip'">Download</button>
-						<div class="fade-in">
-						<p>Use this script to get Group Policy Editor for Windows 10/11 Home.<br>
-						GPE comes with Windows 10/11 Pro or Enterprise editions.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-		<div class="script-column">
-			<div class="mac-scripts">
-				<div class="fade-in">
-					<h3>Fun Commands</h3>
-					<h4 class="sub-heading">For MacOS <img src="images/AppleLogo.png" alt="Apple Logo" class="apple-logo"></h4>
-				</div>
-				<p></p>			
-				<div class="download-item"> 
-					<button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Fun%20Commands%20Mac.zip'">Download</button>
-					<div class="fade-in">
-						<p>*REQUIRES INTERNET*<br>
-							Fun commands for Mac.</p>
-						<ul>
-						<li>Games</li>
-						<li>The Matrix Rain</li>
-						<li>Make It Snow</li>
-						<li>ASCII Star Wars</li>
-						<li>ASCII Train</li>
-						<li>Random Quote</li>
-						<li>Create A Banner</li>
-						<li>Check Birthstones and Flowers</li>
-						<li>Learn Historical Events</li>
-						<li>Cowsay</li>
-						<li>Let Your Terminal Speak</li>
-						</ul>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-	
-
-    </section>
+	<div class="fade-in">
+	<h2 class="table-heading">Mac Scripts</h2>
+	</div>
+	<div class="fade-in">
+	<img class="table-logo" src="images/AppleLogo.png" alt="Apple Logo">
+	</div>
+	<div class="fade-in">
+	<table class="downloads-table">
+    <thead>
+        <tr>
+            <th>Scripts</th>
+            <th>Description</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Fun Commands</td>
+            <td>Includes fun terminal commands like ASCII art, quotes, and more.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Fun%20Commands%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Installed Apps</td>
+            <td>Creates a list of installed apps, useful for reinstallation. Saves data to the Desktop.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Installed%20Apps%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Largest Files</td>
+            <td>Lists the top 10 largest files on your device to identify storage hogs.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Largest%20Files%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Maintenance</td>
+            <td>Automated maintenance for Mac, including disk checks and updates.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Maintenance%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Print Spooler Fix</td>
+            <td>Clears the print spooler when a printer gets stuck and doesn't print.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Print%20Spooler%20Fix%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Repair Tool</td>
+            <td>Checks and repairs the Mac file system and disk.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Repair%20Tool%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Start My Day</td>
+            <td>Start your day with knowledge, including weather, news, sports, and more. API setup required.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Start%20My%20Day%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>System Info</td>
+            <td>Generates detailed system information for Mac devices.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/System%20Info%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Update Fix</td>
+            <td>Fixes issues with downloading Mac updates. Includes additional recovery options.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Update%20Fix%20Mac.zip'">Download</button></td>
+        </tr>
+        <tr>
+            <td>Wi-Fi Info</td>
+            <td>Displays current Wi-Fi SSID and password. Saves results as a text file. Requires admin password.</td>
+            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Wi-Fi%20Info%20Mac.zip'">Download</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</section>
 
 	<!-- Contact Section -->
 	<section id="contact" class="contact-section">
