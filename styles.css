@@ -90,9 +90,6 @@ a {
 
 .mobile-links {
 	margin-left: -1px;
-}
-
-.mobile-links {
     margin-top: 60px;
 	margin-right: 24px;
 	margin-bottom: 50px;
@@ -133,23 +130,6 @@ a {
 
 .text {
     float: left;
-}
-
-.script-column {
-    flex: 1 0 50%; /* Each column takes up 50% of the available space */
-    margin: 0 0%; /* Adjusted margin for the gap between columns */
-    box-sizing: border-box; /* Include padding in width calculation */
-    padding-bottom: 20px; /* Space at the bottom of each column */
-}
-
-.windows-scripts {
-    margin: 0;
-    padding: 0;
-}
-
-.mac-scripts {
-    margin: 0;
-    padding: 0;  
 }
 
 /* Style for the Download button */
@@ -195,12 +175,6 @@ a {
 	margin-bottom: 10px;
 }
 
-.applite-image {
-    margin-left: 340px; /* Adjust this value as needed for Applite */
-    margin-top: 20px;
-	margin-bottom: 10px;
-}
-
 .win-logo {
 display: inline-block;
 vertical-align: middle;
@@ -241,76 +215,6 @@ body.no-scroll {
     overflow: hidden !important;  // Use important to ensure overriding any other style
     position: fixed;  // Can also help in completely stopping the scroll
     width: 100%;  // Maintain full width
-}
-
-
-/* For screens smaller than 1200px (typical mobile phones) */
-@media (max-width: 1200px) {
-	.downloads-container {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    }
-	
-    .container {
-        flex-direction: column; /* Stacks child elements vertically on smaller screens */
-    }
-	
-	.script-column, .mac-scripts, .text, .image {
-    margin: 0;
-    width: 100%;  /* Ensures these elements use the full width */
-    height: auto;  /* Maintains aspect ratio for images */
-    margin-bottom: 20px;  /* Adds space between stacked items */
-    }
-}
-
-/* For screens smaller than 900px (typical mobile phones) */
-@media (max-width: 900px) {
-    /* Adjustments for mobile layout */
-	.gallery-container {
-    width: 100%; /* Full width for the Gallery section */
-    margin-top: 20px; /* Adds space above the Gallery when stacked */
-    }
-	
-    .downloads-container {
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-    
-    nav .hamburger {
-        display: block;
-        position: absolute;
-        right: 10px;  /* Ensures alignment with the edge of the nav bar */
-        top: 10px;  /* Aligns with the top of the nav bar */
-    }
-    
-    /* Hide desktop navigation links on smaller screens */
-    .desktop-links {
-        display: none;
-    }
-
-    /* Display mobile navigation links in the overlay */
-    .menu-overlay.active .mobile-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Other mobile adjustments */
-    .container {
-        flex-direction: column; /* Stacks child elements vertically on smaller screens */
-    }
-
-    .script-column, .mac-scripts, .text, .image {
-        margin: 0;
-        width: 100%;  /* Ensures these elements use the full width */
-        height: auto;  /* Maintains aspect ratio for images */
-        margin-bottom: 20px;  /* Adds space between stacked items */
-    }
-
-    .mac-scripts {
-        margin-top: 20px;  /* Adds space specifically above Mac scripts section */
-    }
-	
 }
 
 .menu-overlay.active ~ nav .hamburger,
@@ -373,9 +277,8 @@ body.no-scroll {
     z-index: 1003; /* Ensure it's above all other content in the overlay */
 }  
 
-.donate-section {
-    overflow: hidden;	
-}
+/* DONATE */
+
 
 /* Row for images, button, and paragraph */
 .donation-row {
@@ -389,7 +292,8 @@ body.no-scroll {
 /* Center the Buy Me a Coffee button and paragraph */
 #bmc-button-container {
     text-align: center;
-	margin-top: 60px; /* Optional: Add space above the button if needed */
+	margin-top: -20px;
+	margin-bottom: 20px;
 }
 
 /* Style the paragraph near the button */
@@ -400,6 +304,8 @@ body.no-scroll {
 .center-column p {
     margin-bottom: 60px; /* Adjust this value to control the spacing */
 }
+
+
 
 .copyright-notice {
     padding-left: 20px; /* Adjust the value as needed */
@@ -539,7 +445,7 @@ body.no-scroll {
     height: auto;
 }
 
-/* Gallery Section */
+/* GALLERY */
 .gallery-container {
     float: right;
     width: 100%; /* Ensure the gallery spans the available width */
@@ -670,62 +576,72 @@ body.no-scroll {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Ensure table stays within section */
-.downloads-table-container {
-    width: 100%; /* Full width of the parent container */
-    overflow-x: auto; /* Enable horizontal scrolling if the content overflows */
+/* For screens smaller than 1200px (typical mobile phones) */
+@media (max-width: 1200px) {
+	.downloads-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    }
+	
+    .container {
+        flex-direction: column; /* Stacks child elements vertically on smaller screens */
+    }
+	
+	.script-column, .mac-scripts, .text, .image {
+    margin: 0;
+    width: 100%;  /* Ensures these elements use the full width */
+    height: auto;  /* Maintains aspect ratio for images */
+    margin-bottom: 20px;  /* Adds space between stacked items */
+    }
 }
 
-.downloads-table {
-    width: 100%; /* Ensure the table spans the full width */
-    border-collapse: collapse; /* Merge table borders */
-    margin-bottom: 40px; /* Space between tables */
-}
-
-.downloads-table th,
-.downloads-table td {
-    border: 1px solid #555; /* Dark border */
-    padding: 12px;
-    text-align: left; /* Left-align content */
-}
-
-.downloads-table th {
-    background-color: #444; /* Dark gray for headers */
-    color: #fff; /* White text */
-    text-align: center; /* Center-align table headers */
-}
-
-.downloads-table td {
-    background-color: #222; /* Dark background for cells */
-    color: #ddd; /* Light gray text */
-    word-wrap: break-word; /* Break long words */
-    overflow-wrap: break-word;
-}
-
-.downloads-table tr:nth-child(even) td {
-    background-color: #333; /* Alternate row background */
-}
-
-/* Adjust column widths */
-.downloads-table th:nth-child(1),
-.downloads-table td:nth-child(1) {
-    width: 10%; /* Scripts column */
-}
-
-.downloads-table th:nth-child(2),
-.downloads-table td:nth-child(2) {
-    width: 80%; /* Description column */
-}
-
-.downloads-table th:nth-child(3),
-.downloads-table td:nth-child(3) {
-    width: 10%; /* Download column */
-}
-
-/* Responsive adjustments for smaller screens */
+/* For screens smaller than 900px (typical mobile phones) */
 @media (max-width: 900px) {
+    /* Adjustments for mobile layout */
+	.gallery-container {
+    width: 100%; /* Full width for the Gallery section */
+    margin-top: 20px; /* Adds space above the Gallery when stacked */
+    }
+	
+    .downloads-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    nav .hamburger {
+        display: block;
+        position: absolute;
+        right: 10px;  /* Ensures alignment with the edge of the nav bar */
+        top: 10px;  /* Aligns with the top of the nav bar */
+    }
+    
+    /* Hide desktop navigation links on smaller screens */
+    .desktop-links {
+        display: none;
+    }
+
+    /* Display mobile navigation links in the overlay */
+    .menu-overlay.active .mobile-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Other mobile adjustments */
+    .container {
+        flex-direction: column; /* Stacks child elements vertically on smaller screens */
+    }
+
+    .text, .image {
+        margin: 0;
+        width: 100%;  /* Ensures these elements use the full width */
+        height: auto;  /* Maintains aspect ratio for images */
+        margin-bottom: 20px;  /* Adds space between stacked items */
+    }	
+	
     .downloads-table th, .downloads-table td {
         font-size: 14px; /* Reduce font size for smaller screens */
         padding: 8px; /* Reduce padding */
     }
 }
+

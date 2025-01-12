@@ -1,4 +1,3 @@
-
 // HAMBURGER MENU
 function toggleMenu() {
     var overlay = document.getElementById('menuOverlay');
@@ -127,24 +126,6 @@ document.addEventListener('keydown', (event) => {
     // Reset the position in the code sequence if the wrong key is pressed
     currentPosition = 0;
   }
-});
-
-// DONATE NAV FIX
-document.addEventListener("DOMContentLoaded", () => {
-    const donateLink = document.querySelector('a[href="#donate"]');
-    const donateSection = document.querySelector("#donate");
-
-    if (donateLink && donateSection) {
-        donateLink.addEventListener("click", (event) => {
-            event.preventDefault();
-            const offset = -60; // Adjust this value as needed
-            const position = donateSection.getBoundingClientRect().top + window.scrollY + offset;
-            window.scrollTo({
-                top: position,
-                behavior: "auto", // Instant scroll
-            });
-        });
-    }
 });
 
 // GALLERY
