@@ -625,6 +625,7 @@ body.no-scroll {
         display: flex;
         flex-direction: column;
         align-items: center;
+		margin-left: 40px;
     }
 
     /* Other mobile adjustments */
