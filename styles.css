@@ -289,12 +289,25 @@ body.no-scroll {
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-/* Center the Buy Me a Coffee button and paragraph */
-#bmc-button-container {
+/* Center donation buttons and space them nicely */
+#donation-buttons {
     text-align: center;
-	margin-top: -20px;
-	margin-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
+
+.donate-button {
+    width: 220px;          /* adjust for your desired size */
+    margin: 8px;           /* space between buttons */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;    /* optional rounded corners */
+}
+
+.donate-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
 
 /* Style the paragraph near the button */
 .donation-row p {
@@ -309,6 +322,22 @@ body.no-scroll {
 
 .copyright-notice {
     padding-left: 20px; /* Adjust the value as needed */
+}
+
+.features-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 35px;
+  color: #ccc;
+  font-size: 1em;
+  flex-wrap: wrap;
+}
+.features-row div {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 #refreshContainer {
