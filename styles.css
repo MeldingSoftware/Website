@@ -40,7 +40,7 @@ h4 {
 }
 
 p, li {
-    font-size: 16px; /* Change the font size as needed */
+    font-size: 18px; /* Change the font size as needed */
 }
 
 a {
@@ -411,6 +411,11 @@ body.no-scroll {
     margin: 0 auto; /* Center horizontally */
 }
 
+.downloads-table th,
+.downloads-table td {
+    font-size: 1.05em; /* about 5% bigger */
+}
+
 /* Styling for download button */
 .download-button {
     display: inline-block;
@@ -675,3 +680,75 @@ body.no-scroll {
     }
 }
 
+/* ======== High-Resolution Visual Scale (builds on your working rules) ======== */
+
+/* 1440p and up */
+@media (min-width: 2560px) and (min-resolution: 2dppx) {
+  html { font-size: 93%; }
+
+  h1, h2, h3,
+  .very-large-text,
+  .large-text,
+  .medium-text,
+  .small-text,
+  .table-heading,
+  th, td,
+  .download-button,
+  .donate-button,
+  .features-row div,
+  .gallery-container h3 {
+    transform: scale(0.97);
+    transform-origin: top left;
+  }
+
+  img, .image-with-shadow, .table-logo {
+    transform: scale(0.97);
+    transform-origin: center;
+  }
+}
+
+/* 2K (≈3000px wide HiDPI) */
+@media (min-width: 3000px) and (min-resolution: 2dppx) {
+  html { font-size: 88%; }
+
+  h1, h2, h3,
+  .very-large-text,
+  .large-text,
+  .medium-text,
+  .small-text,
+  .table-heading,
+  th, td,
+  .download-button,
+  .donate-button,
+  .features-row div,
+  .gallery-container h3 {
+    transform: scale(0.94);
+  }
+
+  img, .image-with-shadow, .table-logo {
+    transform: scale(0.94);
+  }
+}
+
+/* 4K (≈3840px wide HiDPI) */
+@media (min-width: 3800px) and (min-resolution: 2.5dppx) {
+  html { font-size: 82%; }
+
+  h1, h2, h3,
+  .very-large-text,
+  .large-text,
+  .medium-text,
+  .small-text,
+  .table-heading,
+  th, td,
+  .download-button,
+  .donate-button,
+  .features-row div,
+  .gallery-container h3 {
+    transform: scale(0.9);
+  }
+
+  img, .image-with-shadow, .table-logo {
+    transform: scale(0.9);
+  }
+}
