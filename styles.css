@@ -937,3 +937,119 @@ body.no-scroll {
     transform: scale(0.9);
   }
 }
+
+
+/* ===== Mobile center-align for Donate (Mel + QR) =====
+   Fixes left-aligned wrap behavior caused by justify-content: space-between on narrow screens.
+   Desktop layout remains unchanged.
+*/
+@media (max-width: 768px) {
+  .donation-row {
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+
+  /* Center standalone images (Mel + QR) */
+  .donation-row > img.image-with-shadow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Ensure the middle column doesn't fight alignment */
+  .donation-row .center-column {
+    width: 100%;
+  }
+}
+
+
+/* ===== Section title top spacing (non-collapsing) =====
+   h2 margin-top can collapse with the parent section, making the change appear to do nothing.
+   Use padding on the section itself so the space is always visible inside the border.
+*/
+#donate,
+#downloads,
+#contact,
+#about,
+#legal {
+  padding-top: 18px;
+}
+
+/* Keep the title from adding extra space on top */
+#donate > h2,
+#downloads > h2,
+#contact > h2,
+#about > h2,
+#legal > h2 {
+  margin-top: 0;
+}
+
+
+/* ===== Spacing tweaks: Mel image and gallery headings ===== */
+
+/* Mobile: add breathing room above Mel when Donate stacks */
+@media (max-width: 768px) {
+  /* If Mel is the first image in the donation row, add space above it */
+  .donation-row > img.image-with-shadow:first-of-type {
+    margin-top: 18px !important;
+  }
+
+  /* If you keep the explicit class on Mel, this also guarantees the spacing */
+  .donation-row > img.melder-image {
+    margin-top: 18px !important;
+  }
+}
+
+/* Add space below the Gallery headings (Windows + Mac) */
+.gallery-container h3 {
+  margin-bottom: 18px !important;
+}
+
+
+/* ===== Mid-width spacing tweak: Mel image =====
+   There is a narrow "in-between" window size where the Donate row starts wrapping,
+   but the <=768px mobile query does not apply. Add a little top space for Mel there too.
+*/
+@media (max-width: 1100px) and (min-width: 769px) {
+  .donation-row > img.melder-image {
+    margin-top: 18px !important;
+  }
+  /* Fallback if Mel doesn't have melder-image class */
+  .donation-row > img.image-with-shadow:first-of-type {
+    margin-top: 18px !important;
+  }
+}
+
+
+/* ===== Responsive features chips wrap =====
+   On smaller screens, wrap the feature chips into 2–3 lines so they all fit (no horizontal scroll/cutoff).
+*/
+@media (max-width: 900px) {
+  .features-row {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+    padding: 0 10px !important;
+    gap: 10px !important;
+  }
+
+  /* Keep chips readable but compact so 2–3 rows fits nicely */
+  .features-row div {
+    flex: 0 0 auto;
+    font-size: clamp(0.78rem, 0.6rem + 0.4vw, 0.9rem);
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+}
+
+/* Extra small screens: slightly tighter so it doesn’t become 4+ rows */
+@media (max-width: 420px) {
+  .features-row div {
+    font-size: 0.78rem;
+    padding: 6px 8px;
+  }
+}
+
