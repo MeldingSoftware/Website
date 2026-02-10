@@ -17,7 +17,11 @@
 	<meta name="description" content="Your source for free PC software designed to enhance your computing experience.">
 	<meta name="keywords" content="windows, macOS, powershell, terminal, scripts, application, app, homebrew, homebrew cask">
 	<meta name="author" content="Kevin King">
-    <link rel="stylesheet" href="styles.css">
+    	<!-- Fonts (modern, lightweight) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	
 	<!-- Link to the external JavaScript file with defer attribute -->
@@ -63,33 +67,35 @@
 	</nav>
 
     <section id="home" class="home-section">
-    <div class="fade-in">
-        <h2>Welcome to Melding Software</h2>
-    </div>
-    
-    <div class="fade-in">
-        <p class="very-large-text">Crafting Solutions</p>
-        <p class="large-text">Your source for free PC software designed to enhance your computing experience.</p>
-        <p class="medium-text">Melding Software will continue to add new software tools.</p>
-        <p class="small-text">Visit our free open source GitHub: <a href="https://github.com/MeldingSoftware">Melding Software GitHub</a></p>
-        
-        <p>&nbsp;</p>
-        
-        <img class="src" src="images/PoweredBy.png" alt="Powered By Image">	
-		
-		<p>&nbsp;</p>
-		
-	<div class="features-row">
-		<div>🎁 Free & Open Source</div>
-		<div>🧰 PowerShell Tools</div>
-		<div>💻 Terminal Tools</div>
-		<div>🚀 PC Optimization</div>
-		<div>🌐 Cross-Platform Scripts</div>
-	</div>
+  <div class="home-hero fade-in">
+    <div class="home-hero__text">
+      <p class="home-eyebrow">Welcome to</p>
+      <h1 class="home-title">Melding Software</h1>
+      <p class="home-tagline">Crafting Solutions</p>
 
-		
+      <p class="home-subtitle">Your source for free PC software designed to enhance your computing experience.</p>
+      <p class="home-support">Melding Software will continue to add new software tools.</p>
+
+      <div class="home-cta-row">
+        <a class="cta-button primary" href="#downloads">Browse Downloads</a>
+        <a class="cta-button secondary" href="https://github.com/MeldingSoftware" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
     </div>
-	</section>
+
+    <div class="home-hero__media">
+      <img class="powered-by" src="images/PoweredBy.png" alt="Powered by PowerShell and Terminal">
+    </div>
+  </div>
+
+  <div class="features-row home-features">
+          <div>🎁 Free &amp; Open Source</div>
+          <div>🧰 PowerShell Tools</div>
+          <div>💻 Terminal Tools</div>
+          <div>🚀 PC Optimization</div>
+          <div>🌐 Cross-Platform Scripts</div>
+        </div>
+</section>
 
 	<section id="donate" class="donate-section">
 		<div class="fade-in">
@@ -451,7 +457,7 @@
 
     <!-- Copyright Notice at the bottom of the content -->
     <div class="copyright-notice">
-        <p>&copy; 2025 Melding Software. All rights reserved.</p>
+        <p>&copy; 2026 Melding Software. All rights reserved.</p>
     </div>
 
 
