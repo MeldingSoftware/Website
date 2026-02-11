@@ -563,9 +563,9 @@ body.no-scroll {
 }
 
 .powered-by {
-    /* Let the grid column decide the available space, then cap it */
+    /* Let the grid column decide the available space, then cap it (smaller) */
     width: 100%;
-    max-width: clamp(240px, 22vw, 420px);
+    max-width: clamp(220px, 18vw, 360px);
     height: auto;
     object-fit: contain;
     display: block;
