@@ -1054,9 +1054,122 @@ body.no-scroll {
 }
 
 
-/* ===== Compact Downloads tables =====
-   Smaller table text, tighter row height, and smaller Download buttons.
-   (Does not affect Home/Donate layout)
+/* ===== Donate section layout refresh =====
+   Matches the cleaner 2-column layout:
+   - left: Mel artwork
+   - right top: message + buttons
+   - right bottom: QR code
+*/
+.donate-section {
+  padding-top: 18px;
+}
+
+.donation-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 510px) minmax(320px, 1fr);
+  grid-template-areas:
+    "mel content"
+    "mel qr";
+  align-items: center;
+  justify-content: center;
+  column-gap: clamp(28px, 4vw, 70px);
+  row-gap: 22px;
+  flex-wrap: unset;
+}
+
+.donation-row > img.image-with-shadow:first-of-type,
+.donation-row > img.melder-image {
+  grid-area: mel;
+  width: min(100%, 430px);
+  max-width: 380px;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(255,255,255,0.65);
+}
+
+.donation-row .center-column {
+  grid-area: content;
+  width: min(100%, 760px);
+  justify-self: center;
+  text-align: center;
+}
+
+.donation-row .center-column p {
+  margin: 0 0 28px 0;
+  max-width: 760px;
+  text-align: center;
+  line-height: 1.35;
+}
+
+#donation-buttons {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.donate-button {
+  width: clamp(210px, 16vw, 260px);
+  margin: 0;
+  display: block;
+}
+
+.donation-row > img.image-with-shadow:last-of-type {
+  grid-area: qr;
+  width: clamp(180px, 17vw, 250px);
+  max-width: 250px;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto;
+  justify-self: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.65);
+}
+
+/* Reduce the visual dominance of the empty middle gap */
+@media (max-width: 1200px) {
+  .donation-row {
+    grid-template-columns: minmax(240px, 430px) minmax(280px, 1fr);
+    column-gap: clamp(22px, 3vw, 40px);
+  }
+
+  .donation-row > img.image-with-shadow:first-of-type,
+  .donation-row > img.melder-image {
+    max-width: 430px;
+  }
+}
+
+/* Tablet/mobile: stack cleanly */
+@media (max-width: 900px) {
+  .donation-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "mel"
+      "content"
+      "qr";
+    row-gap: 24px;
+    justify-items: center;
+  }
+
+  .donation-row .center-column {
+    width: 100%;
+  }
+
+  .donation-row .center-column p {
+    margin-bottom: 22px;
+  }
+
+  .donation-row > img.image-with-shadow:last-of-type {
+    width: clamp(180px, 48vw, 250px);
+  }
+}
+
+
+/* ===== Compact Downloads tables (less compact) =====
+   One step up from the tighter version.
 */
 .downloads-table th,
 .downloads-table td {
@@ -1069,22 +1182,53 @@ body.no-scroll {
   font-size: 0.95em !important;
 }
 
+.downloads-table th,
+.downloads-table td {
+  border-color: #4a4a4a;
+}
+
 .download-button {
   padding: 7px 14px !important;
   font-size: 0.9rem !important;
   border-radius: 10px !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.32);
 }
 
-/* Slightly tighter on small screens too */
 @media (max-width: 900px) {
   .downloads-table th,
   .downloads-table td {
     padding: 7px 8px !important;
     font-size: 13px !important;
   }
+
   .download-button {
     padding: 6px 12px !important;
     font-size: 0.85rem !important;
+  }
+}
+
+
+/* ===== Donate heading spacing tweak =====
+   Adds space below "Support Our Work" so the Mel image doesn't sit too close.
+*/
+.donate-section h2 {
+  margin-bottom: 22px !important;
+}
+
+/* ===== Donate Mel image size adjustment =====
+   Keep the new donate layout, but reduce the visual dominance of the left artwork.
+*/
+.donation-row > img.image-with-shadow:first-of-type,
+.donation-row > img.melder-image {
+  width: min(100%, 430px) !important;
+  max-width: 430px !important;
+}
+
+@media (max-width: 1200px) {
+  .donation-row > img.image-with-shadow:first-of-type,
+  .donation-row > img.melder-image {
+    width: min(100%, 380px) !important;
+    max-width: 380px !important;
   }
 }
 
