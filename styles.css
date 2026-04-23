@@ -1232,3 +1232,11 @@ body.no-scroll {
   }
 }
 
+
+/* ===== Bold script names =====
+   Makes the first column (script names) stand out more.
+*/
+.downloads-table td:nth-child(1) {
+  font-weight: 700 !important;
+}
+
