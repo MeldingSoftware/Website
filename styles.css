@@ -1053,3 +1053,38 @@ body.no-scroll {
   }
 }
 
+
+/* ===== Compact Downloads tables =====
+   Smaller table text, tighter row height, and smaller Download buttons.
+   (Does not affect Home/Donate layout)
+*/
+.downloads-table th,
+.downloads-table td {
+  padding: 8px 10px !important;
+  font-size: 0.95em !important;
+  line-height: 1.25 !important;
+}
+
+.downloads-table th {
+  font-size: 0.95em !important;
+}
+
+.download-button {
+  padding: 7px 14px !important;
+  font-size: 0.9rem !important;
+  border-radius: 10px !important;
+}
+
+/* Slightly tighter on small screens too */
+@media (max-width: 900px) {
+  .downloads-table th,
+  .downloads-table td {
+    padding: 7px 8px !important;
+    font-size: 13px !important;
+  }
+  .download-button {
+    padding: 6px 12px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
