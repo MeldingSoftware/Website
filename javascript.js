@@ -190,3 +190,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+
+// COPY TERMINAL COMMAND
+document.addEventListener("DOMContentLoaded", () => {
+    const copyButtons = document.querySelectorAll(".copy-command-button");
+
+    copyButtons.forEach((button) => {
+        button.addEventListener("click", async () => {
+            const targetId = button.getAttribute("data-copy-target");
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            const text = target.textContent.trim();
+            const originalText = button.textContent;
+
+            try {
+                await navigator.clipboard.writeText(text);
+                button.textContent = "Copied";
+                button.classList.add("copied");
+            } catch (error) {
+                const range = document.createRange();
+                range.selectNodeContents(target);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                try {
+                    document.execCommand("copy");
+                    button.textContent = "Copied";
+                    button.classList.add("copied");
+                } catch (fallbackError) {
+                    button.textContent = "Copy failed";
+                }
+                selection.removeAllRanges();
+            }
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove("copied");
+            }, 1800);
+        });
+    });
+});
+
