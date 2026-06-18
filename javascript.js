@@ -17,7 +17,7 @@ function toggleMenu() {
         overlay.classList.add('active');  // Add 'active' class to overlay
         body.classList.add('no-scroll');
         logo.style.pointerEvents = 'none';  // Disable pointer events on the logo
-        hamburger.style.pointer.events = 'none';  // Disable pointer events on the hamburger
+        hamburger.style.pointerEvents = 'none';  // Disable pointer events on the hamburger
     }
 }
 
@@ -34,7 +34,7 @@ window.addEventListener('resize', function() {
         if (overlay.classList.contains('active')) {
             overlay.style.display = 'none';
             overlay.classList.remove('active');
-            closeButton.style.display = 'none';
+            if (closeButton) closeButton.style.display = 'none';
         }
         hamburger.style.display = 'none';  // Ensure hamburger is hidden in desktop view
     } else {

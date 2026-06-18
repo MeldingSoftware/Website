@@ -83,7 +83,7 @@ a {
 
 .logo {
         width: auto;
-        max-width: 260px;  // Adjust this value based on how it fits on mobile devices
+        max-width: 260px;  /* Adjust this value based on how it fits on mobile devices */
         height: auto;
 		margin-left: 40px;
 }
@@ -246,9 +246,9 @@ img {
 }
 
 body.no-scroll {
-    overflow: hidden !important;  // Use important to ensure overriding any other style
-    position: fixed;  // Can also help in completely stopping the scroll
-    width: 100%;  // Maintain full width
+    overflow: hidden !important;  /* Use important to ensure overriding any other style */
+    position: fixed;  /* Can also help in completely stopping the scroll */
+    width: 100%;  /* Maintain full width */
 }
 
 .menu-overlay.active ~ nav .hamburger,
@@ -1326,3 +1326,81 @@ body.no-scroll {
     }
 }
 
+
+/* ===== Downloads platform headers ===== */
+.script-platform-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    width: 100%;
+    clear: both;
+    margin: 10px 0 18px 0;
+}
+
+.platform-header-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.apple-platform-logo {
+    width: 54px;
+    height: 54px;
+}
+
+.platform-header-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.platform-header-title {
+    margin: 0 0 4px 0 !important;
+    text-align: left !important;
+}
+
+.platform-header-subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.25;
+    text-align: left;
+}
+
+@media (max-width: 700px) {
+    .script-platform-header {
+        gap: 14px;
+        margin: 8px 0 14px 0;
+    }
+
+    .platform-header-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .apple-platform-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .platform-header-subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ===== Platform header spacing refinement ===== */
+.script-platform-header {
+    margin-top: 34px !important;
+    margin-bottom: 6px !important;
+}
+
+@media (max-width: 700px) {
+    .script-platform-header {
+        margin-top: 26px !important;
+        margin-bottom: 6px !important;
+    }
+}
