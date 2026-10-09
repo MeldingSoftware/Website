@@ -1,440 +1,400 @@
+<!DOCTYPE html>
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
-	<script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	gtag('config', 'G-K56WXLLXD4');
 	</script>
-	
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melding Software</title>
-	<meta name="description" content="Your source for free PC software designed to enhance your computing experience.">
-	<meta name="keywords" content="windows, macOS, powershell, terminal, scripts, application, app, homebrew, homebrew cask">
-	<meta name="author" content="Kevin King">
-    	<!-- Fonts (modern, lightweight) -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	
-	<!-- Link to the external JavaScript file with defer attribute -->
-	<script src="javascript.js" defer></script>
-	
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Melding Software</title>
+<meta content="Your source for free PC software designed to enhance your computing experience." name="description"/>
+<meta content="windows, macOS, powershell, terminal, scripts, application, app, homebrew, homebrew cask" name="keywords"/>
+<meta content="Kevin King" name="author"/>
+<!-- Fonts (modern, lightweight) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- Link to the external JavaScript file with defer attribute -->
+<script defer="" src="javascript.js"></script>
 </head>
-
 <body>
-	<div class="scroll-progress" id="scrollProgress"></div>
-	<div class="ambient ambient-one" aria-hidden="true"></div>
-	<div class="ambient ambient-two" aria-hidden="true"></div>
-
-	<div id="refreshContainer"></div>
-	
-	<nav id="siteNav" class="site-nav">
-	
-	<a href="https://www.meldingsoftware.com">
-    <img src="images/MSLogo.png" alt="Melding Software Logo" class="logo">
-	</a>
-	
-	<!-- Hamburger Menu -->
-	<button class="hamburger" type="button" onclick="toggleMenu()" aria-label="Open navigation" aria-controls="menuOverlay" aria-expanded="false"><span></span><span></span><span></span></button>  	
-
-	<!-- Desktop Links -->
-	<div class="nav-links desktop-links">
-    <a href="#home">Home</a>
-    <a href="#donate">Donate</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <a href="#legal">Legal</a>
-	</div>
-
-	<!-- Mobile Overlay Links -->
-	<div id="menuOverlay" class="menu-overlay" aria-hidden="true">
-    <button class="close-button" type="button" onclick="toggleMenu()" aria-label="Close navigation">×</button>
-		<div class="nav-links mobile-links">
-        <a href="#home" onclick="toggleMenu()">Home</a>
-        <a href="#donate" onclick="toggleMenu()">Donate</a>
-        <a href="#downloads" onclick="toggleMenu()">Downloads</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
-        <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#legal" onclick="toggleMenu()">Legal</a>
-		</div>
-	</div>
-	</nav>
-
-    <section id="home" class="home-section">
-  <div class="home-hero fade-in">
-    <div class="home-hero__text">
-      <p class="home-eyebrow"><span class="eyebrow-dot"></span> Free tools. Built with purpose.</p>
-      <h1 class="home-title">Melding <span>Software</span></h1>
-      <p class="home-tagline">Crafting smarter tools for everyday computing.</p>
-
-      <p class="home-subtitle">Your source for free PC software designed to enhance your computing experience.</p>
-      <p class="home-support">Open-source utilities for setup, maintenance, troubleshooting, automation, and more.</p>
-
-      <div class="home-cta-row">
-        <a class="cta-button primary" href="#downloads">Browse Downloads</a>
-        <a class="cta-button secondary" href="https://github.com/MeldingSoftware" target="_blank" rel="noopener">GitHub</a>
-      </div>
-
-    </div>
-
-    <div class="home-hero__media">
-      <div class="hero-visual">
-        <div class="hero-orbit hero-orbit-one"></div>
-        <div class="hero-orbit hero-orbit-two"></div>
-        <div class="hero-glow"></div>
-        <img class="powered-by" src="images/PoweredBy.png" alt="Powered by PowerShell and Terminal">
-        <div class="hero-status"><span></span> Actively maintained</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="features-row home-features">
-          <div>🎁 Free &amp; Open Source</div>
-          <div>🧰 PowerShell Tools</div>
-          <div>💻 Terminal Tools</div>
-          <div>🚀 PC Optimization</div>
-          <div>🌐 Cross-Platform Scripts</div>
-        </div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+<nav class="site-nav" id="siteNav">
+<a href="https://www.meldingsoftware.com">
+<img alt="Melding Software Logo" class="logo" src="images/MSLogo.png"/>
+</a>
+<!-- Hamburger Menu -->
+<button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+<!-- Desktop Links -->
+<div class="nav-links desktop-links">
+<a href="#home">Home</a>
+<a href="#donate">Donate</a>
+<a href="#downloads">Downloads</a>
+<a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#legal">Legal</a>
+</div>
+<!-- Mobile Overlay Links -->
+<div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+<button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+<div class="nav-links mobile-links">
+<a href="#home" onclick="toggleMenu()">Home</a>
+<a href="#donate" onclick="toggleMenu()">Donate</a>
+<a href="#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="#contact" onclick="toggleMenu()">Contact</a>
+<a href="#about" onclick="toggleMenu()">About</a>
+<a href="#legal" onclick="toggleMenu()">Legal</a>
+</div>
+</div>
+</nav>
+<section class="home-section" id="home">
+<div class="home-hero fade-in">
+<div class="home-hero__text">
+<p class="home-eyebrow"><span class="eyebrow-dot"></span> Free tools. Built with purpose.</p>
+<h1 class="home-title">Melding <span>Software</span></h1>
+<p class="home-tagline">Crafting smarter tools for everyday computing.</p>
+<p class="home-subtitle">Your source for free PC software designed to enhance your computing experience.</p>
+<p class="home-support">Open-source utilities for setup, maintenance, troubleshooting, automation, and more.</p>
+<div class="home-cta-row">
+<a class="cta-button primary" href="#downloads">Browse Downloads</a>
+<a class="cta-button secondary" href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a>
+</div>
+</div>
+<div class="home-hero__media">
+<div class="hero-visual">
+<div class="hero-orbit hero-orbit-one"></div>
+<div class="hero-orbit hero-orbit-two"></div>
+<div class="hero-glow"></div>
+<img alt="Powered by PowerShell and Terminal" class="powered-by" src="images/PoweredBy.png"/>
+<div class="hero-status"><span></span> Actively maintained</div>
+</div>
+</div>
+</div>
+<div class="features-row home-features">
+<div>🎁 Free &amp; Open Source</div>
+<div>🧰 PowerShell Tools</div>
+<div>💻 Terminal Tools</div>
+<div>🚀 PC Optimization</div>
+<div>🌐 Cross-Platform Scripts</div>
+</div>
 </section>
-
-	<section id="donate" class="donate-section">
-		<div class="fade-in">
-		<p class="section-kicker">Help</p>
-		<h2>Support Our Work</h2>
-		<p class="section-intro">Help keep Melding Software free and continuously improving.</p>
-	</div>
-
-	<div class="fade-in donation-row">
-		<!-- Mel Image -->
-		<img class="image-with-shadow" src="images/Mel.png" alt="The Blacksmith Image">
-
-		<!-- Center Column: Paragraph and Donation Buttons -->
-		<div class="center-column">
-			<p class="medium-text">
-			If you find the software helpful,<br>
-			consider making a donation to support our development efforts.<br>
-			All of our software is completely free.<br>
+<section class="donate-section" id="donate">
+<div class="fade-in">
+<p class="section-kicker">Help</p>
+<h2>Support Our Work</h2>
+<p class="section-intro">Help keep Melding Software free and continuously improving.</p>
+</div>
+<div class="fade-in donation-row">
+<!-- Mel Image -->
+<img alt="The Blacksmith Image" class="image-with-shadow" src="images/Mel.png"/>
+<!-- Center Column: Paragraph and Donation Buttons -->
+<div class="center-column">
+<p class="medium-text">
+			If you find the software helpful,<br/>
+			consider making a donation to support our development efforts.<br/>
+			All of our software is completely free.<br/>
 			Donations are greatly appreciated.
 			</p>
+<div id="donation-buttons">
+<a href="https://www.paypal.com/donate?business=meldingsoftware@gmail.com">
+<img alt="Donate with PayPal" class="donate-button" src="images/Paypal.png"/>
+</a>
+<a href="https://www.buymeacoffee.com/MeldingSoftware">
+<img alt="Donate with Buy Me a Coffee" class="donate-button" src="images/BuyMeACoffee.png"/>
+</a>
+</div>
+</div>
+<!-- QR Code -->
+<img alt="Buy Me A Coffee QR" class="image-with-shadow" src="images/BMC_QR.png"/>
+</div>
+</section>
+<section class="downloads-section" id="downloads">
+<div class="fade-in">
+<p class="section-kicker">Toolbox</p>
+<h2>Downloads</h2>
+<p class="section-intro">Choose from Windows and macOS utilities built to simplify common PC tasks.</p>
+</div>
+<div class="fade-in script-platform-header">
+<img alt="Windows Logo" class="platform-header-logo" src="images/WindowsLogo.png"/>
+<div class="platform-header-copy">
+<h2 class="platform-header-title">Windows Scripts</h2>
+<p class="platform-header-subtitle">PowerShell scripts for Windows systems.</p>
+</div>
+</div>
+<!-- Windows Gallery Section -->
+<div class="gallery-container" id="windowsGallery">
+<h3>Gallery For Windows Scripts</h3>
+<div class="gallery-grid" data-gallery="windows">
+<img alt="Melder" data-gallery="windows" src="images/Melder.png"/>
+<img alt="MediaPlayer" data-gallery="windows" src="images/MediaPlayer.png"/>
+<img alt="Maintenance" data-gallery="windows" src="images/Maintenance.png"/>
+<img alt="Coming Soon" data-gallery="windows" src="images/LargestFiles.png"/>
+</div>
+</div>
+<p> </p>
+<div class="fade-in">
+<div class="table-shell"><table class="downloads-table windows-downloads-table">
+<thead>
+<tr>
 
-		<div id="donation-buttons">
-			<a href="https://www.paypal.com/donate?business=meldingsoftware@gmail.com">
-			<img src="images/Paypal.png" alt="Donate with PayPal" class="donate-button">
-			</a>
-			<a href="https://www.buymeacoffee.com/MeldingSoftware">
-			<img src="images/BuyMeACoffee.png" alt="Donate with Buy Me a Coffee" class="donate-button">		
-			</a>
-		</div>
-	</div>
-
-    <!-- QR Code -->
-    <img class="image-with-shadow" src="images/BMC_QR.png" alt="Buy Me A Coffee QR">
-	</div>
-	</section>
 
 
-    <section id="downloads" class="downloads-section">
-    <div class="fade-in">
-        <p class="section-kicker">Toolbox</p>
-        <h2>Downloads</h2>
-        <p class="section-intro">Choose from Windows and macOS utilities built to simplify common PC tasks.</p>
-    </div>
-
-	<div class="fade-in script-platform-header">
-		<img class="platform-header-logo" src="images/WindowsLogo.png" alt="Windows Logo">
-		<div class="platform-header-copy">
-			<h2 class="platform-header-title">Windows Scripts</h2>
-			<p class="platform-header-subtitle">PowerShell scripts for Windows systems.</p>
-		</div>
-	</div>
+<th>Download</th><th>Scripts</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr>
 
 
-    <!-- Windows Gallery Section -->
-	<div class="gallery-container" id="windowsGallery">
-		<h3>Gallery For Windows Scripts</h3>
-		<div class="gallery-grid" data-gallery="windows">
-			<img src="images/Melder.png" alt="Melder" data-gallery="windows">
-			<img src="images/MediaPlayer.png" alt="MediaPlayer" data-gallery="windows">
-			<img src="images/Maintenance.png" alt="Maintenance" data-gallery="windows">
-			<img src="images/LargestFiles.png" alt="Coming Soon" data-gallery="windows">
-		</div>
-	</div>
-	
-	<p>&nbsp;</p>
-	<div class="fade-in">
-	<div class="table-shell"><table class="downloads-table">
-    <thead>
-        <tr>
-            <th>Scripts</th>
-            <th>Description</th>
-            <th>Download</th>
-        </tr>
-    </thead>
-    <tbody>
-		<tr>
-            <td>BitLocker Recovery Key</td>
-            <td>Get the BitLocker Recovery Key. Requires being inside Windows.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/BitLocker%20Recovery%20Key.zip'">Download</button></td>
-        </tr>
-		<tr>
-            <td>DeBloater</td>
-            <td>Remove bloatware from Windows 10/11.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/DeBloater.zip'">Download</button></td>
-        </tr>
-		<tr>
-            <td>Fun Commands</td>
-            <td>Non productive commands. Cat Fact, Games, Matrix, Prank, Songs, and Text to Speech.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Fun%20Commands.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Group Policy Editor</td>
-            <td>Adds Group Policy Editor to Windows 10/11 Home editions.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Group%20Policy%20Editor.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Installed Apps</td>
-            <td>Creates a list of installed apps, useful for reinstallation. Saves data to the Desktop.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Installed%20Apps.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Largest Files</td>
-            <td>Lists the top 10 largest files on your device to identify storage hogs.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Largest%20Files.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Maintenance</td>
-            <td>Automated maintenance for Windows, including updates, cleanup, and optimization.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Maintenance.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Media Player</td>
-            <td>Plays video or audio files with a modern UI. Includes playback buttons and volume slider.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Media%20Player.zip'">Download</button></td>
-        </tr>
-		<tr>
-            <td>Melder</td>
-            <td>Streamline your PC setup with this GUI tool to automate App installs, updates, enable/disable settings, shortcuts, and cleanup.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Melder.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Mouse Jiggler</td>
-            <td>Moves the mouse pointer automatically every 5 seconds. Press Esc to exit.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Mouse%20Jiggler.zip'">Download</button></td>
-        </tr>
-		<tr>
-            <td>Network Fix</td>
-            <td>Test network connectivity, reset network settings, DNS Jumper, Speedtest, save results.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Network%20Fix.zip'">Download</button></td>
-        </tr>
-			<tr>
-            <td>OneDrive Backup</td>
-            <td>Backup your OneDrive folder to an external drive. Requires being online and an external drive connected.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/OneDrive%20Backup.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Print Spooler Fix</td>
-            <td>Clears the print spooler when a printer gets stuck and doesn't print.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Print%20Spooler%20Fix.zip'">Download</button></td>
-        </tr>
-		<tr>
-            <td>Recon</td>
-            <td>Get an extreme detailed list of system information on your target PC.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Recon.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Repair Tool</td>
-            <td>Runs DISM and SFC to check and repair Windows corruption.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Repair%20Tool.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Start My Day</td>
-            <td>Start your day with knowledge, including weather, news, sports, and more. API setup required.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Start%20My%20Day.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>System Info</td>
-            <td>Generates detailed system information, including battery details for laptops.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/System%20Info.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Update Fix</td>
-            <td>Fixes issues with downloading Windows Updates. Includes additional recovery options.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Update%20Fix.zip'">Download</button></td>
-        </tr>
-        <tr>
-            <td>Wi-Fi Info</td>
-            <td>Lists Wi-Fi SSID names and passwords previously used on the PC. Saves results as a text file.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Wi-Fi%20Info.zip'">Download</button></td>
-        </tr>
-		<tr>
-            <td>Windows Security Fix</td>
-            <td>Re-enable Windows Security, Repair Windows Security, Ensure Defender services start automatically, clear Group Policy Settings, Re-register Defender WMI components.</td>
-            <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Windows%20Security%20Fix.zip'">Download</button></td>
-        </tr>
-    </tbody>
-	</table></div>
-	</div>
 
-	<p>&nbsp;</p>
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/BitLocker%20Recovery%20Key.zip'">Download</button></td><td>BitLocker Recovery Key</td><td>Get the BitLocker Recovery Key. Requires being inside Windows.</td></tr>
+<tr>
 
-	<div class="divider"></div>	
-	
-	
-	<div class="fade-in script-platform-header">
-		<img class="platform-header-logo apple-platform-logo" src="images/AppleLogo.png" alt="Apple Logo">
-		<div class="platform-header-copy">
-			<h2 class="platform-header-title">Mac Scripts</h2>
-			<p class="platform-header-subtitle">Shell scripts for macOS.</p>
-		</div>
-	</div>
 
-	<!-- Mac Gallery Section -->
-	<div class="gallery-container" id="macGallery">
-    <h3>Gallery For Mac Scripts</h3>
-    <div class="gallery-grid" data-gallery="mac">
-        <img src="images/FunCommandsMac.png" alt="Fun Commands Mac" data-gallery="mac">
-        <img src="images/MaintenanceMac.png" alt="Maintenance Mac" data-gallery="mac">
-        <img src="images/StartMyDayMac.png" alt="Start My Day Mac" data-gallery="mac">
-        <img src="images/SystemInfoMac.png" alt="System Info Mac" data-gallery="mac">
-    </div>
-	</div>
 
-	<!-- Fullscreen Gallery Overlay -->
-	<div class="gallery-overlay" id="galleryOverlay">
-		<div class="gallery-controls">
-			<button id="prevImage">&lt;</button>
-			<img id="fullImage" src="" alt="Full Image">
-			<button id="nextImage">&gt;</button>
-		</div>
-		<button id="closeGallery" class="close-gallery">X</button>
-	</div>
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/DeBloater.zip'">Download</button></td><td>DeBloater</td><td>Remove bloatware from Windows 10/11.</td></tr>
+<tr>
 
-	<p>&nbsp;</p>
-	<div class="fade-in mac-install-panel">
-	<p class="mac-install-text">Copy and paste this command into Terminal to install the Melding Software Mac scripts.</p>
-	<p class="mac-install-text">After reopening Terminal, type MeldingSoftware anytime to load the list.</p>
-		<div class="command-copy-row">
-			<code id="macInstallCommand" class="terminal-command">curl -fsSL https://raw.githubusercontent.com/MeldingSoftware/Scripts/main/Mac/install.sh | bash</code>
-			<button class="copy-command-button" type="button" data-copy-target="macInstallCommand">Copy</button>
-		</div>
-	</div>
-	<div class="fade-in">
-	<div class="table-shell"><table class="downloads-table mac-downloads-table">
-    <thead>
-        <tr>
-            <th>Scripts</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>DeBloater</td>
-            <td>Remove bloatware, non SIP Apps.</td>
-        </tr>
-        <tr>
-            <td>Fun Commands</td>
-            <td>Includes fun terminal commands like ASCII art, quotes, and more.</td>
-        </tr>
-        <tr>
-            <td>Installed Apps</td>
-            <td>Creates a list of installed apps, useful for reinstallation. Saves data to the Desktop.</td>
-        </tr>
-        <tr>
-            <td>Largest Files</td>
-            <td>Lists the top 10 largest files on your device to identify storage hogs.</td>
-        </tr>
-        <tr>
-            <td>Maintenance</td>
-            <td>Automated maintenance for Mac, including disk checks and updates.</td>
-        </tr>
-        <tr>
-            <td>Melder</td>
-            <td>Streamline your PC setup with this GUI tool to automate App installs, updates, and system tweaks.</td>
-        </tr>
-        <tr>
-            <td>Print Spooler Fix</td>
-            <td>Clears the print spooler when a printer gets stuck and doesn't print.</td>
-        </tr>
-        <tr>
-            <td>Recon</td>
-            <td>Get an extreme detailed list of system information on your target PC.</td>
-        </tr>
-        <tr>
-            <td>Repair Tool</td>
-            <td>Checks and repairs the Mac file system and disk.</td>
-        </tr>
-        <tr>
-            <td>System Info</td>
-            <td>Generates detailed system information for Mac devices.</td>
-        </tr>
-        <tr>
-            <td>Update Fix</td>
-            <td>Fixes issues with downloading Mac updates. Includes additional recovery options.</td>
-        </tr>
-        <tr>
-            <td>Wi-Fi Info</td>
-            <td>Displays current Wi-Fi SSID and password. Saves results as a text file. Requires admin password.</td>
-        </tr>
-    </tbody>
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Fun%20Commands.zip'">Download</button></td><td>Fun Commands</td><td>Non productive commands. Cat Fact, Games, Matrix, Prank, Songs, and Text to Speech.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Group%20Policy%20Editor.zip'">Download</button></td><td>Group Policy Editor</td><td>Adds Group Policy Editor to Windows 10/11 Home editions.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Installed%20Apps.zip'">Download</button></td><td>Installed Apps</td><td>Creates a list of installed apps, useful for reinstallation. Saves data to the Desktop.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Largest%20Files.zip'">Download</button></td><td>Largest Files</td><td>Lists the top 10 largest files on your device to identify storage hogs.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Maintenance.zip'">Download</button></td><td>Maintenance</td><td>Automated maintenance for Windows, including updates, cleanup, and optimization.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Media%20Player.zip'">Download</button></td><td>Media Player</td><td>Plays video or audio files with a modern UI. Includes playback buttons and volume slider.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Melder.zip'">Download</button></td><td>Melder</td><td>Streamline your PC setup with this GUI tool to automate App installs, updates, enable/disable settings, shortcuts, and cleanup.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Mouse%20Jiggler.zip'">Download</button></td><td>Mouse Jiggler</td><td>Moves the mouse pointer automatically every 5 seconds. Press Esc to exit.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Network%20Fix.zip'">Download</button></td><td>Network Fix</td><td>Test network connectivity, reset network settings, DNS Jumper, Speedtest, save results.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/OneDrive%20Backup.zip'">Download</button></td><td>OneDrive Backup</td><td>Backup your OneDrive folder to an external drive. Requires being online and an external drive connected.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Print%20Spooler%20Fix.zip'">Download</button></td><td>Print Spooler Fix</td><td>Clears the print spooler when a printer gets stuck and doesn't print.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Recon.zip'">Download</button></td><td>Recon</td><td>Get an extreme detailed list of system information on your target PC.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Repair%20Tool.zip'">Download</button></td><td>Repair Tool</td><td>Runs DISM and SFC to check and repair Windows corruption.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Start%20My%20Day.zip'">Download</button></td><td>Start My Day</td><td>Start your day with knowledge, including weather, news, sports, and more. API setup required.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/System%20Info.zip'">Download</button></td><td>System Info</td><td>Generates detailed system information, including battery details for laptops.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Update%20Fix.zip'">Download</button></td><td>Update Fix</td><td>Fixes issues with downloading Windows Updates. Includes additional recovery options.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Wi-Fi%20Info.zip'">Download</button></td><td>Wi-Fi Info</td><td>Lists Wi-Fi SSID names and passwords previously used on the PC. Saves results as a text file.</td></tr>
+<tr>
+
+
+
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Windows%20Security%20Fix.zip'">Download</button></td><td>Windows Security Fix</td><td>Re-enable Windows Security, Repair Windows Security, Ensure Defender services start automatically, clear Group Policy Settings, Re-register Defender WMI components.</td></tr>
+</tbody>
 </table></div>
 </div>
-
+<p> </p>
+<div class="divider"></div>
+<div class="fade-in script-platform-header">
+<img alt="Apple Logo" class="platform-header-logo apple-platform-logo" src="images/AppleLogo.png"/>
+<div class="platform-header-copy">
+<h2 class="platform-header-title">Mac Scripts</h2>
+<p class="platform-header-subtitle">Shell scripts for macOS.</p>
+</div>
+</div>
+<!-- Mac Gallery Section -->
+<div class="gallery-container" id="macGallery">
+<h3>Gallery For Mac Scripts</h3>
+<div class="gallery-grid" data-gallery="mac">
+<img alt="Fun Commands Mac" data-gallery="mac" src="images/FunCommandsMac.png"/>
+<img alt="Maintenance Mac" data-gallery="mac" src="images/MaintenanceMac.png"/>
+<img alt="Start My Day Mac" data-gallery="mac" src="images/StartMyDayMac.png"/>
+<img alt="System Info Mac" data-gallery="mac" src="images/SystemInfoMac.png"/>
+</div>
+</div>
+<!-- Fullscreen Gallery Overlay -->
+<div class="gallery-overlay" id="galleryOverlay">
+<div class="gallery-controls">
+<button id="prevImage">&lt;</button>
+<img alt="Full Image" id="fullImage" src=""/>
+<button id="nextImage">&gt;</button>
+</div>
+<button class="close-gallery" id="closeGallery">X</button>
+</div>
+<p> </p>
+<div class="fade-in mac-install-panel">
+<p class="mac-install-text">Copy and paste this command into Terminal to install the Melding Software Mac scripts.</p>
+<p class="mac-install-text">After reopening Terminal, type MeldingSoftware anytime to load the list.</p>
+<div class="command-copy-row">
+<button class="copy-command-button" data-copy-target="macInstallCommand" type="button">Copy</button>
+<code class="terminal-command" id="macInstallCommand">curl -fsSL https://raw.githubusercontent.com/MeldingSoftware/Scripts/main/Mac/install.sh | bash</code>
+</div>
+</div>
+<div class="fade-in">
+<div class="table-shell"><table class="downloads-table mac-downloads-table">
+<thead>
+<tr>
+<th>Scripts</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeBloater</td>
+<td>Remove bloatware, non SIP Apps.</td>
+</tr>
+<tr>
+<td>Fun Commands</td>
+<td>Includes fun terminal commands like ASCII art, quotes, and more.</td>
+</tr>
+<tr>
+<td>Installed Apps</td>
+<td>Creates a list of installed apps, useful for reinstallation. Saves data to the Desktop.</td>
+</tr>
+<tr>
+<td>Largest Files</td>
+<td>Lists the top 10 largest files on your device to identify storage hogs.</td>
+</tr>
+<tr>
+<td>Maintenance</td>
+<td>Automated maintenance for Mac, including disk checks and updates.</td>
+</tr>
+<tr>
+<td>Melder</td>
+<td>Streamline your PC setup with this GUI tool to automate App installs, updates, and system tweaks.</td>
+</tr>
+<tr>
+<td>Print Spooler Fix</td>
+<td>Clears the print spooler when a printer gets stuck and doesn't print.</td>
+</tr>
+<tr>
+<td>Recon</td>
+<td>Get an extreme detailed list of system information on your target PC.</td>
+</tr>
+<tr>
+<td>Repair Tool</td>
+<td>Checks and repairs the Mac file system and disk.</td>
+</tr>
+<tr>
+<td>System Info</td>
+<td>Generates detailed system information for Mac devices.</td>
+</tr>
+<tr>
+<td>Update Fix</td>
+<td>Fixes issues with downloading Mac updates. Includes additional recovery options.</td>
+</tr>
+<tr>
+<td>Wi-Fi Info</td>
+<td>Displays current Wi-Fi SSID and password. Saves results as a text file. Requires admin password.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
 </section>
-
-	<!-- Contact Section -->
-	<section id="contact" class="contact-section">
-		<div class="fade-in">
-		<p class="section-kicker">Get in touch</p>
-		<h2>Contact</h2>
-		</div>
-		<div class="fade-in">
-		<p>Contact Kevin King for inquiries</p>
-		<p>Email: <a href="mailto:meldingsoftware@gmail.com">meldingsoftware@gmail.com</a></p>
-		</div>
-	</section>
-
-	<!-- About Section -->
-	<section id="about" class="about-section">
-		<div class="fade-in">
-		<p class="section-kicker">The project</p>
-		<h2>About</h2>
-		</div>
-		<div class="fade-in">
-		<p>Melding Software is a passion project founded by Kevin King with a mission to simplify and enhance the PC experience for users around the world. 
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+<div class="fade-in">
+<p class="section-kicker">Get in touch</p>
+<h2>Contact</h2>
+</div>
+<div class="fade-in">
+<p>Contact Kevin King for inquiries</p>
+<p>Email: <a href="mailto:meldingsoftware@gmail.com">meldingsoftware@gmail.com</a></p>
+</div>
+</section>
+<!-- About Section -->
+<section class="about-section" id="about">
+<div class="fade-in">
+<p class="section-kicker">The project</p>
+<h2>About</h2>
+</div>
+<div class="fade-in">
+<p>Melding Software is a passion project founded by Kevin King with a mission to simplify and enhance the PC experience for users around the world. 
 		Our journey began with a simple idea: to create software that makes setting up and maintaining a PC easier than ever before.
 		Driven by a desire to empower users with tools that optimize their computing experience, we have developed a range of scripts and applications that cater to the diverse needs of PC users. 
 		Whether you're a tech enthusiast looking to customize your setup or a casual user seeking to improve performance, Melding Software has something for you.
-		At Melding Software, we believe that technology should be accessible to everyone.</p> 
-		<p>That's why all our software is free to download and use, ensuring that anyone can benefit from our tools. 
+		At Melding Software, we believe that technology should be accessible to everyone.</p>
+<p>That's why all our software is free to download and use, ensuring that anyone can benefit from our tools. 
 		We are committed to continuously improving and expanding our offerings, so stay tuned for exciting updates and new releases.
 		Thank you for joining us on this journey. Together, we can transform the way people interact with their PCs and make computing a more enjoyable and efficient experience for all.</p>
-		</div>
-	</section>
-	
-	
-	
+</div>
+</section>
 <!-- Legal Section -->
-<section id="legal" class="legal-section">
-    <div class="fade-in">
-        <p class="section-kicker">Information</p>
-        <h2>Legal</h2>
-    </div>
-    <div class="fade-in">
-        
-        <!-- License -->
-        <h3>License</h3>
-        <p>The MIT License (MIT)</p>
-        <p>Copyright &copy; 2025 Kevin King</p>
-        <p>
+<section class="legal-section" id="legal">
+<div class="fade-in">
+<p class="section-kicker">Information</p>
+<h2>Legal</h2>
+</div>
+<div class="fade-in">
+<!-- License -->
+<h3>License</h3>
+<p>The MIT License (MIT)</p>
+<p>Copyright © 2026 Kevin King</p>
+<p>
             Permission is hereby granted, free of charge, to any person obtaining a copy
             of this software and associated documentation files (the "Software"), to deal
             in the Software without restriction, including without limitation the rights
@@ -442,11 +402,11 @@
             copies of the Software, and to permit persons to whom the Software is
             furnished to do so, subject to the following conditions:
         </p>
-        <p>
+<p>
             The above copyright notice and this permission notice shall be included in
             all copies or substantial portions of the Software.
         </p>
-        <p>
+<p>
             THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
             IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
             FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -455,43 +415,37 @@
             OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
             THE SOFTWARE.
         </p>
-
-        <!-- Disclaimer -->
-        <h3>Disclaimer</h3>
-        <p>
+<!-- Disclaimer -->
+<h3>Disclaimer</h3>
+<p>
             The software provided by <strong>Melding Software</strong> is distributed "as-is" and without any warranties, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
         </p>
-        <p>
+<p>
             While we strive to ensure the software operates as intended, we do not guarantee that it will be error-free, uninterrupted, or meet all user requirements.
         </p>
-        <p>
+<p>
             In no event shall <strong>Melding Software</strong>, its contributors, or affiliates be held liable for any direct, indirect, incidental, special, or consequential damages arising out of the use, misuse, or inability to use the software, including but not limited to loss of data, loss of profits, or business interruption.
         </p>
-        <p>
+<p>
             Users are solely responsible for ensuring the software is compatible with their system and meets their specific needs.
         </p>
-
-        <!-- Backup Recommendation -->
-        <h3>Backup Recommendation</h3>
-        <p>
+<!-- Backup Recommendation -->
+<h3>Backup Recommendation</h3>
+<p>
             It is strongly recommended that users regularly back up their important data to ensure its safety and accessibility in case of hardware failures, accidental deletions, or other unforeseen events.
         </p>
-        <p>
+<p>
             The <strong>3-2-1 backup strategy</strong> is widely regarded as the ideal approach for data protection. This strategy involves maintaining three copies of your data: the original, one on-site backup (e.g., an external hard drive stored locally), and one off-site backup (e.g., a secure external location or with a trusted individual). 
         </p>
-        <p>
+<p>
             Additionally, storing a third copy in the cloud ensures that your data remains accessible even in catastrophic events such as natural disasters or theft. By diversifying storage locations, you significantly reduce the risk of losing important information and ensure peace of mind.
         </p>
-
-    </div>
+</div>
 </section>
-
-    <!-- Copyright Notice at the bottom of the content -->
-    <div class="copyright-notice">
-        <p>&copy; 2026 Melding Software. All rights reserved.</p>
-    </div>
-
-
-<button id="scrollTopButton" class="scroll-top" type="button" aria-label="Back to top">↑</button>
+<!-- Copyright Notice at the bottom of the content -->
+<div class="copyright-notice">
+<p>© 2026 Melding Software. All rights reserved.</p>
+</div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
 </body>
 </html>
