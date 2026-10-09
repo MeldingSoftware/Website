@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -30,17 +30,20 @@
 </head>
 
 <body>
+	<div class="scroll-progress" id="scrollProgress"></div>
+	<div class="ambient ambient-one" aria-hidden="true"></div>
+	<div class="ambient ambient-two" aria-hidden="true"></div>
 
 	<div id="refreshContainer"></div>
 	
-	<nav>
+	<nav id="siteNav" class="site-nav">
 	
 	<a href="https://www.meldingsoftware.com">
     <img src="images/MSLogo.png" alt="Melding Software Logo" class="logo">
 	</a>
 	
 	<!-- Hamburger Menu -->
-	<div class="hamburger" onclick="toggleMenu()">☰</div>  	
+	<button class="hamburger" type="button" onclick="toggleMenu()" aria-label="Open navigation" aria-controls="menuOverlay" aria-expanded="false"><span></span><span></span><span></span></button>  	
 
 	<!-- Desktop Links -->
 	<div class="nav-links desktop-links">
@@ -53,8 +56,8 @@
 	</div>
 
 	<!-- Mobile Overlay Links -->
-	<div id="menuOverlay" class="menu-overlay" style="display: none;">
-    <button onclick="toggleMenu()">×</button>
+	<div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <button class="close-button" type="button" onclick="toggleMenu()" aria-label="Close navigation">×</button>
 		<div class="nav-links mobile-links">
         <a href="#home" onclick="toggleMenu()">Home</a>
         <a href="#donate" onclick="toggleMenu()">Donate</a>
@@ -69,12 +72,12 @@
     <section id="home" class="home-section">
   <div class="home-hero fade-in">
     <div class="home-hero__text">
-      <p class="home-eyebrow">Welcome to</p>
-      <h1 class="home-title">Melding Software</h1>
-      <p class="home-tagline">Crafting Solutions</p>
+      <p class="home-eyebrow"><span class="eyebrow-dot"></span> Free tools. Built with purpose.</p>
+      <h1 class="home-title">Melding <span>Software</span></h1>
+      <p class="home-tagline">Crafting smarter tools for everyday computing.</p>
 
       <p class="home-subtitle">Your source for free PC software designed to enhance your computing experience.</p>
-      <p class="home-support">Melding Software will continue to add new software tools.</p>
+      <p class="home-support">Open-source utilities for setup, maintenance, troubleshooting, automation, and more.</p>
 
       <div class="home-cta-row">
         <a class="cta-button primary" href="#downloads">Browse Downloads</a>
@@ -84,7 +87,13 @@
     </div>
 
     <div class="home-hero__media">
-      <img class="powered-by" src="images/PoweredBy.png" alt="Powered by PowerShell and Terminal">
+      <div class="hero-visual">
+        <div class="hero-orbit hero-orbit-one"></div>
+        <div class="hero-orbit hero-orbit-two"></div>
+        <div class="hero-glow"></div>
+        <img class="powered-by" src="images/PoweredBy.png" alt="Powered by PowerShell and Terminal">
+        <div class="hero-status"><span></span> Actively maintained</div>
+      </div>
     </div>
   </div>
 
@@ -99,7 +108,9 @@
 
 	<section id="donate" class="donate-section">
 		<div class="fade-in">
+		<p class="section-kicker">Support</p>
 		<h2>Support Our Work</h2>
+		<p class="section-intro">Help keep Melding Software free and continuously improving.</p>
 	</div>
 
 	<div class="fade-in donation-row">
@@ -133,7 +144,9 @@
 
     <section id="downloads" class="downloads-section">
     <div class="fade-in">
+        <p class="section-kicker">Toolbox</p>
         <h2>Downloads</h2>
+        <p class="section-intro">Choose from Windows and macOS utilities built to simplify common PC tasks.</p>
     </div>
 
 	<div class="fade-in script-platform-header">
@@ -158,7 +171,7 @@
 	
 	<p>&nbsp;</p>
 	<div class="fade-in">
-	<table class="downloads-table">
+	<div class="table-shell"><table class="downloads-table">
     <thead>
         <tr>
             <th>Scripts</th>
@@ -268,7 +281,7 @@
             <td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Windows%20Security%20Fix.zip'">Download</button></td>
         </tr>
     </tbody>
-	</table>
+	</table></div>
 	</div>
 
 	<p>&nbsp;</p>
@@ -315,7 +328,7 @@
 		</div>
 	</div>
 	<div class="fade-in">
-	<table class="downloads-table mac-downloads-table">
+	<div class="table-shell"><table class="downloads-table mac-downloads-table">
     <thead>
         <tr>
             <th>Scripts</th>
@@ -372,7 +385,7 @@
             <td>Displays current Wi-Fi SSID and password. Saves results as a text file. Requires admin password.</td>
         </tr>
     </tbody>
-</table>
+</table></div>
 </div>
 
 </section>
@@ -380,6 +393,7 @@
 	<!-- Contact Section -->
 	<section id="contact" class="contact-section">
 		<div class="fade-in">
+		<p class="section-kicker">Get in touch</p>
 		<h2>Contact</h2>
 		</div>
 		<div class="fade-in">
@@ -391,6 +405,7 @@
 	<!-- About Section -->
 	<section id="about" class="about-section">
 		<div class="fade-in">
+		<p class="section-kicker">The project</p>
 		<h2>About</h2>
 		</div>
 		<div class="fade-in">
@@ -410,6 +425,7 @@
 <!-- Legal Section -->
 <section id="legal" class="legal-section">
     <div class="fade-in">
+        <p class="section-kicker">Information</p>
         <h2>Legal</h2>
     </div>
     <div class="fade-in">
@@ -417,7 +433,7 @@
         <!-- License -->
         <h3>License</h3>
         <p>The MIT License (MIT)</p>
-        <p>Copyright &copy; 2025 Kevin King</p>
+        <p>Copyright &copy; 2026 Kevin King</p>
         <p>
             Permission is hereby granted, free of charge, to any person obtaining a copy
             of this software and associated documentation files (the "Software"), to deal
@@ -476,5 +492,6 @@
     </div>
 
 
+<button id="scrollTopButton" class="scroll-top" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>

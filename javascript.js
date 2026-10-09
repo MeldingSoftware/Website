@@ -1,235 +1,179 @@
-// HAMBURGER MENU
-function toggleMenu() {
-    var overlay = document.getElementById('menuOverlay');
-    var body = document.body;  // Reference to the body element
-    var logo = document.querySelector('.logo');  // Logo element
-    var hamburger = document.querySelector('.hamburger');  // Hamburger menu element
 
-    // Check if the overlay is currently visible
-    if (overlay.classList.contains('active')) {
-        overlay.style.display = 'none';
-        overlay.classList.remove('active');  // Make sure to remove 'active' class
-        body.classList.remove('no-scroll');
-        logo.style.pointerEvents = 'auto';  // Re-enable pointer events on the logo
-        hamburger.style.pointerEvents = 'auto';  // Re-enable pointer events on the hamburger
-    } else {
-        overlay.style.display = 'block';
-        overlay.classList.add('active');  // Add 'active' class to overlay
-        body.classList.add('no-scroll');
-        logo.style.pointerEvents = 'none';  // Disable pointer events on the logo
-        hamburger.style.pointerEvents = 'none';  // Disable pointer events on the hamburger
-    }
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function toggleMenu(forceClose = false) {
+  const overlay = document.getElementById('menuOverlay');
+  const body = document.body;
+  const hamburger = document.querySelector('.hamburger');
+  if (!overlay) return;
+
+  const shouldOpen = !forceClose && !overlay.classList.contains('active');
+  overlay.classList.toggle('active', shouldOpen);
+  overlay.setAttribute('aria-hidden', String(!shouldOpen));
+  body.classList.toggle('no-scroll', shouldOpen);
+  if (hamburger) hamburger.setAttribute('aria-expanded', String(shouldOpen));
 }
 
-
-// CLOSE OVERYLAY WHEN EXCEEDING MOBILE SIZE
-window.addEventListener('resize', function() {
-    var overlay = document.getElementById('menuOverlay');
-    var hamburger = document.querySelector('nav .hamburger');
-    var closeButton = document.querySelector('.close-button');
-
-    // Assuming 768px as the breakpoint for mobile to desktop transition
-    if (window.innerWidth > 900) {
-        // Close the overlay and hide both the hamburger and close button when transitioning to desktop view
-        if (overlay.classList.contains('active')) {
-            overlay.style.display = 'none';
-            overlay.classList.remove('active');
-            if (closeButton) closeButton.style.display = 'none';
-        }
-        hamburger.style.display = 'none';  // Ensure hamburger is hidden in desktop view
-    } else {
-        // Make sure the hamburger is visible when in mobile view
-        hamburger.style.display = 'block';
-    }
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) toggleMenu(true);
 });
 
-
-// PULL TO REFRESH
-let startY;
-let isAtTop = window.scrollY === 0;
-const pullThreshold = 150; // Set the pull threshold to 150 pixels
-
-window.addEventListener('scroll', function() {
-    isAtTop = window.scrollY === 0;
-    document.getElementById('refreshContainer').style.display = isAtTop ? 'block' : 'none';
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    toggleMenu(true);
+    document.getElementById('galleryOverlay')?.classList.remove('active');
+  }
 });
 
-window.addEventListener('touchstart', function(event) {
-    if (isAtTop) {
-        startY = event.touches[0].clientY;
-    }
-}, false);
-
-window.addEventListener('touchmove', function(event) {
-    if (startY !== undefined && isAtTop && event.touches[0].clientY - startY > pullThreshold) {
-        window.location.reload();
-    }
-}, false);
-
-window.addEventListener('touchend', function() {
-    startY = undefined;
-}, false);
-
-
-// FADE-IN
-const elements = document.querySelectorAll('.fade-in');
-
-// Intersection Observer to detect when elements come into the viewport
-const observer = new IntersectionObserver(entries => {
+// Modern scroll reveal
+const revealElements = document.querySelectorAll('.fade-in');
+if (reducedMotion || !('IntersectionObserver' in window)) {
+  revealElements.forEach(el => el.classList.add('visible'));
+} else {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible'); // Add visible class when element is in viewport
-            observer.unobserve(entry.target); // Stop observing once the animation has been triggered
-        }
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
     });
-});
-// Observe each element
-elements.forEach(element => {
-    observer.observe(element);
-});
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealElements.forEach((el, index) => {
+    el.style.transitionDelay = `${Math.min(index % 4, 3) * 65}ms`;
+    observer.observe(el);
+  });
+}
 
+// Navigation state, scroll progress, and back-to-top
+const nav = document.getElementById('siteNav');
+const progress = document.getElementById('scrollProgress');
+const scrollTopButton = document.getElementById('scrollTopButton');
+const sectionLinks = [...document.querySelectorAll('.desktop-links a')];
+const sections = [...document.querySelectorAll('section[id]')];
 
-// KONAMI
-const konamiCode = [
-  'ArrowUp',
-  'ArrowUp',
-  'ArrowDown',
-  'ArrowDown',
-  'ArrowLeft',
-  'ArrowRight',
-  'ArrowLeft',
-  'ArrowRight',
-  'KeyB',
-  'KeyA',
-  'Enter'
-];
+function updateScrollUI() {
+  const y = window.scrollY;
+  nav?.classList.toggle('scrolled', y > 18);
+  scrollTopButton?.classList.toggle('visible', y > 650);
 
-// Store the current position in the code sequence
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (progress) progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
+
+  let current = sections[0]?.id;
+  sections.forEach(section => {
+    if (y >= section.offsetTop - 160) current = section.id;
+  });
+  sectionLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
+}
+
+window.addEventListener('scroll', updateScrollUI, { passive: true });
+window.addEventListener('load', updateScrollUI);
+scrollTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+// Subtle hero parallax on pointer-capable devices
+const heroVisual = document.querySelector('.hero-visual');
+if (heroVisual && !reducedMotion && window.matchMedia('(pointer:fine)').matches) {
+  heroVisual.addEventListener('pointermove', event => {
+    const rect = heroVisual.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    heroVisual.style.transform = `perspective(900px) rotateY(${x * 4}deg) rotateX(${y * -4}deg)`;
+  });
+  heroVisual.addEventListener('pointerleave', () => {
+    heroVisual.style.transform = '';
+  });
+}
+
+// Konami easter egg
+const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','KeyB','KeyA','Enter'];
 let currentPosition = 0;
-
-// Listen for keydown events
-document.addEventListener('keydown', (event) => {
-  // Check if the pressed key matches the current position in the code sequence
+document.addEventListener('keydown', event => {
   if (event.code === konamiCode[currentPosition]) {
-    // Move to the next position in the code sequence
     currentPosition++;
-    
-    // If the entire code sequence has been entered
     if (currentPosition === konamiCode.length) {
-      // Do something special (e.g., display a message, trigger an animation, etc.)
       window.location.href = 'https://www.retrogames.cz/play_022-NES.php';
-      
-      // Reset the position in the code sequence
       currentPosition = 0;
     }
-  } else {
-    // Reset the position in the code sequence if the wrong key is pressed
+  } else if (event.key !== 'Escape') {
     currentPosition = 0;
   }
 });
 
-// GALLERY
-document.addEventListener("DOMContentLoaded", () => {
-    const galleryOverlay = document.getElementById("galleryOverlay");
-    const fullImage = document.getElementById("fullImage");
-    const closeGallery = document.getElementById("closeGallery");
-    const prevImage = document.getElementById("prevImage");
-    const nextImage = document.getElementById("nextImage");
+// Gallery lightbox
+window.addEventListener('DOMContentLoaded', () => {
+  const galleryOverlay = document.getElementById('galleryOverlay');
+  const fullImage = document.getElementById('fullImage');
+  const closeGallery = document.getElementById('closeGallery');
+  const prevImage = document.getElementById('prevImage');
+  const nextImage = document.getElementById('nextImage');
+  if (!galleryOverlay || !fullImage) return;
 
-    let currentImageIndex = 0;
-    let currentGallery = [];
-    let currentGalleryName = "";
+  let currentImageIndex = 0;
+  let currentGallery = [];
 
-    // Open Gallery
-    const galleryImages = document.querySelectorAll(".gallery-grid img");
-    galleryImages.forEach((image, index) => {
-        image.addEventListener("click", () => {
-            currentGalleryName = image.dataset.gallery; // Determine the gallery type
-            currentGallery = Array.from(
-                document.querySelectorAll(`.gallery-grid img[data-gallery="${currentGalleryName}"]`)
-            );
-            currentImageIndex = currentGallery.indexOf(image);
+  function renderCurrent() {
+    const item = currentGallery[currentImageIndex];
+    if (!item) return;
+    fullImage.src = item.src;
+    fullImage.alt = item.alt || 'Gallery image';
+  }
+  function openGallery(image) {
+    currentGallery = [...document.querySelectorAll(`.gallery-grid img[data-gallery="${image.dataset.gallery}"]`)];
+    currentImageIndex = currentGallery.indexOf(image);
+    renderCurrent();
+    galleryOverlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+  function closeGalleryOverlay() {
+    galleryOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    currentGallery = [];
+    currentImageIndex = 0;
+  }
 
-            openGallery(image.src);
-        });
-    });
+  document.querySelectorAll('.gallery-grid img').forEach(image => image.addEventListener('click', () => openGallery(image)));
+  closeGallery?.addEventListener('click', closeGalleryOverlay);
+  galleryOverlay.addEventListener('click', event => { if (event.target === galleryOverlay) closeGalleryOverlay(); });
+  prevImage?.addEventListener('click', () => { if (currentGallery.length) { currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length; renderCurrent(); } });
+  nextImage?.addEventListener('click', () => { if (currentGallery.length) { currentImageIndex = (currentImageIndex + 1) % currentGallery.length; renderCurrent(); } });
 
-    function openGallery(src) {
-        fullImage.src = src;
-        galleryOverlay.classList.add("active");
-    }
-
-    // Close Gallery
-    closeGallery.addEventListener("click", closeGalleryOverlay);
-    galleryOverlay.addEventListener("click", (e) => {
-        if (e.target === galleryOverlay || e.target === closeGallery) {
-            closeGalleryOverlay();
-        }
-    });
-
-    function closeGalleryOverlay() {
-        galleryOverlay.classList.remove("active");
-        currentImageIndex = 0;
-        currentGallery = [];
-        currentGalleryName = "";
-    }
-
-    // Navigate Gallery
-    prevImage.addEventListener("click", () => {
-        if (currentGallery.length > 0) {
-            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
-            fullImage.src = currentGallery[currentImageIndex].src;
-        }
-    });
-
-    nextImage.addEventListener("click", () => {
-        if (currentGallery.length > 0) {
-            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
-            fullImage.src = currentGallery[currentImageIndex].src;
-        }
-    });
+  document.addEventListener('keydown', event => {
+    if (!galleryOverlay.classList.contains('active')) return;
+    if (event.key === 'ArrowLeft') prevImage?.click();
+    if (event.key === 'ArrowRight') nextImage?.click();
+  });
 });
 
-
-
-// COPY TERMINAL COMMAND
-document.addEventListener("DOMContentLoaded", () => {
-    const copyButtons = document.querySelectorAll(".copy-command-button");
-
-    copyButtons.forEach((button) => {
-        button.addEventListener("click", async () => {
-            const targetId = button.getAttribute("data-copy-target");
-            const target = document.getElementById(targetId);
-            if (!target) return;
-
-            const text = target.textContent.trim();
-            const originalText = button.textContent;
-
-            try {
-                await navigator.clipboard.writeText(text);
-                button.textContent = "Copied";
-                button.classList.add("copied");
-            } catch (error) {
-                const range = document.createRange();
-                range.selectNodeContents(target);
-                const selection = window.getSelection();
-                selection.removeAllRanges();
-                selection.addRange(range);
-                try {
-                    document.execCommand("copy");
-                    button.textContent = "Copied";
-                    button.classList.add("copied");
-                } catch (fallbackError) {
-                    button.textContent = "Copy failed";
-                }
-                selection.removeAllRanges();
-            }
-
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.classList.remove("copied");
-            }, 1800);
-        });
+// Copy terminal command
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.copy-command-button').forEach(button => {
+    button.addEventListener('click', async () => {
+      const target = document.getElementById(button.dataset.copyTarget);
+      if (!target) return;
+      const originalText = button.textContent;
+      try {
+        await navigator.clipboard.writeText(target.textContent.trim());
+        button.textContent = 'Copied';
+        button.classList.add('copied');
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        try {
+          document.execCommand('copy');
+          button.textContent = 'Copied';
+          button.classList.add('copied');
+        } catch {
+          button.textContent = 'Copy failed';
+        }
+        selection.removeAllRanges();
+      }
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('copied');
+      }, 1600);
     });
+  });
 });
-
