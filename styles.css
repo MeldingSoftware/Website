@@ -334,10 +334,10 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
   padding-top:0;
 }
 
-/* ===== Home true page-top alignment ===== */
+/* ===== Home final start/anchor alignment ===== */
 @media (min-width:901px){
   .home-section{
-    margin-top:var(--nav-h);
-    scroll-margin-top:var(--nav-h);
+    margin-top:calc(var(--nav-h) + 24px);
+    scroll-margin-top:calc(var(--nav-h) + 24px);
   }
 }
