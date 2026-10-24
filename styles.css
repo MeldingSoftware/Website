@@ -333,3 +333,10 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
   margin-top:clamp(28px,3vw,42px);
   padding-top:0;
 }
+
+/* ===== Home initial viewport position fix ===== */
+@media (min-width:901px){
+  .home-section{
+    margin-top:calc(var(--nav-h) + 4px);
+  }
+}
