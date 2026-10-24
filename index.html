@@ -26,6 +26,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<style>
+.script-details-link{
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  transition:color .2s ease,text-shadow .2s ease;
+}
+.script-details-link:hover{
+  color:var(--accent);
+  text-shadow:0 0 18px rgba(255,45,63,.24);
+}
+</style>
+
 <!-- Link to the external JavaScript file with defer attribute -->
 <script defer="" src="javascript.js"></script>
 </head>
@@ -246,7 +259,7 @@
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Windows/Threat%20Inspection.zip'">Download</button></td><td>Threat Inspection</td><td>Inspects Windows for common security concerns and suspicious activity, then generates an HTML report for review.</td></tr>
+<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Windows/Threat%20Inspection.zip'">Download</button></td><td><a class="script-details-link" href="threat-inspection.html" title="Learn more about Threat Inspection">Threat Inspection</a></td><td>Inspects Windows for common security concerns and suspicious activity, then generates an HTML report for review.</td></tr>
 <tr>
 
 
