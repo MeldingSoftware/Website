@@ -51,6 +51,25 @@
   color:#fff;
   text-shadow:0 0 18px rgba(255,45,63,.34);
 }
+
+.mac-downloads-table{
+  table-layout:fixed;
+}
+.mac-downloads-table col.mac-script-column{
+  width:24%;
+}
+.mac-downloads-table col.mac-description-column{
+  width:76%;
+}
+.mac-downloads-table th,
+.mac-downloads-table td{
+  text-align:left;
+}
+@media(max-width:700px){
+  .mac-downloads-table col.mac-script-column{width:32%;}
+  .mac-downloads-table col.mac-description-column{width:68%;}
+}
+
 </style>
 
 <!-- Link to the external JavaScript file with defer attribute -->
@@ -331,6 +350,10 @@
 </div>
 <div class="fade-in">
 <div class="table-shell"><table class="downloads-table mac-downloads-table">
+<colgroup>
+<col class="mac-script-column"/>
+<col class="mac-description-column"/>
+</colgroup>
 <thead>
 <tr>
 <th>Scripts</th>
@@ -340,51 +363,43 @@
 <tbody>
 <tr>
 <td>DeBloater</td>
-<td>Remove bloatware, non SIP Apps.</td>
-</tr>
-<tr>
+<td>Removes a curated list of normally removable apps from /Applications while skipping SIP-protected system apps. <a class="script-learn-more" href="mac/debloater.html" title="Learn more about DeBloater">Learn more →</a></td>
+</tr><tr>
 <td>Fun Commands</td>
-<td>Includes fun terminal commands like ASCII art, quotes, and more.</td>
-</tr>
-<tr>
+<td>Interactive Terminal menu with Matrix rain, ASCII effects, quotes, banners, historical events, Cowsay, text-to-speech, and more. <a class="script-learn-more" href="mac/fun-commands.html" title="Learn more about Fun Commands">Learn more →</a></td>
+</tr><tr>
 <td>Installed Apps</td>
-<td>Creates a list of installed apps, useful for reinstallation. Saves data to the Desktop.</td>
-</tr>
-<tr>
+<td>Lists apps from /Applications and /System/Applications and saves the inventory to the Desktop. <a class="script-learn-more" href="mac/installed-apps.html" title="Learn more about Installed Apps">Learn more →</a></td>
+</tr><tr>
 <td>Largest Files</td>
-<td>Lists the top 10 largest files on your device to identify storage hogs.</td>
-</tr>
-<tr>
+<td>Scans the current user&#x27;s home folder for the 10 largest items, checks likely Full Disk Access, and saves the results to the Desktop. <a class="script-learn-more" href="mac/largest-files.html" title="Learn more about Largest Files">Learn more →</a></td>
+</tr><tr>
 <td>Maintenance</td>
-<td>Automated maintenance for Mac, including disk checks and updates.</td>
-</tr>
-<tr>
+<td>Runs macOS updates, DNS flush, cleanup, Time Machine snapshot thinning, Homebrew/App Store updates, disk checks, cache cleanup, and creates an HTML report. <a class="script-learn-more" href="mac/maintenance.html" title="Learn more about Maintenance">Learn more →</a></td>
+</tr><tr>
 <td>Melder</td>
-<td>Streamline your PC setup with this GUI tool to automate App installs, updates, and system tweaks.</td>
-</tr>
-<tr>
+<td>GUI setup utility using swiftDialog and Homebrew to install selected apps, search additional casks, and apply macOS tweaks. <a class="script-learn-more" href="mac/melder.html" title="Learn more about Melder">Learn more →</a></td>
+</tr><tr>
 <td>Print Spooler Fix</td>
-<td>Clears the print spooler when a printer gets stuck and doesn't print.</td>
-</tr>
-<tr>
+<td>Restarts the macOS CUPS print spooler service to recover from a stalled printing service. <a class="script-learn-more" href="mac/print-spooler-fix.html" title="Learn more about Print Spooler Fix">Learn more →</a></td>
+</tr><tr>
 <td>Recon</td>
-<td>Get an extreme detailed list of system information on your target PC.</td>
-</tr>
-<tr>
+<td>Authorized-use reconnaissance collector that gathers system, network, saved Wi-Fi credentials, browser artifacts, and other data into a ZIP archive. <a class="script-learn-more" href="mac/recon.html" title="Learn more about Recon">Learn more →</a></td>
+</tr><tr>
 <td>Repair Tool</td>
-<td>Checks and repairs the Mac file system and disk.</td>
-</tr>
-<tr>
+<td>Verifies and repairs the macOS system volume and disk, records SMART/APFS information, and provides Recovery-specific repair guidance. <a class="script-learn-more" href="mac/repair-tool.html" title="Learn more about Repair Tool">Learn more →</a></td>
+</tr><tr>
 <td>System Info</td>
-<td>Generates detailed system information for Mac devices.</td>
-</tr>
-<tr>
+<td>Creates a local report covering macOS, hardware, storage, network, battery/power, security checks, update history, and top CPU processes. <a class="script-learn-more" href="mac/system-info.html" title="Learn more about System Info">Learn more →</a></td>
+</tr><tr>
+<td>Threat Inspection</td>
+<td>Read-only technician inspection of remote access/RMM, PUP/PUA, persistence, suspicious files, browsers, network, and macOS security with an HTML report. <a class="script-learn-more" href="mac/threat-inspection.html" title="Learn more about Threat Inspection">Learn more →</a></td>
+</tr><tr>
 <td>Update Fix</td>
-<td>Fixes issues with downloading Mac updates. Includes additional recovery options.</td>
-</tr>
-<tr>
+<td>Stops the macOS software update service, clears removable /Library/Updates data, restarts the service, and explains protected-file cases. <a class="script-learn-more" href="mac/update-fix.html" title="Learn more about Update Fix">Learn more →</a></td>
+</tr><tr>
 <td>Wi-Fi Info</td>
-<td>Displays current Wi-Fi SSID and password. Saves results as a text file. Requires admin password.</td>
+<td>Displays the current Wi-Fi SSID, retrieves its saved password from macOS Keychain when authorized, and saves the result beside the script. <a class="script-learn-more" href="mac/wi-fi-info.html" title="Learn more about Wi-Fi Info">Learn more →</a></td>
 </tr>
 </tbody>
 </table></div>
