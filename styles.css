@@ -317,3 +317,19 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
   .mac-downloads-table th:last-child,
   .mac-downloads-table td:last-child{width:74%;}
 }
+
+/* ===== Home section vertical spacing balance ===== */
+.home-section{
+  justify-content:flex-start;
+  padding-top:clamp(28px,3vw,42px);
+  padding-bottom:clamp(28px,3vw,42px);
+}
+
+.home-section > .home-hero{
+  flex:0 1 auto;
+}
+
+.home-features{
+  margin-top:clamp(28px,3vw,42px);
+  padding-top:0;
+}
