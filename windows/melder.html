@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Melder | Melding Software</title>
+<meta name="description" content="Melder is a free Windows setup and maintenance GUI that installs applications, searches WinGet, manages selected Windows settings, creates shortcuts, performs system-prep tasks, and can remove selected bloatware."/>
+<meta name="keywords" content="Melder, Windows setup utility, app installer, WinGet GUI, Windows tweaks, PC setup, software installer, debloater, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/tools/melder.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Melder",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A Windows setup and maintenance GUI for installing software, searching WinGet, applying selected Windows settings, creating shortcuts, performing system-prep tasks, and removing selected optional apps.",
+  "author": {
+    "@type": "Organization",
+    "name": "Melding Software",
+    "url": "https://meldingsoftware.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Melder.zip"
+}
+</script>
+
+<style>
+.tool-page{width:min(1180px,calc(100% - 32px));margin:calc(var(--nav-h) + 24px) auto 28px}
+.tool-hero,.doc-section{position:relative;background:linear-gradient(145deg,rgba(20,20,24,.8),rgba(11,11,14,.84));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.tool-hero{padding:clamp(28px,4vw,58px);background:linear-gradient(145deg,rgba(20,20,24,.72),rgba(10,10,13,.92)),radial-gradient(circle at 82% 28%,rgba(255,45,63,.16),transparent 28%)}
+.tool-hero::before{content:'';position:absolute;width:420px;height:420px;border:1px solid rgba(255,45,63,.1);border-radius:50%;right:-180px;top:-180px;box-shadow:0 0 0 45px rgba(255,45,63,.015),0 0 0 90px rgba(255,45,63,.01);pointer-events:none}
+.tool-kicker{margin:0 0 12px;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.tool-title{margin:0;color:#fff;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;letter-spacing:-.065em;font-weight:900}
+.tool-title span{color:var(--accent)}
+.tool-lead{max-width:940px;margin:22px 0 0;color:#d8d8df;font-size:clamp(1.08rem,1.2vw + .8rem,1.45rem);line-height:1.6}
+.tool-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.tool-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
+.meta-card,.feature-card,.faq-card{border:1px solid var(--border);background:rgba(255,255,255,.025);border-radius:16px}
+.meta-card{padding:16px}
+.meta-label{color:var(--muted);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.meta-value{margin-top:5px;color:#fff;font-size:.98rem;font-weight:750}
+.doc-section{margin-top:28px;padding:clamp(24px,3.5vw,42px)}
+.doc-section h2{margin:0 0 14px}
+.doc-section>p{color:#c7c7ce;max-width:980px;line-height:1.7}
+.doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.feature-card,.faq-card{padding:20px}
+.feature-card h3,.faq-card h3{margin:0 0 8px}
+.feature-card p,.faq-card p{margin:0;color:#b9b9c3;line-height:1.65}
+.tab-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
+.tab-item{padding:15px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.025)}
+.tab-item strong{display:block;color:#fff;margin-bottom:5px}
+.tab-item span{color:#aaaab3;font-size:.88rem;line-height:1.45}
+.steps,.tool-list{margin:18px 0 0;padding-left:22px;color:#c7c7ce}
+.steps li,.tool-list li{margin:9px 0;line-height:1.6}
+.notice,.warning-notice{margin-top:20px;padding:16px 18px;border-radius:10px;line-height:1.65}
+.notice{border-left:4px solid var(--accent);background:rgba(255,45,63,.07);color:#d6d6dc}
+.warning-notice{border-left:4px solid #f0c969;background:rgba(240,201,105,.075);color:#ddd8c9}
+.code-line{display:inline-block;padding:2px 7px;border-radius:7px;background:#08080a;border:1px solid rgba(255,255,255,.08);color:#f0f0f3;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.9em}
+.page-back{margin:28px 0 0;text-align:center}
+@media(max-width:900px){.tool-page{width:min(100% - 20px,1180px);margin-top:calc(var(--nav-h) + 12px)}.tool-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.tab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.tool-hero,.doc-section{border-radius:20px}.tool-hero{padding:24px 20px}.doc-section{padding:22px 20px}.doc-grid,.tool-meta,.tab-grid{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+    <a href="../index.html#home">Home</a><a href="../index.html#donate">Donate</a><a href="../index.html#downloads">Downloads</a><a href="../index.html#contact">Contact</a><a href="../index.html#about">About</a><a href="../index.html#legal">Legal</a>
+  </div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+      <a href="../index.html#home" onclick="toggleMenu()">Home</a><a href="../index.html#donate" onclick="toggleMenu()">Donate</a><a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a><a href="../index.html#contact" onclick="toggleMenu()">Contact</a><a href="../index.html#about" onclick="toggleMenu()">About</a><a href="../index.html#legal" onclick="toggleMenu()">Legal</a>
+    </div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Setup &amp; Maintenance GUI</p>
+    <h1 class="tool-title"><span>Melder</span></h1>
+    <p class="tool-lead">
+      Melder is a free Windows setup utility that brings application installation, WinGet search, driver and diagnostic tools, security software, Windows configuration changes, shortcuts, cleanup, updates, restore-point tasks, and selected uninstall actions into one checkbox-driven interface.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Melder.zip">Download Melder</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+      <div class="meta-card"><div class="meta-label">Interface</div><div class="meta-value">WinForms GUI</div></div>
+      <div class="meta-card"><div class="meta-label">Tabs</div><div class="meta-value">8</div></div>
+      <div class="meta-card"><div class="meta-label">Internet</div><div class="meta-value">Required</div></div>
+    </div>
+
+    <div class="warning-notice">
+      Melder can install and uninstall software, change Windows settings, remove selected apps, create shortcuts, run cleanup/update tasks, and open vendor installers. Review the selections on every tab before clicking <strong>RUN</strong>.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Interface</p>
+    <h2>Eight tabs for different jobs</h2>
+    <p>
+      Melder organizes its tools by purpose instead of presenting one enormous installer list. Check the items you want, then use the Tasks tab's RUN button to process selected actions.
+    </p>
+
+    <div class="tab-grid">
+      <div class="tab-item"><strong>General</strong><span>AI tools, browsers, audio, compression, documents, finance, imaging, media, social, travel, utilities, video, and more.</span></div>
+      <div class="tab-item"><strong>Gaming</strong><span>Emulators, launchers, game tools, streaming software, mods, speedrun tools, virtual LAN, and selected games.</span></div>
+      <div class="tab-item"><strong>Developing</strong><span>Databases, IDEs, languages, runtimes, terminals, testing tools, version control, engines, and planning tools.</span></div>
+      <div class="tab-item"><strong>Diagnostic</strong><span>Audio, battery, benchmarks, data recovery, storage, monitoring, networking, RAM, system diagnostics, and uninstall utilities.</span></div>
+      <div class="tab-item"><strong>Drivers</strong><span>Display software, driver tools, motherboard/OEM utilities, printer tools, peripheral software, and RGB utilities.</span></div>
+      <div class="tab-item"><strong>Security</strong><span>Anti-malware, antivirus, backup, firewall, password managers, privacy tools, encryption, second-opinion scanners, and VPNs.</span></div>
+      <div class="tab-item"><strong>Search</strong><span>Search WinGet, search installed packages, list installed packages, then install or uninstall the selected result.</span></div>
+      <div class="tab-item"><strong>Tasks</strong><span>Windows tweaks, shortcuts, system-prep actions, updates, cleanup, restore point creation, and selected app removal.</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">WinGet &amp; App Installer</p>
+    <h2>Built-in dependency and App Installer repair</h2>
+    <p>
+      Melder depends heavily on Windows Package Manager. If App Installer is missing or too old, the script can repair the required components before the GUI is used.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Bundled AppX dependencies</h3>
+        <p>The ZIP includes Microsoft VCLibs and Microsoft UI Xaml AppX packages used by the App Installer repair path.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Windows App Runtime 1.8</h3>
+        <p>Melder checks for a compatible Windows App Runtime 1.8 framework and downloads Microsoft's runtime installer when the required framework is missing.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>App Installer repair</h3>
+        <p>If needed, Melder downloads Microsoft's Desktop App Installer package from the official winget-cli GitHub release and verifies the installed package afterward.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>WinGet source recovery</h3>
+        <p>The script includes source update/repair logic and installer retry handling for package-manager failures and hash-mismatch scenarios.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      The included Read Me identifies Microsoft sources for App Installer, Microsoft UI Xaml, Microsoft VCLibs, and Windows App Runtime. Melder requires an internet connection for package searches and most installations.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Application Installation</p>
+    <h2>Curated installs plus manual vendor flows</h2>
+    <p>
+      Many selections are installed through WinGet, while other software uses vendor downloads, portable archives, Microsoft Store packages, or an official webpage when a fully automated installation is not appropriate.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>WinGet installs</h3>
+        <p>Melder maps a large set of checkboxes to package IDs and installs the selected packages through Windows Package Manager.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Direct and portable installers</h3>
+        <p>Some tools use vendor URLs, GitHub release assets, ZIP extraction, custom install folders, or special verification logic when no standard WinGet flow fits.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Manual download steps</h3>
+        <p>Current examples include NVIDIA App, AMD Software, and some security/vendor products. Melder opens the official website, explains what to do, and waits for Enter before continuing.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Clean cancellation</h3>
+        <p>Manual prompts support <strong>qq</strong> so the user can stop the RUN sequence instead of being forced to continue.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Gaming</p>
+    <h2>Install games and launchers to a selected drive</h2>
+    <p>
+      When multiple internal drives are available, Melder can ask which drive should be used for supported game, launcher, mod, and emulator installations. If C: is the only eligible internal drive, it can use it automatically where the package allows.
+    </p>
+
+    <div class="notice">
+      Battle.net is treated specially because its WinGet manifest requires an installation location. Other supported game packages can use their normal default location when appropriate.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Search</p>
+    <h2>Search, install, and uninstall WinGet packages</h2>
+    <p>
+      The Search tab runs WinGet asynchronously so the GUI does not have to block while results are collected. It supports searching the catalog, searching installed packages, listing all installed packages, installing the selected result, and uninstalling a selected installed package.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Catalog Search</h3>
+        <p>Enter a term to search available WinGet and Store-backed results using the currently configured package sources.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Installed Search</h3>
+        <p>Search the packages already installed on the PC or list the entire WinGet-visible installed package inventory.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Tasks</p>
+    <h2>Windows setup and maintenance actions</h2>
+    <p>
+      The Tasks tab groups Windows changes into Disable, Enable, Shortcuts, System Prep, and Uninstall sections.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Disable</h3>
+        <p>Selections include Animations, Encryption, Highlights, Notifications, Sleep, Snap Windows, Suggestions, Task View, Telemetry, Transparency, Widgets, and Xbox Services.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Enable</h3>
+        <p>Selections include Accent Color, Classic Context Menu, Clipboard History, Dark Mode, File Extensions, Hidden Files, Left Taskbar alignment, Night Light, Show Seconds, and automatic time-zone behavior.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Shortcuts</h3>
+        <p>Melder can create desktop web shortcuts for sites such as Amazon, Best Buy, Gmail, Google, Reddit, Yahoo, YouTube, X, and others, plus selected software/project shortcuts.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>System Prep</h3>
+        <p>Current selections include App Updates, Auto Restart, Auto Time Zone, Cleanup, Restore Point, Windows Updates, and Select All.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Bloatware</p>
+    <h2>Selective Windows 10/11 app removal</h2>
+    <p>
+      The current Bloatware task uses a curated list of optional Microsoft consumer/inbox apps instead of removing Windows apps indiscriminately. Core utilities and dependencies are intentionally preserved.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Microsoft targets</h3>
+        <p>Examples include Clipchamp, Copilot, Feedback Hub, Maps, Phone Link, consumer Teams, Outlook for Windows, Solitaire, selected legacy Bing packages, and Xbox front-end/overlay packages.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Provisioned promotional apps</h3>
+        <p>Third-party promotional packages such as Amazon, Netflix, Spotify, TikTok, Candy Crush, Instagram, WinZip, and similar apps are only added to the target set when Windows/OEM provisioned them.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Preserved Windows components</h3>
+        <p>Microsoft Store, App Installer, Calculator, Camera, Snipping Tool, Notepad, Terminal, Photos, Sticky Notes, Quick Assist, Web Experience, Cross Device, Gaming Services, and other core dependencies are intentionally retained.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Installed + provisioned cleanup</h3>
+        <p>Matching removable Appx packages can be removed for all users and matching provisioned packages can be removed from the online Windows image for future profiles.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Uninstall Tasks</p>
+    <h2>Selected removal tools</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>McAfee MCPR</h3>
+        <p>Melder downloads MCPR from McAfee, verifies its Authenticode signature, launches the interactive removal tool, and tells the user to close MCPR rather than click its Restart button when finished.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>OneDrive</h3>
+        <p>Melder first tries WinGet uninstall for Microsoft OneDrive and can fall back to the Windows OneDriveSetup uninstall path when necessary.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How To Use</p>
+    <h2>Running Melder</h2>
+
+    <ol class="steps">
+      <li>Download and extract <strong>Melder.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>Approve the Windows UAC prompt. The launcher starts PowerShell with <span class="code-line">-ExecutionPolicy Bypass</span>.</li>
+      <li>If App Installer or required frameworks are missing/outdated, allow Melder to repair its dependencies.</li>
+      <li>Review the tabs and check only the apps or tasks you want.</li>
+      <li>Use the Search tab directly when you want to search, install, or uninstall a package outside the curated lists.</li>
+      <li>Open the Tasks tab and click <strong>RUN</strong> to process the selected checkboxes.</li>
+      <li>When a vendor requires a manual web download, follow the on-screen instructions, then press Enter to continue or type <strong>qq</strong> to stop cleanly.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What Melder can change</h2>
+    <p>
+      Melder is intentionally a system-management utility, so its actions are more powerful than a simple downloader. Depending on your selections, it can install and uninstall applications, modify registry values and Windows services, open Settings pages, create shortcuts, run cleanup/update operations, create a restore point, change taskbar or Explorer preferences, and remove selected Appx packages.
+    </p>
+
+    <div class="warning-notice">
+      Nothing is meant to run merely because it appears on a tab. The script checks checkbox state before acting. Review all selected items before RUN, especially Windows tweaks, uninstall choices, cleanup, and bloatware removal.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Does Melder require the internet?</h3>
+        <p>Yes. The included Read Me explicitly requires an internet connection because package searches, WinGet installs, vendor downloads, and dependency repair rely on online sources.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does every app install through WinGet?</h3>
+        <p>No. Many do, but Melder also uses direct vendor downloads, GitHub releases, portable ZIPs, Store/AppX packages, and manual official-website flows where appropriate.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can I install something that is not in the checkbox lists?</h3>
+        <p>Yes. The Search tab can search WinGet directly and install the selected result.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can Melder uninstall applications?</h3>
+        <p>Yes. The Search tab can uninstall a selected WinGet-visible package, and the Tasks tab includes selected uninstall actions such as Bloatware, McAfee, and OneDrive.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does Bloatware remove core Windows apps?</h3>
+        <p>The current curated list intentionally preserves core utilities and dependencies including Store, App Installer, Calculator, Camera, Snipping Tool, Notepad, Terminal, Photos, Sticky Notes, Quick Assist, Web Experience, Cross Device, and Gaming Services.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can I stop during a manual installation step?</h3>
+        <p>Yes. Manual prompts support <strong>qq</strong> to stop the RUN sequence cleanly.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a></div>
+</main>
+
+<div class="copyright-notice"><p>© 2026 Melding Software. All rights reserved.</p></div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+</body>
+</html>

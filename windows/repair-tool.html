@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Repair Tool | Melding Software</title>
+<meta name="description" content="Repair Tool is a free Windows PowerShell utility that runs DISM component-store analysis and repair commands followed by System File Checker, then saves the full results to DISM_SFC.txt on the Desktop."/>
+<meta name="keywords" content="Repair Tool, DISM, SFC, System File Checker, Windows corruption repair, RestoreHealth, ScanHealth, PowerShell, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/tools/repair-tool.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Repair Tool",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A PowerShell utility that runs DISM component-store analysis, cleanup and repair commands followed by System File Checker, then saves the full console transcript locally.",
+  "author": {
+    "@type": "Organization",
+    "name": "Melding Software",
+    "url": "https://meldingsoftware.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Repair%20Tool.zip"
+}
+</script>
+
+<style>
+.tool-page{width:min(1180px,calc(100% - 32px));margin:calc(var(--nav-h) + 24px) auto 28px}
+.tool-hero,.doc-section{position:relative;background:linear-gradient(145deg,rgba(20,20,24,.8),rgba(11,11,14,.84));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.tool-hero{padding:clamp(28px,4vw,58px);background:linear-gradient(145deg,rgba(20,20,24,.72),rgba(10,10,13,.92)),radial-gradient(circle at 82% 28%,rgba(255,45,63,.16),transparent 28%)}
+.tool-hero::before{content:'';position:absolute;width:420px;height:420px;border:1px solid rgba(255,45,63,.1);border-radius:50%;right:-180px;top:-180px;box-shadow:0 0 0 45px rgba(255,45,63,.015),0 0 0 90px rgba(255,45,63,.01);pointer-events:none}
+.tool-kicker{margin:0 0 12px;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.tool-title{margin:0;color:#fff;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;letter-spacing:-.065em;font-weight:900}
+.tool-title span{color:var(--accent)}
+.tool-lead{max-width:920px;margin:22px 0 0;color:#d8d8df;font-size:clamp(1.08rem,1.2vw + .8rem,1.45rem);line-height:1.6}
+.tool-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.tool-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
+.meta-card,.feature-card,.faq-card{border:1px solid var(--border);background:rgba(255,255,255,.025);border-radius:16px}
+.meta-card{padding:16px}
+.meta-label{color:var(--muted);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.meta-value{margin-top:5px;color:#fff;font-size:.98rem;font-weight:750}
+.doc-section{margin-top:28px;padding:clamp(24px,3.5vw,42px)}
+.doc-section h2{margin:0 0 14px}
+.doc-section>p{color:#c7c7ce;max-width:980px;line-height:1.7}
+.doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.feature-card,.faq-card{padding:20px}
+.feature-card h3,.faq-card h3{margin:0 0 8px}
+.feature-card p,.faq-card p{margin:0;color:#b9b9c3;line-height:1.65}
+.steps{margin:18px 0 0;padding-left:22px;color:#c7c7ce}
+.steps li{margin:9px 0;line-height:1.6}
+.flow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}
+.flow-item{padding:14px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.025);text-align:center}
+.flow-number{display:block;color:var(--accent);font-size:.77rem;font-weight:850;letter-spacing:.08em}
+.flow-name{display:block;margin-top:5px;color:#f4f4f6;font-weight:750}
+.notice,.warning-notice{margin-top:20px;padding:16px 18px;border-radius:10px;line-height:1.65}
+.notice{border-left:4px solid var(--accent);background:rgba(255,45,63,.07);color:#d6d6dc}
+.warning-notice{border-left:4px solid #f0c969;background:rgba(240,201,105,.075);color:#ddd8c9}
+.code-line{display:inline-block;padding:2px 7px;border-radius:7px;background:#08080a;border:1px solid rgba(255,255,255,.08);color:#f0f0f3;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.9em}
+.page-back{margin:28px 0 0;text-align:center}
+@media(max-width:900px){.tool-page{width:min(100% - 20px,1180px);margin-top:calc(var(--nav-h) + 12px)}.tool-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.tool-hero,.doc-section{border-radius:20px}.tool-hero{padding:24px 20px}.doc-section{padding:22px 20px}.doc-grid,.tool-meta,.flow-grid{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+    <a href="../index.html#home">Home</a><a href="../index.html#donate">Donate</a><a href="../index.html#downloads">Downloads</a><a href="../index.html#contact">Contact</a><a href="../index.html#about">About</a><a href="../index.html#legal">Legal</a>
+  </div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+      <a href="../index.html#home" onclick="toggleMenu()">Home</a><a href="../index.html#donate" onclick="toggleMenu()">Donate</a><a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a><a href="../index.html#contact" onclick="toggleMenu()">Contact</a><a href="../index.html#about" onclick="toggleMenu()">About</a><a href="../index.html#legal" onclick="toggleMenu()">Legal</a>
+    </div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Repair Utility</p>
+    <h1 class="tool-title">Repair <span>Tool</span></h1>
+    <p class="tool-lead">
+      Repair Tool is a focused Windows PowerShell utility that runs Microsoft DISM component-store analysis, cleanup, health checks, and repair commands, then runs System File Checker to verify and repair protected Windows system files.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Repair%20Tool.zip">Download Repair Tool</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+      <div class="meta-card"><div class="meta-label">Permission</div><div class="meta-value">Administrator</div></div>
+      <div class="meta-card"><div class="meta-label">Repair Tools</div><div class="meta-value">DISM + SFC</div></div>
+      <div class="meta-card"><div class="meta-label">Saved Results</div><div class="meta-value">DISM_SFC.txt</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Repair Sequence</p>
+    <h2>DISM first, SFC second</h2>
+    <p>
+      The script runs the servicing commands in a fixed order so the Windows component store is analyzed and repaired before System File Checker performs its final protected-file scan.
+    </p>
+
+    <div class="flow-grid">
+      <div class="flow-item"><span class="flow-number">01</span><span class="flow-name">Analyze &amp; Clean</span></div>
+      <div class="flow-item"><span class="flow-number">02</span><span class="flow-name">Check, Scan &amp; Restore</span></div>
+      <div class="flow-item"><span class="flow-number">03</span><span class="flow-name">SFC /scannow</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">DISM</p>
+    <h2>Windows component-store servicing</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Analyze Component Store</h3>
+        <p>Runs <span class="code-line">DISM /Online /Cleanup-Image /AnalyzeComponentStore /NoRestart</span> to analyze the Windows component store and report its servicing/cleanup state.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Start Component Cleanup</h3>
+        <p>Runs <span class="code-line">DISM /Online /Cleanup-Image /StartComponentCleanup</span> to clean superseded component-store content through Microsoft's servicing stack.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>CheckHealth</h3>
+        <p>Runs <span class="code-line">DISM /Online /Cleanup-Image /CheckHealth</span> for a quick check of whether Windows has already marked the component image as corrupted.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>ScanHealth</h3>
+        <p>Runs <span class="code-line">DISM /Online /Cleanup-Image /ScanHealth</span> to perform a deeper component-store corruption scan.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>RestoreHealth</h3>
+        <p>Runs <span class="code-line">DISM /Online /Cleanup-Image /RestoreHealth</span> to repair component-store corruption when Windows detects it.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No automatic reboot command</h3>
+        <p>The current PowerShell script does not issue a restart command after DISM or SFC completes.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      The included Read Me marks Repair Tool as requiring internet access. The script itself does not directly download files with PowerShell, but DISM RestoreHealth can rely on Windows-configured repair sources when replacement components are needed.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">System File Checker</p>
+    <h2>SFC /scannow</h2>
+    <p>
+      After all DISM commands finish, Repair Tool runs <span class="code-line">sfc /scannow</span>. System File Checker verifies protected Windows system files and attempts to replace corrupted copies using the Windows servicing infrastructure.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Saved Results</p>
+    <h2>Repair Tool Results\DISM_SFC.txt</h2>
+    <p>
+      Before the repair commands start, Repair Tool creates a results folder and starts a PowerShell transcript so the console output is saved for later review.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Normal Desktop</h3>
+        <p>If <code>%USERPROFILE%\Desktop</code> exists, the output folder is created as <code>Desktop\Repair Tool Results</code>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>OneDrive Desktop fallback</h3>
+        <p>If that Desktop path is not found, the script uses <code>%USERPROFILE%\OneDrive\Desktop\Repair Tool Results</code>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Transcript file</h3>
+        <p>The full PowerShell transcript is written to <code>DISM_SFC.txt</code> inside the Repair Tool Results folder.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Transcript closes cleanly</h3>
+        <p>After SFC finishes, the script prints its completion message and stops the PowerShell transcript before waiting for Enter.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How To Run</p>
+    <h2>Launching Repair Tool</h2>
+
+    <ol class="steps">
+      <li>Connect the PC to the internet, as recommended by the included Read Me.</li>
+      <li>Download and extract <strong>Repair Tool.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell with <span class="code-line">-ExecutionPolicy Bypass</span> and requests administrator elevation through UAC.</li>
+      <li>Repair Tool creates the local results folder and starts its transcript.</li>
+      <li>DISM AnalyzeComponentStore runs.</li>
+      <li>DISM StartComponentCleanup runs.</li>
+      <li>DISM CheckHealth, ScanHealth, and RestoreHealth run in sequence.</li>
+      <li><span class="code-line">sfc /scannow</span> runs last.</li>
+      <li>Review <strong>DISM_SFC.txt</strong> in the Repair Tool Results folder for the saved output.</li>
+      <li>Press Enter to close the PowerShell window.</li>
+    </ol>
+
+    <div class="notice">
+      The included Read Me notes that Windows 11 may display a “Windows protected your PC” SmartScreen message because the script was downloaded. Review the files before choosing “More info” and “Run anyway.”
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What Repair Tool changes</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Windows component servicing</h3>
+        <p>DISM StartComponentCleanup and RestoreHealth can change the Windows component store as part of Microsoft's built-in servicing process.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Protected system-file repair</h3>
+        <p>SFC can replace corrupted protected Windows system files when valid repair copies are available.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No third-party repair software</h3>
+        <p>The current script relies on built-in Microsoft Windows DISM and SFC executables rather than downloading a third-party repair application.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No data upload</h3>
+        <p>The current PowerShell script contains no upload/API command for sending the saved DISM/SFC transcript to Melding Software or another service.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>What does Repair Tool actually run?</h3>
+        <p>DISM AnalyzeComponentStore, StartComponentCleanup, CheckHealth, ScanHealth, RestoreHealth, and finally <code>sfc /scannow</code>.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it require administrator access?</h3>
+        <p>Yes. The batch launcher requests an elevated PowerShell window through UAC.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Where are the results saved?</h3>
+        <p>Normally under <code>Desktop\Repair Tool Results\DISM_SFC.txt</code>, with a OneDrive Desktop fallback when the regular Desktop path is not present.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it restart Windows automatically?</h3>
+        <p>No. The current script does not contain an automatic reboot command.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it use third-party repair software?</h3>
+        <p>No. The repair operations use Microsoft's built-in DISM and System File Checker tools.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Why does the Read Me say internet is required?</h3>
+        <p>The script itself does not issue a direct web download, but DISM RestoreHealth may need access to a Windows repair source when replacement components are required.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a></div>
+</main>
+
+<div class="copyright-notice"><p>© 2026 Melding Software. All rights reserved.</p></div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+</body>
+</html>

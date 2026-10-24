@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Installed Apps | Melding Software</title>
+<meta name="description" content="Installed Apps is a free Windows PowerShell utility that inventories traditional installed programs and current-user Appx packages, then saves the results to CSV and Excel files on the Desktop."/>
+<meta name="keywords" content="Installed Apps, Windows software inventory, installed programs list, PowerShell inventory, export installed apps CSV, export installed apps Excel, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/tools/installed-apps.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Installed Apps",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A PowerShell utility that inventories traditional Windows programs and current-user Appx packages, then saves the combined results to CSV and Excel files on the Desktop.",
+  "author": {
+    "@type": "Organization",
+    "name": "Melding Software",
+    "url": "https://meldingsoftware.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Installed%20Apps.zip"
+}
+</script>
+
+<style>
+.tool-page{
+  width:min(1180px,calc(100% - 32px));
+  margin:calc(var(--nav-h) + 24px) auto 28px;
+}
+.tool-hero,.doc-section{
+  position:relative;
+  background:linear-gradient(145deg,rgba(20,20,24,.8),rgba(11,11,14,.84));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.tool-hero{
+  padding:clamp(28px,4vw,58px);
+  background:
+    linear-gradient(145deg,rgba(20,20,24,.72),rgba(10,10,13,.92)),
+    radial-gradient(circle at 82% 28%,rgba(255,45,63,.16),transparent 28%);
+}
+.tool-hero::before{
+  content:'';
+  position:absolute;
+  width:420px;
+  height:420px;
+  border:1px solid rgba(255,45,63,.1);
+  border-radius:50%;
+  right:-180px;
+  top:-180px;
+  box-shadow:0 0 0 45px rgba(255,45,63,.015),0 0 0 90px rgba(255,45,63,.01);
+  pointer-events:none;
+}
+.tool-kicker{
+  margin:0 0 12px;
+  color:var(--accent);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.tool-title{
+  margin:0;
+  max-width:980px;
+  color:#fff;
+  font-size:clamp(3rem,7vw,6.5rem);
+  line-height:.95;
+  letter-spacing:-.065em;
+  font-weight:900;
+}
+.tool-title span{color:var(--accent)}
+.tool-lead{
+  max-width:900px;
+  margin:22px 0 0;
+  color:#d8d8df;
+  font-size:clamp(1.08rem,1.2vw + .8rem,1.45rem);
+  line-height:1.6;
+}
+.tool-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
+.tool-meta{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:30px;
+}
+.meta-card,.info-card,.faq-card{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.025);
+  border-radius:16px;
+}
+.meta-card{padding:16px}
+.meta-label{
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.meta-value{
+  margin-top:5px;
+  color:#fff;
+  font-size:.98rem;
+  font-weight:750;
+}
+.doc-section{
+  margin-top:28px;
+  padding:clamp(24px,3.5vw,42px);
+}
+.doc-section h2{margin:0 0 14px}
+.doc-section > p{
+  color:#c7c7ce;
+  max-width:960px;
+  line-height:1.7;
+}
+.doc-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:22px;
+}
+.info-card,.faq-card{padding:20px}
+.info-card h3,.faq-card h3{margin:0 0 8px}
+.info-card p,.faq-card p{
+  margin:0;
+  color:#b9b9c3;
+  line-height:1.65;
+}
+.steps,.tool-list{
+  margin:18px 0 0;
+  padding-left:22px;
+  color:#c7c7ce;
+}
+.steps li,.tool-list li{margin:9px 0;line-height:1.6}
+.output-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:20px;
+}
+.output-card{
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:#09090b;
+}
+.output-card h3{margin:0 0 10px}
+.output-card code{
+  display:block;
+  color:#efeff3;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.notice{
+  margin-top:20px;
+  padding:16px 18px;
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+  background:rgba(255,45,63,.07);
+  color:#d6d6dc;
+  line-height:1.65;
+}
+.page-back{
+  margin:28px 0 0;
+  text-align:center;
+}
+@media(max-width:900px){
+  .tool-page{width:min(100% - 20px,1180px);margin-top:calc(var(--nav-h) + 12px)}
+  .tool-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  .tool-hero,.doc-section{border-radius:20px}
+  .tool-hero{padding:24px 20px}
+  .doc-section{padding:22px 20px}
+  .doc-grid,.tool-meta,.output-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home">
+    <img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/>
+  </a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links desktop-links">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#donate">Donate</a>
+    <a href="../index.html#downloads">Downloads</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#legal">Legal</a>
+  </div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+      <a href="../index.html#home" onclick="toggleMenu()">Home</a>
+      <a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+      <a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+      <a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+      <a href="../index.html#about" onclick="toggleMenu()">About</a>
+      <a href="../index.html#legal" onclick="toggleMenu()">Legal</a>
+    </div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Inventory Utility</p>
+    <h1 class="tool-title">Installed <span>Apps</span></h1>
+    <p class="tool-lead">
+      Installed Apps is a free PowerShell utility that creates a portable inventory of software on a Windows PC. It combines traditional installed programs with current-user Appx packages and saves the results into both CSV and Excel formats on the Desktop.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Installed%20Apps.zip">Download Installed Apps</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+      <div class="meta-card"><div class="meta-label">Script Type</div><div class="meta-value">PowerShell</div></div>
+      <div class="meta-card"><div class="meta-label">Output Formats</div><div class="meta-value">CSV + XLSX</div></div>
+      <div class="meta-card"><div class="meta-label">Save Location</div><div class="meta-value">Desktop</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Overview</p>
+    <h2>What Installed Apps collects</h2>
+    <p>
+      The script builds one combined software list from two Windows sources: the machine-level uninstall registry and the current user's Appx package inventory.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>Traditional desktop programs</h3>
+        <p>
+          The script reads <code>HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall</code> and collects Display Name, Display Version, Publisher/Vendor, Install Date, and Install Location. Entries without both a program name and vendor are filtered out.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Windows Appx packages</h3>
+        <p>
+          It also runs <code>Get-AppxPackage</code> for the current user and records Name, Version, Publisher, Install Date, and Install Location.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Sorted software inventory</h3>
+        <p>
+          Traditional programs are sorted by name before being combined with the sorted Appx package list, providing a convenient reference when rebuilding or auditing a PC.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Local-only reporting</h3>
+        <p>
+          The current script reads Windows registry/package information and writes local files. It does not contain code that uploads the inventory to a website or cloud service.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Output</p>
+    <h2>Files created on the Desktop</h2>
+    <p>
+      The script creates an <strong>Installed Apps</strong> folder on the current user's Desktop and separates its two output formats into clearly named subfolders.
+    </p>
+
+    <div class="output-grid">
+      <div class="output-card">
+        <h3>CSV / text-friendly output</h3>
+        <code>Desktop\Installed Apps\Open with Notepad\InstalledApps.csv</code>
+      </div>
+      <div class="output-card">
+        <h3>Excel workbook</h3>
+        <code>Desktop\Installed Apps\Open with Excel\InstalledApps.xlsx</code>
+      </div>
+    </div>
+
+    <div class="notice">
+      The folder name says “Open with Notepad” for the CSV copy, but CSV is a standard text-based format and can also be opened with Excel, LibreOffice Calc, spreadsheet applications, and many text editors.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Excel Requirement</p>
+    <h2>The XLSX export uses Microsoft Excel</h2>
+    <p>
+      After the CSV is written, the script creates an <code>Excel.Application</code> COM object, opens a new workbook, writes the collected software information into worksheet cells, auto-fits the used columns, and saves the workbook as an XLSX file.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>Microsoft Excel required for XLSX</h3>
+        <p>
+          Because the script automates the desktop Excel application through COM, Microsoft Excel must be installed and available for the XLSX creation step to work.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>CSV is created first</h3>
+        <p>
+          The script exports <code>InstalledApps.csv</code> before it attempts to start Excel, so the CSV output is not dependent on Excel being installed.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Workbook formatting</h3>
+        <p>
+          After filling the worksheet, the script uses Excel's UsedRange and AutoFit functionality so the exported columns are easier to read.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Excel is closed afterward</h3>
+        <p>
+          The workbook is saved in XLSX format, closed, and the Excel application is quit. The script then explicitly releases the worksheet, workbook, and Excel COM objects from memory.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How It Works</p>
+    <h2>Running Installed Apps</h2>
+
+    <ol class="steps">
+      <li>Download and extract <strong>Installed Apps.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell with <code>-ExecutionPolicy Bypass</code> and requests administrator elevation through UAC.</li>
+      <li>The script inventories traditional programs from the Windows uninstall registry.</li>
+      <li>It inventories current-user Appx packages with <code>Get-AppxPackage</code>.</li>
+      <li>The two lists are combined.</li>
+      <li>The Desktop output folders are created if they do not already exist.</li>
+      <li>The combined inventory is exported to CSV.</li>
+      <li>Microsoft Excel is automated to create and save the XLSX copy.</li>
+    </ol>
+
+    <div class="notice">
+      The included Read Me notes that Windows 11 may display a “Windows protected your PC” SmartScreen message because the script was downloaded. Review the script before choosing “More info” and “Run anyway.”
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Use Cases</p>
+    <h2>When the inventory is useful</h2>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>Before reinstalling Windows</h3>
+        <p>Save a reference of installed software before resetting, replacing, or reinstalling a Windows PC.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>New PC migration</h3>
+        <p>Keep a software checklist while moving from an older computer to a new Windows system.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Technician documentation</h3>
+        <p>Create a quick local snapshot of application names, versions, vendors, dates, and install locations before service work.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>General software review</h3>
+        <p>Use the CSV or workbook as a convenient reference when reviewing what software is present on a PC.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Where are the files saved?</h3>
+        <p>Inside an <strong>Installed Apps</strong> folder on the current user's Desktop.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>What information is recorded?</h3>
+        <p>The script collects software name, version, publisher/vendor, install date, and install location when those values are available.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does the XLSX export require Excel?</h3>
+        <p>Yes. The current script creates the workbook by automating <code>Excel.Application</code>, so the desktop Microsoft Excel application is required for that step.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can I still use the CSV without Excel?</h3>
+        <p>Yes. The CSV is created before the Excel automation step and can be opened with a text editor or another application that supports CSV files.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it inventory Appx packages for every Windows user?</h3>
+        <p>No. The current script uses <code>Get-AppxPackage</code> without <code>-AllUsers</code>, so the Appx portion reflects the current user's package inventory.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it upload my software list?</h3>
+        <p>No. The current script contains no upload or web-request code. Its output is written locally to the Desktop.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back">
+    <a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a>
+  </div>
+</main>
+
+<div class="copyright-notice">
+  <p>© 2026 Melding Software. All rights reserved.</p>
+</div>
+
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+</body>
+</html>

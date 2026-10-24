@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Group Policy Editor | Melding Software</title>
+<meta name="description" content="Group Policy Editor is a free Windows PowerShell utility intended for Windows 10/11 Home that adds the built-in Group Policy Client Tools and Client Extensions packages from the local Windows servicing store using DISM."/>
+<meta name="keywords" content="Group Policy Editor, gpedit Windows Home, Windows 11 Home Group Policy, Windows 10 Home Group Policy, PowerShell, DISM, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/tools/group-policy-editor.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Group Policy Editor",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "A PowerShell utility intended for Windows Home editions that adds Windows Group Policy Client Tools and Client Extensions packages already present in the local Windows servicing store.",
+  "author": {
+    "@type": "Organization",
+    "name": "Melding Software",
+    "url": "https://meldingsoftware.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Group%20Policy%20Editor.zip"
+}
+</script>
+
+<style>
+.tool-page{
+  width:min(1180px,calc(100% - 32px));
+  margin:calc(var(--nav-h) + 24px) auto 28px;
+}
+.tool-hero,.doc-section{
+  position:relative;
+  background:linear-gradient(145deg,rgba(20,20,24,.8),rgba(11,11,14,.84));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.tool-hero{
+  padding:clamp(28px,4vw,58px);
+  background:
+    linear-gradient(145deg,rgba(20,20,24,.72),rgba(10,10,13,.92)),
+    radial-gradient(circle at 82% 28%,rgba(255,45,63,.16),transparent 28%);
+}
+.tool-hero::before{
+  content:'';
+  position:absolute;
+  width:420px;
+  height:420px;
+  border:1px solid rgba(255,45,63,.1);
+  border-radius:50%;
+  right:-180px;
+  top:-180px;
+  box-shadow:0 0 0 45px rgba(255,45,63,.015),0 0 0 90px rgba(255,45,63,.01);
+  pointer-events:none;
+}
+.tool-kicker{
+  margin:0 0 12px;
+  color:var(--accent);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.tool-title{
+  margin:0;
+  max-width:980px;
+  color:#fff;
+  font-size:clamp(2.8rem,6.5vw,6.2rem);
+  line-height:.95;
+  letter-spacing:-.065em;
+  font-weight:900;
+}
+.tool-title span{color:var(--accent)}
+.tool-lead{
+  max-width:900px;
+  margin:22px 0 0;
+  color:#d8d8df;
+  font-size:clamp(1.08rem,1.2vw + .8rem,1.45rem);
+  line-height:1.6;
+}
+.tool-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
+.tool-meta{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:30px;
+}
+.meta-card,.info-card,.faq-card{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.025);
+  border-radius:16px;
+}
+.meta-card{padding:16px}
+.meta-label{
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.meta-value{
+  margin-top:5px;
+  color:#fff;
+  font-size:.98rem;
+  font-weight:750;
+}
+.doc-section{
+  margin-top:28px;
+  padding:clamp(24px,3.5vw,42px);
+}
+.doc-section h2{margin:0 0 14px}
+.doc-section > p{
+  color:#c7c7ce;
+  max-width:960px;
+  line-height:1.7;
+}
+.doc-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:22px;
+}
+.info-card,.faq-card{padding:20px}
+.info-card h3,.faq-card h3{margin:0 0 8px}
+.info-card p,.faq-card p{
+  margin:0;
+  color:#b9b9c3;
+  line-height:1.65;
+}
+.steps,.tool-list{
+  margin:18px 0 0;
+  padding-left:22px;
+  color:#c7c7ce;
+}
+.steps li,.tool-list li{margin:9px 0;line-height:1.6}
+.code-block{
+  margin-top:18px;
+  padding:16px 18px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#070709;
+  color:#e7e7eb;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  font-size:.9rem;
+  line-height:1.65;
+  overflow-x:auto;
+  white-space:pre-wrap;
+}
+.notice{
+  margin-top:20px;
+  padding:16px 18px;
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+  background:rgba(255,45,63,.07);
+  color:#d6d6dc;
+  line-height:1.65;
+}
+.page-back{
+  margin:28px 0 0;
+  text-align:center;
+}
+@media(max-width:900px){
+  .tool-page{width:min(100% - 20px,1180px);margin-top:calc(var(--nav-h) + 12px)}
+  .tool-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  .tool-hero,.doc-section{border-radius:20px}
+  .tool-hero{padding:24px 20px}
+  .doc-section{padding:22px 20px}
+  .doc-grid,.tool-meta{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home">
+    <img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/>
+  </a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links desktop-links">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#donate">Donate</a>
+    <a href="../index.html#downloads">Downloads</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#legal">Legal</a>
+  </div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+      <a href="../index.html#home" onclick="toggleMenu()">Home</a>
+      <a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+      <a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+      <a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+      <a href="../index.html#about" onclick="toggleMenu()">About</a>
+      <a href="../index.html#legal" onclick="toggleMenu()">Legal</a>
+    </div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Configuration Utility</p>
+    <h1 class="tool-title">Group Policy <span>Editor</span></h1>
+    <p class="tool-lead">
+      Group Policy Editor is a free PowerShell utility intended for Windows 10/11 Home. It locates the Group Policy Client Tools and Client Extensions packages already present in the local Windows servicing store and adds those packages to the running Windows installation with DISM.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Group%20Policy%20Editor.zip">Download Group Policy Editor</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Intended For</div><div class="meta-value">Windows 10 / 11 Home</div></div>
+      <div class="meta-card"><div class="meta-label">Script Type</div><div class="meta-value">PowerShell + Batch Launcher</div></div>
+      <div class="meta-card"><div class="meta-label">Installer</div><div class="meta-value">Windows DISM</div></div>
+      <div class="meta-card"><div class="meta-label">Source Packages</div><div class="meta-value">Local Windows Servicing Store</div></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Overview</p>
+    <h2>What the utility actually installs</h2>
+    <p>
+      The script searches <code>%SystemRoot%\servicing\Packages</code> for Windows package manifests whose names begin with the Group Policy Client Extensions and Group Policy Client Tools package families. It then processes those local package manifests with DISM.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>Group Policy Client Extensions</h3>
+        <p>The script finds package manifests matching the Windows <code>Microsoft-Windows-GroupPolicy-ClientExtensions-Package</code> family in the local servicing package directory.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Group Policy Client Tools</h3>
+        <p>It also finds package manifests matching the Windows <code>Microsoft-Windows-GroupPolicy-ClientTools-Package</code> family.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Local package inventory</h3>
+        <p>The package names found on the current PC are written to <code>List.txt</code>. The script regenerates this list from the machine's own Windows servicing store when it runs.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>DISM package installation</h3>
+        <p>Each package listed in <code>List.txt</code> is passed to Windows DISM using the online image and the corresponding local <code>.mum</code> package manifest.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How It Works</p>
+    <h2>Installation process</h2>
+    <ol class="steps">
+      <li>The batch launcher starts PowerShell and requests administrator elevation through UAC.</li>
+      <li>PowerShell changes its working directory to the folder containing <code>GPE.ps1</code>.</li>
+      <li>The script searches the Windows servicing package directory for Group Policy Client Extensions package manifests.</li>
+      <li>It searches the same directory for Group Policy Client Tools package manifests.</li>
+      <li>The matching package filenames are written to <code>List.txt</code>.</li>
+      <li>Each package is added to the current online Windows installation with DISM.</li>
+      <li>When the loop finishes, the script displays a completion message and waits for Enter before closing.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What the launcher and PowerShell script do</h2>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>Administrator elevation</h3>
+        <p><code>Run Me.bat</code> starts a new PowerShell process with <code>-Verb RunAs</code>, which triggers the Windows UAC prompt.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>ExecutionPolicy Bypass</h3>
+        <p>The batch launcher starts PowerShell with <code>-ExecutionPolicy Bypass</code> for this launch so the downloaded local script can run without changing the machine's permanent execution-policy configuration.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>No third-party package download</h3>
+        <p>The PowerShell script contains no download command. The packages it adds are taken from the Windows servicing package directory already present on the PC.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>No forced restart</h3>
+        <p>DISM is called with <code>/norestart</code>. The script itself does not issue a reboot command.</p>
+      </article>
+    </div>
+
+    <div class="code-block">dism /online /norestart /add-package:"&lt;local Group Policy .mum package&gt;"</div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Package Files</p>
+    <h2>Why List.txt is included</h2>
+    <p>
+      The ZIP includes a <code>List.txt</code> file, but the PowerShell script rebuilds it when run. That allows it to use the Group Policy package filenames found on the current Windows installation rather than depending only on the versions that happened to be listed when the ZIP was created.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Instructions</p>
+    <h2>Running Group Policy Editor</h2>
+    <ol class="steps">
+      <li>Download and extract <strong>Group Policy Editor.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>Click <strong>Yes</strong> when Windows asks for administrator permission.</li>
+      <li>Allow the DISM package operations to complete.</li>
+      <li>Press Enter when the script displays its completion message.</li>
+    </ol>
+
+    <div class="notice">
+      The included Read Me notes that Windows 11 may display a “Windows protected your PC” SmartScreen message because the script was downloaded. Review the files before choosing “More info” and “Run anyway.”
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Scope</p>
+    <h2>Designed for Windows Home editions</h2>
+    <p>
+      The included Read Me describes this utility as a way to get Group Policy Editor on Windows 10/11 Home and notes that Group Policy Editor is already included with Pro or Enterprise editions. Running the utility on editions that already include the feature is therefore unnecessary.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Does this download Group Policy Editor from another website?</h3>
+        <p>No. The current script contains no download command. It works with Group Policy package manifests located in the PC's Windows servicing package directory.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it require administrator permission?</h3>
+        <p>Yes. The included batch launcher explicitly requests an elevated PowerShell session through UAC.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it permanently change PowerShell's execution policy?</h3>
+        <p>The launcher uses <code>-ExecutionPolicy Bypass</code> for the PowerShell processes it starts. It does not contain a command that permanently changes the configured execution-policy setting.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Will the script automatically restart Windows?</h3>
+        <p>No. DISM is run with <code>/norestart</code>, and the script contains no restart command.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Why does it create List.txt?</h3>
+        <p>It uses that file as a temporary list of the Group Policy Client Extensions and Client Tools package manifests found on the current PC before processing them with DISM.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Do I need this on Windows Pro or Enterprise?</h3>
+        <p>The included Read Me says Group Policy Editor already comes with Pro and Enterprise editions, so this utility is intended for Windows Home.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back">
+    <a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a>
+  </div>
+</main>
+
+<div class="copyright-notice">
+  <p>© 2026 Melding Software. All rights reserved.</p>
+</div>
+
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+</body>
+</html>
