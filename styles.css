@@ -340,3 +340,11 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
     margin-top:calc(var(--nav-h) + 4px);
   }
 }
+
+/* ===== Home anchor/start position sync ===== */
+@media (min-width:901px){
+  .home-section{
+    margin-top:calc(var(--nav-h) + 4px);
+    scroll-margin-top:calc(var(--nav-h) + 4px);
+  }
+}
