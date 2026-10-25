@@ -95,8 +95,14 @@
   <section class="doc-section">
     <p class="tool-kicker">Installation</p>
     <h2>Using the Melding Software Mac installer</h2>
-    <p>The Melding Software homepage provides this Terminal installer command:</p>
-    <div class="notice"><span class="code-line">curl -fsSL https://raw.githubusercontent.com/MeldingSoftware/Scripts/main/Mac/install.sh | bash</span></div>
+    <div class="mac-install-panel">
+      <p class="mac-install-text">Copy and paste this command into Terminal to install the Melding Software Mac scripts.</p>
+      <p class="mac-install-text">After reopening Terminal, type MeldingSoftware anytime to load the list.</p>
+      <div class="command-copy-row">
+        <button class="copy-command-button" data-copy-target="macInstallCommand" type="button">Copy</button>
+        <code class="terminal-command" id="macInstallCommand">curl -fsSL https://raw.githubusercontent.com/MeldingSoftware/Scripts/main/Mac/install.sh | bash</code>
+      </div>
+    </div>
     <p>Because this command downloads and immediately runs a shell installer, you can review <strong>install.sh</strong> in the GitHub repository before executing it. Individual scripts may also request permissions, administrator access, Keychain authorization, Full Disk Access, or other macOS approvals depending on what the selected tool needs.</p>
   </section>
 
