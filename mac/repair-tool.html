@@ -29,40 +29,11 @@
   "applicationCategory":"UtilitiesApplication",
   "operatingSystem":"macOS",
   "description":"Verifies and repairs the macOS system volume and disk, records SMART/APFS information, and provides Recovery-specific repair guidance.",
-  "author":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
   "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
 }
 </script>
-<style>
-.tool-page{width:min(1180px,calc(100% - 32px));margin:calc(var(--nav-h) + 24px) auto 28px}
-.tool-hero,.doc-section{position:relative;background:linear-gradient(145deg,rgba(20,20,24,.8),rgba(11,11,14,.84));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-.tool-hero{padding:clamp(28px,4vw,58px);background:linear-gradient(145deg,rgba(20,20,24,.72),rgba(10,10,13,.92)),radial-gradient(circle at 82% 28%,rgba(255,45,63,.16),transparent 28%)}
-.tool-hero::before{content:'';position:absolute;width:420px;height:420px;border:1px solid rgba(255,45,63,.1);border-radius:50%;right:-180px;top:-180px;box-shadow:0 0 0 45px rgba(255,45,63,.015),0 0 0 90px rgba(255,45,63,.01);pointer-events:none}
-.tool-kicker{margin:0 0 12px;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-.tool-title{margin:0;color:#fff;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;letter-spacing:-.065em;font-weight:900}
-.tool-title span{color:var(--accent)}
-.tool-lead{max-width:960px;margin:22px 0 0;color:#d8d8df;font-size:clamp(1.08rem,1.2vw + .8rem,1.45rem);line-height:1.6}
-.tool-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.tool-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
-.meta-card,.feature-card,.faq-card{border:1px solid var(--border);background:rgba(255,255,255,.025);border-radius:16px}
-.meta-card{padding:16px}
-.meta-label{color:var(--muted);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.meta-value{margin-top:5px;color:#fff;font-size:.98rem;font-weight:750}
-.doc-section{margin-top:28px;padding:clamp(24px,3.5vw,42px)}
-.doc-section h2{margin:0 0 14px}
-.doc-section>p{color:#c7c7ce;max-width:980px;line-height:1.7}
-.doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
-.feature-card,.faq-card{padding:20px}
-.feature-card h3,.faq-card h3{margin:0 0 8px}
-.feature-card p,.faq-card p{margin:0;color:#b9b9c3;line-height:1.65}
-.notice,.warning-notice{margin-top:20px;padding:16px 18px;border-radius:10px;line-height:1.65}
-.notice{border-left:4px solid var(--accent);background:rgba(255,45,63,.07);color:#d6d6dc}
-.warning-notice{border-left:4px solid #f0c969;background:rgba(240,201,105,.075);color:#ddd8c9}
-.code-line{display:inline-block;padding:2px 7px;border-radius:7px;background:#08080a;border:1px solid rgba(255,255,255,.08);color:#f0f0f3;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.9em}
-.page-back{margin:28px 0 0;text-align:center}
-@media(max-width:900px){.tool-page{width:min(100% - 20px,1180px);margin-top:calc(var(--nav-h) + 12px)}.tool-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){.tool-hero,.doc-section{border-radius:20px}.tool-hero{padding:24px 20px}.doc-section{padding:22px 20px}.doc-grid,.tool-meta{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -74,13 +45,25 @@
   <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
   <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
   <div class="nav-links desktop-links">
-    <a href="../index.html#home">Home</a><a href="../index.html#donate">Donate</a><a href="../index.html#downloads">Downloads</a><a href="../index.html#contact">Contact</a><a href="../index.html#about">About</a><a href="../index.html#legal">Legal</a>
-  </div>
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../index.html#legal">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
   <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
     <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
     <div class="nav-links mobile-links">
-      <a href="../index.html#home" onclick="toggleMenu()">Home</a><a href="../index.html#donate" onclick="toggleMenu()">Donate</a><a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a><a href="../index.html#contact" onclick="toggleMenu()">Contact</a><a href="../index.html#about" onclick="toggleMenu()">About</a><a href="../index.html#legal" onclick="toggleMenu()">Legal</a>
-    </div>
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../index.html#legal" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
   </div>
 </nav>
 
@@ -94,6 +77,12 @@
       <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts/tree/main/Mac" target="_blank" rel="noopener">GitHub Repository</a>
     </div>
     <div class="tool-meta"><div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">macOS</div></div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Updated October 24, 2026</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
 <div class="meta-card"><div class="meta-label">Privilege</div><div class="meta-value">sudo for repairs</div></div>
 <div class="meta-card"><div class="meta-label">Tools</div><div class="meta-value">diskutil + fsck</div></div>
 <div class="meta-card"><div class="meta-label">Output</div><div class="meta-value">Desktop log</div></div></div>
@@ -158,7 +147,10 @@
   <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Mac Scripts</a></div>
 </main>
 
-<div class="copyright-notice"><p>© 2026 Melding Software. All rights reserved.</p></div>
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
 <button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
 <script defer src="../javascript.js"></script>
 </body>
