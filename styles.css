@@ -337,7 +337,8 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
 /* ===== Home initial viewport position fix ===== */
 @media (min-width:901px){
   .home-section{
-    margin-top:calc(var(--nav-h) + 4px);
+    margin-top:calc(var(--nav-h) + 24px);
+    scroll-margin-top:calc(var(--nav-h) + 24px);
   }
 }
 
@@ -2267,7 +2268,8 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
   display:flex;
   flex-wrap:wrap;
   gap:8px 16px;
-  margin-top:18px;
+  margin-top:16px;
+  padding:0 2px;
   color:var(--muted);
   font-size:.84rem;
   line-height:1.5;
