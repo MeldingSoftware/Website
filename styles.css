@@ -2265,11 +2265,12 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
 
 /* ===== Trust, privacy, documentation media, and safe ad spacing ===== */
 .tool-byline{
+  grid-column:1 / -1;
   display:flex;
   flex-wrap:wrap;
   gap:8px 16px;
-  margin-top:16px;
-  padding:0 2px;
+  margin-top:4px;
+  padding:4px 2px 0;
   color:var(--muted);
   font-size:.84rem;
   line-height:1.5;
@@ -2299,3 +2300,7 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
 .download-button,.copy-command-button,.tool-actions,.command-copy-row{isolation:isolate}
 @media(max-width:900px){.policy-page{width:min(100% - 20px,1040px);margin-top:calc(var(--nav-h) + 12px)}}
 @media(max-width:640px){.tool-byline{display:block}.tool-byline span{display:block;margin-top:6px}.tool-byline span+span::before{content:none}.site-footer-links{flex-wrap:wrap}.policy-hero,.policy-section{border-radius:20px}}
+
+
+/* Keep tool page information below every metadata card */
+.tool-meta > .tool-byline{grid-column:1 / -1}
