@@ -113,6 +113,16 @@
   </section>
 
   <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/debloater.png" alt="DeBloater screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>DeBloater running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
     <p class="section-kicker">Overview</p>
     <h2>A more selective Windows debloat</h2>
     <p>
@@ -257,5 +267,15 @@
 
 <button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
 <script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
 </body>
 </html>

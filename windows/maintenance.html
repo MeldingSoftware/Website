@@ -117,6 +117,16 @@
   </section>
 
   <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/maintenance.png" alt="Maintenance screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Maintenance running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
     <p class="tool-kicker">Workflow</p>
     <h2>What Maintenance runs</h2>
     <p>
@@ -413,17 +423,7 @@
       <strong>Run Me.bat</strong> launches a new elevated PowerShell process with UAC using <span class="code-line">-Verb RunAs</span> and uses <span class="code-line">-ExecutionPolicy Bypass</span> for the launched process. The PowerShell script itself also declares <span class="code-line">#requires -RunAsAdministrator</span>.
     </p>
   </section>
-  <section class="doc-section">
-    <p class="tool-kicker">Screenshot</p>
-    <h2>Tool preview</h2>
-    <figure class="tool-screenshot">
-      <img src="../images/Maintenance.png" alt="Maintenance HTML report and Windows maintenance workflow preview." loading="lazy"/>
-      <figcaption>Maintenance HTML report and Windows maintenance workflow preview. This image is provided by Melding Software and reflects the tool's own interface or output.</figcaption>
-    </figure>
-  </section>
-
-
-  <section class="doc-section">
+<section class="doc-section">
     <p class="tool-kicker">FAQ</p>
     <h2>Frequently asked questions</h2>
 
@@ -482,5 +482,15 @@
 
 <button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
 <script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
 </body>
 </html>
