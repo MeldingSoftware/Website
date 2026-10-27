@@ -93,6 +93,16 @@
   </section>
 
   <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/mac/wi-fi_info.png" alt="Wi-Fi Info screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Wi-Fi Info running on macOS.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
     <p class="tool-kicker">Installation</p>
     <h2>Using the Melding Software Mac installer</h2>
     <div class="mac-install-panel">
@@ -152,5 +162,15 @@
 </div>
 <button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
 <script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
 </body>
 </html>

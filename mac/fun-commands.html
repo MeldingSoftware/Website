@@ -93,6 +93,16 @@
   </section>
 
   <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/mac/fun_commands.png" alt="Fun Commands screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Fun Commands running on macOS.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
     <p class="tool-kicker">Installation</p>
     <h2>Using the Melding Software Mac installer</h2>
     <div class="mac-install-panel">
@@ -142,17 +152,7 @@
 <article class="feature-card"><h3>Graceful fallbacks</h3><p>When optional commands are unavailable, the menu reports the problem and returns rather than silently failing.</p></article>
   </div>
 </section>
-  <section class="doc-section">
-    <p class="tool-kicker">Screenshot</p>
-    <h2>Tool preview</h2>
-    <figure class="tool-screenshot">
-      <img src="../images/FunCommandsMac.png" alt="Fun Commands running in macOS Terminal." loading="lazy"/>
-      <figcaption>Fun Commands running in macOS Terminal. This image is provided by Melding Software and reflects the tool's own interface or output.</figcaption>
-    </figure>
-  </section>
-
-
-  <section class="doc-section">
+<section class="doc-section">
     <p class="tool-kicker">FAQ</p>
     <h2>Frequently asked questions</h2>
     <div class="doc-grid"><article class="faq-card"><h3>Does it install software?</h3><p>It can install Homebrew and selected command-line dependencies when they are not already available.</p></article>
@@ -170,5 +170,15 @@
 </div>
 <button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
 <script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
 </body>
 </html>
