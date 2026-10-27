@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DeBloater | Melding Software</title>
+<meta name="description" content="DeBloater is a free Windows PowerShell utility that removes selected optional Microsoft consumer apps and provisioned promotional/OEM apps while preserving core Windows utilities and dependencies."/>
+<meta name="keywords" content="Windows debloater, Windows 11 bloatware, Windows 10 bloatware, PowerShell debloater, remove optional apps, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/debloater.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DeBloater",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "A PowerShell utility that removes selected optional Microsoft consumer apps and provisioned promotional/OEM apps while intentionally preserving core Windows utilities and dependencies.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/DeBloater.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home">
+    <img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/>
+  </a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Cleanup Utility</p>
+    <h1 class="tool-title">De<span>Bloater</span></h1>
+    <p class="tool-lead">
+      DeBloater is a free PowerShell utility for Windows 10 and Windows 11 that removes a curated set of optional Microsoft consumer apps and Windows/OEM-provisioned promotional apps while deliberately preserving core Windows utilities and dependencies.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/DeBloater.zip">Download DeBloater</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Operating System</div><div class="meta-value">Windows 10 / 11</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Script Type</div><div class="meta-value">PowerShell</div></div>
+      <div class="meta-card"><div class="meta-label">Scope</div><div class="meta-value">Installed + Provisioned Apps</div></div>
+      <div class="meta-card"><div class="meta-label">Approach</div><div class="meta-value">Curated Removal List</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/debloater.png" alt="DeBloater screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>DeBloater running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="section-kicker">Overview</p>
+    <h2>A more selective Windows debloat</h2>
+    <p>
+      The current DeBloater uses two different strategies instead of treating every optional Windows app the same. A curated Microsoft list is eligible for removal when present, while third-party promotional apps are only targeted when Windows or the PC manufacturer provisioned them for users.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>Optional Microsoft apps</h3>
+        <p>The script checks a defined list of optional consumer/inbox packages such as Clipchamp, Copilot, Feedback Hub, Maps, Phone Link, consumer Teams, Outlook for Windows, Solitaire, several legacy Bing apps, and Xbox front-end packages.</p>
+      </article>
+      <article class="info-card">
+        <h3>Provisioned promotional apps</h3>
+        <p>Patterns cover common promotional/OEM packages such as Amazon, Netflix, Spotify, TikTok, Candy Crush, Facebook, Instagram, Hulu, WinZip, and similar apps—but only when they appear in the provisioned Windows image.</p>
+      </article>
+      <article class="info-card">
+        <h3>Installed-package cleanup</h3>
+        <p>Matching installed Appx packages are removed for all users. Packages marked by Windows as non-removable are skipped rather than forced.</p>
+      </article>
+      <article class="info-card">
+        <h3>Future-user cleanup</h3>
+        <p>Matching provisioned packages are also removed from the online Windows image so those targeted apps are not automatically provisioned for newly created user profiles.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="section-kicker">Preserved Apps</p>
+    <h2>Core utilities are intentionally preserved</h2>
+    <p>
+      The newer removal list is deliberately narrower than the older DeBloater list. Core utilities and Windows dependencies are left alone instead of being removed simply because they are inbox apps.
+    </p>
+
+    <div class="preserve-grid">
+      <div class="preserve-item">Microsoft Store</div>
+      <div class="preserve-item">App Installer</div>
+      <div class="preserve-item">Calculator</div>
+      <div class="preserve-item">Camera</div>
+      <div class="preserve-item">Snipping Tool</div>
+      <div class="preserve-item">Notepad</div>
+      <div class="preserve-item">Windows Terminal</div>
+      <div class="preserve-item">Photos</div>
+      <div class="preserve-item">Sticky Notes</div>
+      <div class="preserve-item">Quick Assist</div>
+      <div class="preserve-item">Web Experience</div>
+      <div class="preserve-item">Cross Device</div>
+      <div class="preserve-item">Gaming Services</div>
+      <div class="preserve-item">Media Player</div>
+    </div>
+
+    <div class="notice">
+      “Preserved” means the package is intentionally absent from DeBloater's current target list. The script is designed to remove selected optional apps rather than strip Windows down indiscriminately.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="section-kicker">Sponsored Apps</p>
+    <h2>Why promotional apps are handled differently</h2>
+    <p>
+      A third-party app can be unwanted when it arrives as part of a Windows/OEM image but completely intentional when the user installed it themselves. DeBloater checks the provisioned-package inventory first and only adds a sponsored app pattern to the removal targets when that package was provisioned by Windows or the OEM.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>User choice is preserved</h3>
+        <p>If a supported third-party app was intentionally installed by the user and is not represented in the provisioned image, the sponsored-pattern logic does not target that app merely because its name matches.</p>
+      </article>
+      <article class="info-card">
+        <h3>Pattern matching supports OEM variations</h3>
+        <p>Sponsored packages often use different Store package identifiers. Wildcard patterns let the script recognize common promotional families without maintaining a single exact package name for every OEM image.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="section-kicker">How It Works</p>
+    <h2>What happens when DeBloater runs</h2>
+    <ol class="steps">
+      <li>Windows installed Appx packages are inventoried for all users.</li>
+      <li>The current online Windows provisioned-package inventory is loaded.</li>
+      <li>The curated Microsoft bloatware list is added to a case-insensitive set of removal targets.</li>
+      <li>Sponsored patterns are compared with the provisioned inventory. Only matching provisioned third-party packages are added to the target set.</li>
+      <li>Matching installed packages are removed for all users unless Windows marks the package as non-removable.</li>
+      <li>Matching provisioned packages are deprovisioned from the online Windows image.</li>
+      <li>The script reports how many installed packages and provisioned packages were removed and how many removals, if any, failed.</li>
+    </ol>
+
+    <div class="notice">
+      App removal can require elevated Windows permissions. If Windows blocks a package removal, DeBloater records the failure and continues processing the remaining targets instead of terminating the entire cleanup.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="section-kicker">Xbox</p>
+    <h2>What the current list removes</h2>
+    <p>
+      The current Microsoft list includes the Xbox app, legacy Xbox Console Companion, Xbox Game Bar/overlay packages, Xbox Identity Provider, and Xbox speech-to-text overlay. Gaming Services itself is intentionally preserved.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="section-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Does DeBloater remove Microsoft Store?</h3>
+        <p>No. Microsoft Store is intentionally preserved.</p>
+      </article>
+      <article class="faq-card">
+        <h3>Does it remove Calculator, Camera, or Snipping Tool?</h3>
+        <p>No. Those core utilities are intentionally preserved by the current target list.</p>
+      </article>
+      <article class="faq-card">
+        <h3>Does it remove Gaming Services?</h3>
+        <p>No. Gaming Services is preserved even though the current Xbox app and several Xbox interface/overlay packages are targeted.</p>
+      </article>
+      <article class="faq-card">
+        <h3>Will it delete Spotify or Netflix if I installed them myself?</h3>
+        <p>The sponsored-app logic only adds those app families to the removal targets when a matching package is present in Windows' provisioned package inventory. That is intended to avoid removing a copy that exists only because the user intentionally installed it.</p>
+      </article>
+      <article class="faq-card">
+        <h3>What happens to protected packages?</h3>
+        <p>If Windows reports an installed package as non-removable, DeBloater skips it and prints a protected-package message.</p>
+      </article>
+      <article class="faq-card">
+        <h3>Can some removals fail?</h3>
+        <p>Yes. Windows can block package removal for permissions, package state, servicing, or other reasons. The script counts failed removals, reports them as warnings, and continues with the remaining packages.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back">
+    <a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a>
+  </div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

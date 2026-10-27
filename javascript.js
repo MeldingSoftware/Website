@@ -168,13 +168,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentGallery = [];
     let currentGalleryName = "";
 
+    if (!galleryOverlay || !fullImage || !closeGallery || !prevImage || !nextImage) {
+        return;
+    }
+
     // Open Gallery
-    const galleryImages = document.querySelectorAll(".gallery-grid img");
+    const galleryImages = document.querySelectorAll(".gallery-grid img, .tool-screenshot img");
     galleryImages.forEach((image, index) => {
         image.addEventListener("click", () => {
             currentGalleryName = image.dataset.gallery; // Determine the gallery type
             currentGallery = Array.from(
-                document.querySelectorAll(`.gallery-grid img[data-gallery="${currentGalleryName}"]`)
+                document.querySelectorAll(`.gallery-grid img[data-gallery="${currentGalleryName}"], .tool-screenshot img[data-gallery="${currentGalleryName}"]`)
             );
             currentImageIndex = currentGallery.indexOf(image);
 

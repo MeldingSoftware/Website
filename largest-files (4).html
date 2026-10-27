@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Largest Files | Melding Software</title>
+<meta name="description" content="Largest Files is a free Windows PowerShell utility that scans all drive-letter file-system drives, excludes the Windows system folder, finds the 10 largest files, and saves the results to a text file."/>
+<meta name="keywords" content="Largest Files, disk space, storage usage, find large files, Windows PowerShell, top 10 largest files, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/largest-files.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Largest Files",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A PowerShell utility that scans drive-letter file-system drives, excludes the Windows system folder, identifies the 10 largest files, and saves the results locally.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Largest%20Files.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home">
+    <img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/>
+  </a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Storage Utility</p>
+    <h1 class="tool-title">Largest <span>Files</span></h1>
+    <p class="tool-lead">
+      Largest Files is a free PowerShell utility that scans drive-letter file-system drives on a Windows PC, identifies the 10 largest files outside the Windows system folder, displays them in the console, and saves the results to a local text file.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Largest%20Files.zip">Download Largest Files</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Script Type</div><div class="meta-value">PowerShell</div></div>
+      <div class="meta-card"><div class="meta-label">Results</div><div class="meta-value">Top 10 Files</div></div>
+      <div class="meta-card"><div class="meta-label">Output</div><div class="meta-value">Largest Files.txt</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/largest_files.png" alt="Largest Files screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Largest Files running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Overview</p>
+    <h2>What Largest Files scans</h2>
+    <p>
+      The script asks PowerShell for mounted FileSystem drives and keeps drive roots that use standard Windows drive-letter paths such as <code>C:\</code>, <code>D:\</code>, and <code>E:\</code>. It then recursively enumerates files on those drives.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>All drive-letter file-system drives</h3>
+        <p>The scan is not limited to C:. Any mounted PowerShell FileSystem drive whose root matches a standard drive-letter path is included.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Recursive file search</h3>
+        <p>Each selected drive is searched recursively with <code>Get-ChildItem -Recurse -File</code> so files in nested folders are considered.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Windows folder excluded</h3>
+        <p>Files underneath the current <code>%SystemRoot%</code> path are filtered out. On a typical installation, this excludes files under <code>C:\Windows</code>.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Access errors are skipped</h3>
+        <p>The file enumeration uses <code>-ErrorAction SilentlyContinue</code>, so inaccessible folders or files are skipped rather than stopping the entire scan.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Ranking</p>
+    <h2>How the top 10 are selected</h2>
+    <p>
+      After collecting the visible files from all selected drives, the script sorts them by byte length from largest to smallest and keeps the first 10 results.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>Human-readable sizes</h3>
+        <p>A helper function formats each size as bytes, KB, MB, GB, or TB and rounds larger units to two decimal places.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Full path included</h3>
+        <p>Each result contains both the formatted file size and the file's complete path, making it easier to locate large storage consumers.</p>
+      </article>
+    </div>
+
+    <div class="output-example">Size       FullName
+---------  ---------------------------------------------
+24.62 GB   D:\Example\LargeVideo.mkv
+11.38 GB   C:\Users\Example\Downloads\Archive.zip
+8.17 GB    E:\Backups\DiskImage.vhdx</div>
+
+    <div class="notice">
+      The sample above is illustrative. Actual results depend entirely on the files that are visible and accessible on the computer being scanned.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Output</p>
+    <h2>Where the results are saved</h2>
+    <p>
+      The same top-10 result objects shown in the console are written to <code>Largest Files.txt</code> in the directory containing the PowerShell script.
+    </p>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>File name</h3>
+        <p>The output is always named <code>Largest Files.txt</code>.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Save location</h3>
+        <p>The script uses <code>$PSScriptRoot</code>, so when it is run normally from the extracted package, the text file is saved beside <code>Largest Files.ps1</code>.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Local-only output</h3>
+        <p>The current script contains no upload, API, or web-request code. File paths and sizes remain in the local console and local text file.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>ASCII text</h3>
+        <p>The result file is written using ASCII encoding so it can be opened easily in Notepad or another text editor.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How It Works</p>
+    <h2>Running Largest Files</h2>
+
+    <ol class="steps">
+      <li>Download and extract <strong>Largest Files.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell with <code>-ExecutionPolicy Bypass</code> and requests administrator elevation through UAC.</li>
+      <li>The script enumerates mounted drive-letter FileSystem drives.</li>
+      <li>Files are recursively collected while the Windows system folder is excluded.</li>
+      <li>The file list is sorted from largest to smallest.</li>
+      <li>The top 10 files are displayed in the PowerShell window.</li>
+      <li>The same results are written to <code>Largest Files.txt</code> beside the script.</li>
+      <li>Press Enter to exit after reviewing the results.</li>
+    </ol>
+
+    <div class="notice">
+      The script warns that the scan can take several minutes. Scan time depends on the number of drives, total number of files, storage speed, and the folders PowerShell can access.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What the tool does not do</h2>
+
+    <div class="doc-grid">
+      <article class="info-card">
+        <h3>No file deletion</h3>
+        <p>The current script does not contain <code>Remove-Item</code> or other commands that delete the large files it finds.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>No automatic cleanup</h3>
+        <p>It is an inventory tool only. Deciding whether a listed file is safe to remove is left to the user.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>No Windows-folder scan</h3>
+        <p>The Windows system directory is deliberately excluded, reducing system-file noise in the results.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>No network upload</h3>
+        <p>The scan does not transmit filenames, file paths, or file sizes anywhere.</p>
+      </article>
+    </div>
+  </section>
+<section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Does it scan only my C: drive?</h3>
+        <p>No. It scans mounted PowerShell FileSystem drives that use standard drive-letter roots, so additional drives such as D: or E: can be included.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it scan the Windows folder?</h3>
+        <p>No. Files whose paths are underneath the current Windows system root are excluded.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Will it delete the files it finds?</h3>
+        <p>No. The script only reports file size and path information.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Where is the report saved?</h3>
+        <p>As <code>Largest Files.txt</code> in the same folder as the PowerShell script.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Why can the scan take a while?</h3>
+        <p>It recursively walks the accessible files on every selected drive before sorting them, so systems with large drives or many files can take longer.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Why might a file be missing from the list?</h3>
+        <p>Folders that PowerShell cannot access are silently skipped, and files under the Windows system folder are intentionally excluded.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back">
+    <a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a>
+  </div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

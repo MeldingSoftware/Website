@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OneDrive Backup | Melding Software</title>
+<meta name="description" content="OneDrive Backup is a free Windows PowerShell utility that copies a local OneDrive sync folder to an external drive, temporarily hydrates online-only files, restores their Files On-Demand state afterward, and saves Robocopy logs and a hydration manifest."/>
+<meta name="keywords" content="OneDrive Backup, Files On-Demand backup, OneDrive external drive, PowerShell backup, Robocopy OneDrive, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/onedrive-backup.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OneDrive Backup",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A PowerShell backup utility that copies a OneDrive sync folder to an external drive, temporarily hydrates Files On-Demand content, and restores online-only state afterward.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/OneDrive%20Backup.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Backup Utility</p>
+    <h1 class="tool-title">OneDrive <span>Backup</span></h1>
+    <p class="tool-lead">
+      OneDrive Backup is a free PowerShell utility designed to copy the contents of a local OneDrive sync folder to an external drive while safely handling Files On-Demand content. Online-only files are temporarily hydrated when needed, copied with Robocopy, and then returned to their previous online-only state.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/OneDrive%20Backup.zip">Download OneDrive Backup</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Run Mode</div><div class="meta-value">Non-Admin</div></div>
+      <div class="meta-card"><div class="meta-label">Destination</div><div class="meta-value">External USB Drive</div></div>
+      <div class="meta-card"><div class="meta-label">Copy Engine</div><div class="meta-value">Robocopy</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+
+    <div class="warning-notice">
+      <strong>OneDrive must be signed in and available.</strong> The script is intentionally launched in a normal non-administrator PowerShell session because OneDrive cannot be started from an elevated session.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/onedrive_backup.png" alt="OneDrive Backup screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>OneDrive Backup running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Workflow</p>
+    <h2>How the backup works</h2>
+
+    <div class="flow-grid">
+      <div class="flow-item"><span class="flow-number">01</span><span class="flow-name">Find OneDrive</span></div>
+      <div class="flow-item"><span class="flow-number">02</span><span class="flow-name">Choose USB Destination</span></div>
+      <div class="flow-item"><span class="flow-number">03</span><span class="flow-name">Hydrate &amp; Copy</span></div>
+      <div class="flow-item"><span class="flow-number">04</span><span class="flow-name">Restore Online-Only State</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">OneDrive Detection</p>
+    <h2>Finding the sync folder automatically</h2>
+    <p>
+      Unless a source path is provided manually, the script checks OneDrive environment variables and current-user OneDrive registry account data for valid sync-folder paths.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Personal and business accounts</h3>
+        <p>The detection logic checks <code>OneDriveConsumer</code>, <code>OneDriveCommercial</code>, the general <code>OneDrive</code> environment variable, and OneDrive account registry entries.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Multiple candidates</h3>
+        <p>If more than one valid OneDrive folder is found, the current script lists the candidates and uses the first resolved path.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Signed-in check</h3>
+        <p>The script verifies account information, the sync folder, and local OneDrive settings before considering OneDrive ready.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Starts OneDrive when needed</h3>
+        <p>If OneDrive is signed in but not running, the non-admin script tries to locate OneDrive.exe, start it, and wait briefly for the process to become available.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Destination</p>
+    <h2>External-drive selection</h2>
+    <p>
+      When no explicit destination path or volume label is supplied, the script searches for USB-attached storage volumes and automatically selects the eligible destination with the most free space.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>USB detection</h3>
+        <p>The preferred path uses the Windows Storage cmdlets to identify disks whose BusType is USB. A WMI-based USB-disk fallback is also included.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Source drive excluded</h3>
+        <p>A destination that uses the same drive letter as the OneDrive source is excluded from automatic selection.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Cloud-style labels ignored</h3>
+        <p>Volumes whose labels begin with Google Drive, OneDrive, Dropbox, iCloud, Box, or SharePoint are ignored by the automatic USB destination scan.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Manual overrides supported</h3>
+        <p>The PowerShell script also accepts an explicit destination path or a destination volume label when run with parameters.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Free-Space Checks</p>
+    <h2>Source and destination safeguards</h2>
+    <p>
+      Before copying, OneDrive Backup calculates the logical size of the transferable OneDrive files and checks available capacity on both the source and destination drives.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>5 GB destination buffer</h3>
+        <p>By default, the destination must have enough free space for the calculated OneDrive logical size plus a 5 GB free-space buffer.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>5 GB source buffer</h3>
+        <p>When online-only files need to be hydrated, the script also preserves a default 5 GB source-drive buffer beyond the temporary space required for that batch.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Large folders can be split</h3>
+        <p>If an entire directory would require too much temporary local space to hydrate at once, the script can enqueue its child items and process them in smaller batches.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Items can be skipped</h3>
+        <p>If even the smaller work item cannot be hydrated without violating the source free-space buffer, the script warns and skips that item rather than filling the drive.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Files On-Demand</p>
+    <h2>Temporary hydration of online-only files</h2>
+    <p>
+      OneDrive Backup examines OneDrive file attributes to distinguish Always Available, Online Only, and locally available content. Online-only files needed for a backup batch are temporarily pinned with Windows <code>attrib</code>, then the script waits until they can be read.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Pin for backup</h3>
+        <p>Online-only files are changed with <span class="code-line">attrib -u +p</span> so OneDrive downloads their content locally.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Hydration wait</h3>
+        <p>The script checks every five seconds until the files are no longer online-only and can be opened for reading. The default hydration timeout is 90 minutes.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Restore previous state</h3>
+        <p>After the batch copy attempt, temporarily hydrated files are returned to online-only state with <span class="code-line">attrib +u -p</span>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Hydration manifest</h3>
+        <p>A JSON manifest records affected paths, batch roots, whether files were pinned, whether they were restored, and timestamps.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      This design is intended to avoid permanently converting the user's online-only OneDrive library into an always-local copy just to perform the backup.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Copy Process</p>
+    <h2>Robocopy backup behavior</h2>
+    <p>
+      OneDrive Backup uses Windows Robocopy to preserve the OneDrive folder structure on the external drive. The copy uses restartable mode, unbuffered I/O, file and directory timestamps/attributes, junction exclusion, limited retries, and multithreaded copying.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Folder copies</h3>
+        <p>Directory work items use <code>/E</code> so subdirectories, including empty directories, are included.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Restartable and multithreaded</h3>
+        <p>The current arguments include <code>/Z</code>, <code>/J</code>, and <code>/MT:16</code>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Limited retry behavior</h3>
+        <p>Robocopy is configured with two retries and a two-second wait between retries using <code>/R:2 /W:2</code>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Junctions excluded</h3>
+        <p><code>/XJ</code> is used to avoid following junction points that could cause unexpected recursion.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Backup Output</p>
+    <h2>Timestamped backup folder, log, and manifest</h2>
+    <p>
+      Each normal run creates a new destination folder named with the current date and time, for example:
+    </p>
+
+    <div class="notice">
+      <strong>OneDrive Backup 2026-10-24 12-30-00</strong>
+    </div>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>robocopy.log</h3>
+        <p>Robocopy output is appended to a log file inside the backup folder. Copy failures with Robocopy exit codes 8 or higher are recorded and surfaced as warnings.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>hydration-manifest.json</h3>
+        <p>The manifest records online-only files that were temporarily pinned during the run and whether their original state was restored.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Continues after copy failures</h3>
+        <p>A failed work item is recorded, but the queue continues so other OneDrive items can still be backed up.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Final summary</h3>
+        <p>At completion, the script reports whether the backup completed cleanly or with warnings and displays the backup root, log-file path, and manifest path.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">WhatIf</p>
+    <h2>Optional dry-run mode</h2>
+    <p>
+      The PowerShell script supports a <code>-WhatIf</code> switch. In that mode it reports the intended destination and Robocopy commands without creating the backup folder, changing Files On-Demand state, saving the manifest, or copying files.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How To Run</p>
+    <h2>Launching OneDrive Backup</h2>
+
+    <ol class="steps">
+      <li>Make sure OneDrive is signed in and that the PC is online.</li>
+      <li>Connect an external USB drive with enough free space for the backup.</li>
+      <li>Download and extract <strong>OneDrive Backup.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell in normal non-admin mode with <span class="code-line">-ExecutionPolicy Bypass</span>.</li>
+      <li>The script detects the OneDrive folder and checks that OneDrive is ready.</li>
+      <li>An eligible external USB destination is selected automatically unless parameters specify another destination.</li>
+      <li>Online-only content is hydrated in manageable batches, copied, and restored to online-only state afterward.</li>
+      <li>Review the final backup path, Robocopy log, and hydration manifest.</li>
+      <li>Press Enter to close the script.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What is intentionally skipped or unchanged</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>desktop.ini</h3>
+        <p>The script explicitly skips files named <code>desktop.ini</code>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Selected hidden/system GUID items</h3>
+        <p>Hidden or system items whose names match a GUID-style pattern are excluded by the current skip logic.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No source deletion</h3>
+        <p>The current script copies OneDrive content to another location. It does not delete backed-up source files from OneDrive.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No forced admin elevation</h3>
+        <p>The included launcher deliberately starts PowerShell without <code>-Verb RunAs</code>. This helps preserve normal OneDrive process/account behavior.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Does OneDrive Backup require administrator access?</h3>
+        <p>No. The included Run Me.bat intentionally starts it in non-admin mode, and the script warns that OneDrive cannot be started from an elevated session.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it back up online-only files?</h3>
+        <p>Yes, when there is enough temporary source-drive space. Those files are pinned, hydrated, copied, and then restored to online-only state.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>How does it choose the external drive?</h3>
+        <p>If no destination is specified, it finds eligible USB volumes and selects the one with the most free space.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Will it fill my C: drive while downloading cloud files?</h3>
+        <p>The script checks temporary hydration requirements and keeps a default 5 GB source-drive buffer. Oversized folders can be split into smaller batches, and items can be skipped when there still is not enough space.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it overwrite one fixed backup folder?</h3>
+        <p>No. Each normal run creates a new timestamped <strong>OneDrive Backup yyyy-MM-dd HH-mm-ss</strong> folder.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>How can I see what failed?</h3>
+        <p>Robocopy output is saved in <code>robocopy.log</code>, failed work items are summarized at the end, and the hydration manifest records the temporary Files On-Demand state changes.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a></div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

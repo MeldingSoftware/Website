@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Media Player | Melding Software</title>
+<meta name="description" content="Media Player is a free Windows PowerShell WPF media player with local file loading, play/pause controls, 10-second seek, interactive progress seeking, volume, playback time, fullscreen, and auto-hiding controls."/>
+<meta name="keywords" content="PowerShell Media Player, Windows media player, WPF MediaElement, MP4 player, MP3 player, fullscreen media player, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/media-player.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Media Player",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows",
+  "description": "A WPF PowerShell media player for local video and audio with playback controls, seek, volume, playback time, fullscreen, and automatic control hiding.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Media%20Player.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home">
+    <img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/>
+  </a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Multimedia Utility</p>
+    <h1 class="tool-title">Media <span>Player</span></h1>
+    <p class="tool-lead">
+      Media Player is a free Windows PowerShell application built with WPF and the Windows MediaElement control. It plays local video and audio files in a resizable interface with playback controls, interactive seeking, playback time, volume control, fullscreen support, and controls that automatically hide during playback.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Media%20Player.zip">Download Media Player</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Interface</div><div class="meta-value">WPF</div></div>
+      <div class="meta-card"><div class="meta-label">Media Source</div><div class="meta-value">Local Files</div></div>
+      <div class="meta-card"><div class="meta-label">Playback Engine</div><div class="meta-value">Windows MediaElement</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/media_player.png" alt="Media Player screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Media Player running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Features</p>
+    <h2>Playback controls</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Load media</h3>
+        <p>
+          The load button opens a standard Windows file picker. The current filter highlights MP4, MP3, WMV, AVI, and MKV files, while an <strong>All Files</strong> option is also available.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Play and pause</h3>
+        <p>
+          Dedicated Play and Pause buttons control the WPF MediaElement and start or stop the progress timer used for the playback position display.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Rewind and fast-forward</h3>
+        <p>
+          Rewind moves playback backward by 10 seconds. Fast-forward moves playback ahead by 10 seconds.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Interactive progress seeking</h3>
+        <p>
+          A transparent slider is layered over the visible progress bar. Clicking or dragging on that area changes the MediaElement playback position.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Playback timer</h3>
+        <p>
+          The player updates approximately every 500 milliseconds and shows elapsed time and total media duration in <code>hh:mm:ss</code> format.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Volume slider</h3>
+        <p>
+          Volume is adjustable from 0 to 1 using the horizontal volume slider. The player starts with the slider at full volume.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">File Selection</p>
+    <h2>Formats shown in the file picker</h2>
+    <p>
+      The current Open File dialog highlights these media extensions:
+    </p>
+
+    <div class="format-grid">
+      <div class="format-item">MP4</div>
+      <div class="format-item">MP3</div>
+      <div class="format-item">WMV</div>
+      <div class="format-item">AVI</div>
+      <div class="format-item">MKV</div>
+    </div>
+
+    <div class="notice">
+      Displaying a file extension in the picker does not guarantee the Windows MediaElement can decode every file that uses that extension. Actual playback depends on the codecs available to Windows and on the encoding used inside the media file.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Fullscreen</p>
+    <h2>Fullscreen and multi-monitor behavior</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Fullscreen button</h3>
+        <p>
+          The fullscreen button removes the normal window border, disables resizing, makes the window topmost, and expands the player to the full bounds of the monitor where the window is currently located.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Double-click fullscreen</h3>
+        <p>
+          Double-clicking the player toggles fullscreen unless the click originated on a button or slider.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Escape to leave fullscreen</h3>
+        <p>
+          Pressing <strong>Esc</strong> while fullscreen restores the normal bordered player window.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Playback position preserved</h3>
+        <p>
+          Before the window changes fullscreen state, the current media position is stored and reapplied afterward so playback stays at the same point.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Interface</p>
+    <h2>Auto-hiding controls and cursor</h2>
+    <p>
+      After media is loaded, a two-second timer hides the controls panel, progress controls, playback timer, and mouse cursor while video or audio is present. Moving the mouse shows the controls again and restarts the two-second timer.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How It Works</p>
+    <h2>Running Media Player</h2>
+
+    <ol class="steps">
+      <li>Download and extract <strong>Media Player.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell with <span class="code-line">-ExecutionPolicy Bypass</span> and requests administrator elevation through UAC.</li>
+      <li>The PowerShell console is hidden and the WPF player window opens centered at 1200 × 600.</li>
+      <li>Click the menu/load button and choose a local media file.</li>
+      <li>Playback starts automatically after a file is selected.</li>
+      <li>Use Play, Pause, ±10-second seek, progress seeking, volume, fullscreen, or the close button as needed.</li>
+    </ol>
+
+    <div class="notice">
+      The current player does not automatically scan media folders, build a library, or stream online content. A local file is selected manually each time through the file picker.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Codec Help</p>
+    <h2>Black video or unsupported playback</h2>
+    <p>
+      The ZIP includes a shortcut named <strong>K-Lite Codec Pack</strong> that opens the official Codec Guide page for the K-Lite Codec Pack Standard download. The included Read Me recommends trying K-Lite when a video opens but displays a black picture because a required codec may be missing.
+    </p>
+
+    <div class="warning-notice">
+      K-Lite is optional third-party software and is not bundled or silently installed by Media Player. The ZIP only contains an Internet shortcut to <strong>codecguide.com</strong>. Review the external download before installing it.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What Media Player accesses</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Local media files</h3>
+        <p>
+          The player opens the local file you explicitly select in the Windows file picker and assigns its path to the WPF MediaElement source.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No automatic uploads</h3>
+        <p>
+          The PowerShell script contains no web-request or upload logic. Media selected for playback stays local to the Windows playback components.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No persistent installation</h3>
+        <p>
+          The current script does not create a Windows service, scheduled task, startup entry, or media database.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Hidden PowerShell console</h3>
+        <p>
+          A small native interop helper calls the Windows console API to hide the underlying PowerShell console so only the graphical media player remains visible.
+        </p>
+      </article>
+    </div>
+  </section>
+<section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Can it play both video and audio?</h3>
+        <p>Yes. The player uses the same MediaElement for local video and audio files.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does media start automatically after loading?</h3>
+        <p>Yes. Once a file is selected and assigned to the player, the script starts playback and the progress timer.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>How far do the rewind and fast-forward buttons jump?</h3>
+        <p>Each button changes the current position by 10 seconds.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can I seek by clicking the progress bar?</h3>
+        <p>Yes. A transparent slider sits over the visible progress bar and changes the media position when used.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>How do I exit fullscreen?</h3>
+        <p>Press Esc, click the fullscreen button again, or double-click outside a button/slider area.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Why is my video black?</h3>
+        <p>The Read Me identifies missing codec support as one possible cause. The ZIP includes an optional shortcut to the K-Lite Codec Pack Standard download page for troubleshooting.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back">
+    <a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a>
+  </div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

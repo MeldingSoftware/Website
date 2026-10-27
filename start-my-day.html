@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Start My Day | Melding Software</title>
+<meta name="description" content="Start My Day is a free Windows PowerShell daily briefing script that displays the date, history, quote, weather, news, sports, lottery, market, and cryptocurrency information in one console window."/>
+<meta name="keywords" content="Start My Day, PowerShell daily briefing, weather, news, sports, lottery, stocks, crypto, daily dashboard, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/start-my-day.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Start My Day",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A PowerShell daily briefing that displays date, history, quote, weather, news, sports, lottery, market, and cryptocurrency information in a console window.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Start%20My%20Day.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Daily Briefing</p>
+    <h1 class="tool-title">Start My <span>Day</span></h1>
+    <p class="tool-lead">
+      Start My Day is a configurable PowerShell briefing that brings the current date, a historical event, quote, local weather, news headlines, sports schedules, lottery results, market data, and cryptocurrency prices into one console window.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Start%20My%20Day.zip">Download Start My Day</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Interface</div><div class="meta-value">PowerShell Console</div></div>
+      <div class="meta-card"><div class="meta-label">Internet</div><div class="meta-value">Required</div></div>
+      <div class="meta-card"><div class="meta-label">Setup</div><div class="meta-value">Some API Keys Required</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/start_my_day.png" alt="Start My Day screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Start My Day running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Briefing Sections</p>
+    <h2>What Start My Day displays</h2>
+
+    <div class="section-grid">
+      <div class="section-item"><strong>Day &amp; Date</strong><span>Current weekday, month, day, and year from the PC clock.</span></div>
+      <div class="section-item"><strong>This Day in History</strong><span>A historical event for today's month/day from Numbers API through RapidAPI.</span></div>
+      <div class="section-item"><strong>Quote of the Day</strong><span>A daily quotation and author from They Said So.</span></div>
+      <div class="section-item"><strong>Weather</strong><span>Location-based National Weather Service forecast information.</span></div>
+      <div class="section-item"><strong>News</strong><span>The first 10 titles from the Google News U.S. RSS feed.</span></div>
+      <div class="section-item"><strong>Sports</strong><span>NBA, NFL, NCAA football, NHL, and MLB games scheduled for the current date.</span></div>
+      <div class="section-item"><strong>Lotto</strong><span>Latest Mega Millions and Powerball numbers plus the returned next-jackpot values.</span></div>
+      <div class="section-item"><strong>Stocks</strong><span>Major market indexes plus gold and crude-oil market quotes.</span></div>
+      <div class="section-item"><strong>Crypto</strong><span>Current USD prices for Bitcoin, Ethereum, and Dogecoin.</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Setup Required</p>
+    <h2>API keys and sports timezone</h2>
+    <p>
+      The included script intentionally contains placeholder values such as <code>REPLACE WITH RAPIDAPI KEY</code>, <code>REPLACE WITH API KEY</code>, and <code>REPLACE WITH TIMEZONE</code>. Those sections will not work correctly until the placeholders are replaced with valid account credentials/settings.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>This Day in History</h3>
+        <p>Requires a RapidAPI key for the Numbers API endpoint hosted at <code>numbersapi.p.rapidapi.com</code>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Quote of the Day</h3>
+        <p>Requires an API key for They Said So and sends it through the <code>X-TheySaidSo-Api-Secret</code> request header.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Sports</h3>
+        <p>Requires RapidAPI access for API-Basketball, API-American-Football, API-Hockey, and API-Baseball, plus a configured API timezone.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Lotto and Stocks</h3>
+        <p>Mega Millions, Powerball, and Yahoo Finance data in the current script also require RapidAPI keys.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      The ZIP includes <strong>Sports Time Zones.txt</strong>, which contains the timezone strings expected by the sports APIs. For example, the list includes values such as <code>America&amp;2FNew_York</code> and <code>America&amp;2FDetroit</code>.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Weather</p>
+    <h2>IP-based location and National Weather Service forecast</h2>
+    <p>
+      Weather does not require a user-supplied API key in the current script. It performs several requests to estimate the user's location and obtain a forecast.
+    </p>
+
+    <ol class="steps">
+      <li><code>api.ipify.org</code> is queried for the current public IP address.</li>
+      <li>The public IP is sent to <code>ip-api.com</code> to obtain approximate latitude, longitude, city, and country information.</li>
+      <li>Those coordinates are sent to the National Weather Service <code>api.weather.gov/points</code> endpoint.</li>
+      <li>The forecast URL returned by NWS is requested.</li>
+      <li>The console displays periods named Today, This Afternoon, and Tonight when those periods are present.</li>
+    </ol>
+
+    <div class="warning-notice">
+      The current location request to <code>ip-api.com</code> uses an <strong>HTTP</strong> URL rather than HTTPS. Also, IP-based location is approximate and may identify an ISP/network location rather than the computer's exact physical location.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">News</p>
+    <h2>Top 10 Google News headlines</h2>
+    <p>
+      Start My Day downloads the U.S. English Google News RSS feed at <code>news.google.com</code>, parses it as XML, and writes the first 10 item titles to the console. The current code does not open the stories or save them to disk.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Sports</p>
+    <h2>Today's game schedule</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Basketball</h3>
+        <p>Queries API-Basketball and displays NBA games, including results whose league name is NBA or NBA In-Season Tournament.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Football</h3>
+        <p>One API-American-Football request is used for both NFL and NCAA game filtering.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Hockey</h3>
+        <p>Queries API-Hockey and displays games whose league name is NHL.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Baseball</h3>
+        <p>Queries API-Baseball and displays games whose league name is MLB.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      Game times are parsed from the API's <code>HH:mm</code> value and displayed as four-digit 24-hour times such as <strong>1930</strong>.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Lotto</p>
+    <h2>Mega Millions and Powerball</h2>
+    <p>
+      Two RapidAPI endpoints are queried for the latest drawing data. The script writes each returned number set together with the endpoint's next-jackpot value.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Markets</p>
+    <h2>Stocks, indexes, commodities, and crypto</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Yahoo Finance market quotes</h3>
+        <p>The RapidAPI Yahoo Finance request asks for <code>^DJI</code>, <code>^IXIC</code>, <code>^SPX</code>, <code>GC=F</code>, and <code>CL=F</code>, representing major U.S. indexes plus gold and crude-oil futures.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Market fields</h3>
+        <p>For each returned quote, the script formats symbol, name, market price, daily low, daily high, and percentage change into a PowerShell table.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>CryptoCompare</h3>
+        <p>Crypto prices are fetched directly from CryptoCompare's public price endpoint without a user-supplied key in the current script.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Default cryptocurrencies</h3>
+        <p>The included function lists Bitcoin (BTC), Ethereum (ETH), and Dogecoin (DOGE) in USD. The Read Me notes that this list can be customized.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">External Services</p>
+    <h2>Network services contacted by the script</h2>
+    <p>
+      Depending on which sections are correctly configured and reached during a run, the current script contains requests to the following services:
+    </p>
+
+    <ul class="tool-list">
+      <li>RapidAPI-hosted Numbers API</li>
+      <li>They Said So Quote of the Day API</li>
+      <li>api.ipify.org</li>
+      <li>ip-api.com</li>
+      <li>api.weather.gov</li>
+      <li>Google News RSS</li>
+      <li>RapidAPI API-Basketball</li>
+      <li>RapidAPI API-American-Football</li>
+      <li>RapidAPI API-Hockey</li>
+      <li>RapidAPI API-Baseball</li>
+      <li>RapidAPI Mega Millions</li>
+      <li>RapidAPI Powerball</li>
+      <li>RapidAPI Yahoo Finance</li>
+      <li>CryptoCompare</li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How To Run</p>
+    <h2>Launching Start My Day</h2>
+
+    <ol class="steps">
+      <li>Download and extract <strong>Start My Day.zip</strong>.</li>
+      <li>Open <strong>Start My Day.ps1</strong> in a text editor.</li>
+      <li>Follow the included Read Me to obtain the API subscriptions/keys you want to use.</li>
+      <li>Replace the corresponding placeholder API-key values in the script.</li>
+      <li>Choose the required sports timezone from <strong>Sports Time Zones.txt</strong> and replace the timezone placeholder.</li>
+      <li>Save the edited PowerShell script.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell with <span class="code-line">-ExecutionPolicy Bypass</span> and requests administrator elevation through UAC.</li>
+      <li>The console is maximized and the configured daily information is requested and displayed in sequence.</li>
+      <li>Press Enter at the final prompt to exit.</li>
+    </ol>
+
+    <div class="notice">
+      The included Read Me notes that Windows 11 may display a “Windows protected your PC” SmartScreen message because the script was downloaded. Review the files before choosing “More info” and “Run anyway.”
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What the script does not do</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>No local report file</h3>
+        <p>The current script writes the briefing to the PowerShell console. It does not create a daily HTML, text, CSV, or database report.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No persistent installation</h3>
+        <p>The script does not create a service, scheduled task, startup entry, or background process.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No Windows configuration changes</h3>
+        <p>Other than changing the appearance/state of its own console window, the current PowerShell script is focused on requesting and displaying information rather than changing Windows settings.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>API credentials stay in the script file</h3>
+        <p>The current design expects keys to be typed directly into the PowerShell source. Anyone who can read that edited file can potentially read those API keys.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Does Start My Day work immediately after download?</h3>
+        <p>Only partially. Date, weather, news, and crypto do not require the user-supplied keys described in the Read Me, but history, quote, sports, lotto, and stock sections require setup in the current script.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it require an internet connection?</h3>
+        <p>Yes. Nearly every section except the local date depends on an online API or feed.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>How does it determine my weather location?</h3>
+        <p>It gets the public IP from ipify, looks up approximate coordinates through ip-api.com, then sends those coordinates to the National Weather Service.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>What sports are included?</h3>
+        <p>NBA basketball, NFL football, NCAA football, NHL hockey, and MLB baseball.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can I customize the market or crypto list?</h3>
+        <p>Yes. The Read Me explicitly notes that the Stocks and Crypto sections can be adjusted, though doing so requires editing the PowerShell code.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it save my daily briefing?</h3>
+        <p>No. The current version displays the information in the console only.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a></div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

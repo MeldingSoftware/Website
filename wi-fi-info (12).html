@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wi-Fi Info | Melding Software</title>
+<meta name="description" content="Wi-Fi Info is a free Windows PowerShell utility that lists saved Wi-Fi profile names and locally stored passwords from the current Windows installation and saves the results to a text file."/>
+<meta name="keywords" content="Wi-Fi Info, saved Wi-Fi profiles, Wi-Fi passwords, WLAN profiles, PowerShell, Windows Wi-Fi, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/wi-fi-info.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Wi-Fi Info",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A PowerShell utility that displays saved Windows Wi-Fi profile names and locally stored passwords, then saves the results to a text file.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Wi-Fi%20Info.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Wi-Fi Utility</p>
+    <h1 class="tool-title">Wi-Fi <span>Info</span></h1>
+    <p class="tool-lead">
+      Wi-Fi Info is a lightweight PowerShell utility that reads the Wi-Fi profiles already saved in the local Windows installation, displays their SSID names and any locally stored passwords Windows can reveal, and saves the results to a text file beside the script.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Wi-Fi%20Info.zip">Download Wi-Fi Info</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Permission</div><div class="meta-value">Administrator</div></div>
+      <div class="meta-card"><div class="meta-label">Source</div><div class="meta-value">Saved WLAN Profiles</div></div>
+      <div class="meta-card"><div class="meta-label">Output</div><div class="meta-value">Wifi Info.txt</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+
+    <div class="warning-notice">
+      <strong>Sensitive information:</strong> this utility can expose saved Wi-Fi passwords in clear text. Use it only on a Windows device you own or are authorized to manage, and protect or delete the generated text file when it is no longer needed.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/wi-fi_info.png" alt="Wi-Fi Info screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Wi-Fi Info running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Workflow</p>
+    <h2>How Wi-Fi Info works</h2>
+
+    <div class="flow-grid">
+      <div class="flow-item"><span class="flow-number">01</span><span class="flow-name">List Saved Profiles</span></div>
+      <div class="flow-item"><span class="flow-number">02</span><span class="flow-name">Read Stored Keys</span></div>
+      <div class="flow-item"><span class="flow-number">03</span><span class="flow-name">Display &amp; Save</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Saved Profiles</p>
+    <h2>Enumerates Windows WLAN profiles</h2>
+    <p>
+      The script begins with the built-in Windows command <span class="code-line">netsh wlan show profiles</span>. It extracts entries labeled <strong>All User Profile</strong> and treats each returned profile name as an SSID/profile to inspect.
+    </p>
+
+    <div class="notice">
+      Wi-Fi Info does not scan nearby wireless networks. It works from Wi-Fi profiles that Windows has already saved on the computer.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Password Retrieval</p>
+    <h2>Requests stored Wi-Fi keys in clear text</h2>
+    <p>
+      For each saved profile, the current script runs:
+    </p>
+
+    <div class="notice">
+      <span class="code-line">netsh wlan show profile name="PROFILE_NAME" key=clear</span>
+    </div>
+
+    <p>
+      It then searches the returned profile details for <strong>Key Content</strong>. When Windows exposes a stored wireless key, that value becomes the PASSWORD field associated with the SSID.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>SSID</h3>
+        <p>The profile name extracted from Windows is stored in the <strong>SSID</strong> column.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Password</h3>
+        <p>The value found after <strong>Key Content</strong> is stored in the <strong>PASSWORD</strong> column.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      Not every saved profile necessarily has a retrievable password. Open networks, enterprise-authenticated networks, profiles without a stored key, or profiles Windows cannot reveal may result in a blank password field.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Console Output</p>
+    <h2>SSID and password table</h2>
+    <p>
+      When profiles are found, the collected objects are formatted into a PowerShell table with <strong>SSID</strong> and <strong>PASSWORD</strong> columns. If no saved Wi-Fi profiles are detected, the script displays:
+    </p>
+
+    <div class="notice">
+      <strong>No Wi-Fi profiles found on this computer.</strong>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Saved Results</p>
+    <h2>Wifi Info.txt</h2>
+    <p>
+      After collecting the profile information, the script writes the same data to:
+    </p>
+
+    <div class="notice">
+      <span class="code-line">&lt;script directory&gt;\Wifi Info.txt</span>
+    </div>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Saved beside the script</h3>
+        <p>The destination is based on PowerShell's <code>$PSScriptRoot</code>, so the text file is created in the extracted Wi-Fi Info folder.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>ASCII text output</h3>
+        <p>The current script writes the results with <code>Out-File -Encoding ASCII</code>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Replaced on another run</h3>
+        <p>The script does not use <code>-Append</code>, so another run writes a new <strong>Wifi Info.txt</strong> at the same location.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Local file only</h3>
+        <p>The current script contains no command that uploads or transmits the generated text file.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How To Run</p>
+    <h2>Launching Wi-Fi Info</h2>
+
+    <ol class="steps">
+      <li>Use the utility only on a computer you own or are authorized to manage.</li>
+      <li>Download and extract <strong>Wi-Fi Info.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell with <span class="code-line">-ExecutionPolicy Bypass</span> and requests administrator elevation through UAC.</li>
+      <li>Windows saved Wi-Fi profiles are enumerated.</li>
+      <li>Each profile is queried with <span class="code-line">key=clear</span> so any locally stored key can be read.</li>
+      <li>The SSID/password table is displayed in the console.</li>
+      <li>The results are written to <strong>Wifi Info.txt</strong> beside the script.</li>
+      <li>Press Enter to exit.</li>
+    </ol>
+
+    <div class="notice">
+      The included Read Me notes that Windows 11 may display a “Windows protected your PC” SmartScreen message because the script was downloaded. Review the files before choosing “More info” and “Run anyway.”
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What the current script does and does not do</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Reads local Windows profiles</h3>
+        <p>The information comes from WLAN profiles already stored by Windows on the computer.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Does not discover remote passwords</h3>
+        <p>The script does not crack Wi-Fi encryption or obtain passwords from networks that are not already represented by saved Windows profiles.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No network requests</h3>
+        <p>The current PowerShell script contains no web request, API request, upload, or download logic.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No persistent installation</h3>
+        <p>It does not install a service, scheduled task, startup item, or other background component.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>What Wi-Fi networks does it show?</h3>
+        <p>Profiles already saved in Windows and returned as <strong>All User Profile</strong> entries by <code>netsh wlan show profiles</code>.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can it display saved Wi-Fi passwords?</h3>
+        <p>Yes. It requests each profile with <code>key=clear</code> and records the <strong>Key Content</strong> value when Windows provides one.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Why might a password be blank?</h3>
+        <p>The network may not use a stored pre-shared key, or Windows may not return a <strong>Key Content</strong> value for that profile.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Where is the result saved?</h3>
+        <p>As <strong>Wifi Info.txt</strong> in the same directory as <strong>Wi-Fi Info.ps1</strong>.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it send the passwords anywhere?</h3>
+        <p>No. The current script contains no network or upload functionality.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it require administrator access?</h3>
+        <p>The included batch launcher requests administrator elevation through UAC before running the PowerShell script.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a></div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

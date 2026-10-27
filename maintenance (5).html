@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Maintenance | Melding Software</title>
+<meta name="description" content="Maintenance is a comprehensive Windows PowerShell utility that performs system repair checks, cleanup, Windows and app updates, crash-dump analysis, drive optimization, restore-point handling, and produces an HTML maintenance report."/>
+<meta name="keywords" content="Windows maintenance, PowerShell maintenance, DISM SFC, CHKDSK, Windows Update, winget updates, crash dump analysis, cleanup, drive optimization, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/maintenance.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Maintenance",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A comprehensive Windows PowerShell maintenance utility covering repair checks, cleanup, updates, crash-dump analysis, drive optimization, restore-point handling, and HTML reporting.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Maintenance.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home">
+    <img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/>
+  </a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Comprehensive Windows Utility</p>
+    <h1 class="tool-title"><span>Maintenance</span></h1>
+    <p class="tool-lead">
+      Maintenance is a comprehensive Windows PowerShell utility that combines interactive startup and driver-software checks with file-system repair scheduling, Windows image repair, BSOD crash-dump analysis, browser and temporary-file cleanup, Windows and application updates, drive optimization, restore-point handling, and a detailed HTML report.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Maintenance.zip">Download Maintenance</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Permission</div><div class="meta-value">Administrator</div></div>
+      <div class="meta-card"><div class="meta-label">Report</div><div class="meta-value">HTML on Desktop</div></div>
+      <div class="meta-card"><div class="meta-label">Completion</div><div class="meta-value">Automatic Restart</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+
+    <div class="warning-notice">
+      <strong>Save your work before starting.</strong> The launcher requests administrator access, Maintenance closes open File Explorer windows and supported browsers during pre-flight, and Windows is automatically restarted when the maintenance run completes without a fatal error.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/maintenance.png" alt="Maintenance screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Maintenance running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Workflow</p>
+    <h2>What Maintenance runs</h2>
+    <p>
+      Maintenance performs a long sequence of repair, cleanup, update, reporting, and restart tasks. Some early steps are interactive so you can review startup apps and vendor driver software while you are still at the computer.
+    </p>
+
+    <div class="flow-grid">
+      <div class="flow-item"><span class="flow-number">01</span><span class="flow-name">Startup Optimization</span></div>
+      <div class="flow-item"><span class="flow-number">02</span><span class="flow-name">Intel / NVIDIA / AMD Software</span></div>
+      <div class="flow-item"><span class="flow-number">03</span><span class="flow-name">Schedule CHKDSK</span></div>
+      <div class="flow-item"><span class="flow-number">04</span><span class="flow-name">DISM &amp; SFC</span></div>
+      <div class="flow-item"><span class="flow-number">05</span><span class="flow-name">Crash Dumps</span></div>
+      <div class="flow-item"><span class="flow-number">06</span><span class="flow-name">Browser Cleanup</span></div>
+      <div class="flow-item"><span class="flow-number">07</span><span class="flow-name">Temp Cleanup</span></div>
+      <div class="flow-item"><span class="flow-number">08</span><span class="flow-name">Windows Updates</span></div>
+      <div class="flow-item"><span class="flow-number">09</span><span class="flow-name">App Updates</span></div>
+      <div class="flow-item"><span class="flow-number">10</span><span class="flow-name">Drive Optimization</span></div>
+      <div class="flow-item"><span class="flow-number">11</span><span class="flow-name">Restore Point</span></div>
+      <div class="flow-item"><span class="flow-number">12</span><span class="flow-name">Report + Restart</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Pre-flight</p>
+    <h2>Keeping the computer awake during maintenance</h2>
+    <p>
+      The script records the currently active Windows power plan, creates or reuses a custom <strong>Always on</strong> power scheme, activates it, and sets monitor, disk, standby, and hibernate timeouts to zero for both AC and DC power. In the script's final cleanup block, it attempts to restore the power plan that was active before Maintenance started.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Interactive Checks</p>
+    <h2>Startup apps and hardware-vendor software</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Startup Optimization</h3>
+        <p>
+          Task Manager is opened so you can review the <strong>Startup apps</strong> tab and disable unnecessary startup entries yourself. Maintenance asks whether any apps were disabled and records the result in the report.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Intel</h3>
+        <p>
+          If Intel hardware is detected, Maintenance checks for Intel Driver &amp; Support Assistant. When missing, it can install the tool through WinGet after asking for permission.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>NVIDIA</h3>
+        <p>
+          If NVIDIA hardware is detected, Maintenance checks for NVIDIA App. When missing, it can open NVIDIA's official App download page so you can download and install it manually.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>AMD</h3>
+        <p>
+          If AMD hardware is detected, Maintenance checks for AMD Software / Adrenalin / Radeon Software. When missing, it can open AMD's official Drivers and Support page for manual installation.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Disk &amp; Windows Repair</p>
+    <h2>CHKDSK, DISM, and SFC</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>CHKDSK on next boot</h3>
+        <p>
+          Maintenance schedules <span class="code-line">CHKDSK /f /r</span> on the Windows system drive for the next boot. If Riot Vanguard's tray process is detected, the script asks you to exit Vanguard before continuing.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>DISM image servicing</h3>
+        <p>
+          The repair sequence runs DISM AnalyzeComponentStore, StartComponentCleanup, CheckHealth, ScanHealth, and RestoreHealth against the online Windows installation.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>System File Checker</h3>
+        <p>
+          After DISM, Maintenance runs <span class="code-line">sfc /scannow</span> to verify protected Windows system files and attempt repair when Windows reports corruption.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Post-restart CHKDSK report</h3>
+        <p>
+          A one-time RunOnce helper checks recent Windows CHKDSK/Wininit events and <code>Bootex.log</code> after reboot, inserts the result into the HTML report, then removes its RunOnce entry.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Crash Analysis</p>
+    <h2>BSOD crash-dump inspection</h2>
+    <p>
+      Maintenance checks the standard Windows kernel crash-dump locations <code>C:\Windows\MEMORY.DMP</code> and <code>C:\Windows\Minidump</code>. When dumps are present, it attempts automated debugger analysis.
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>CDB debugger</h3>
+        <p>
+          The script looks for Microsoft's CDB debugger. If it is not available, Maintenance can install Microsoft WinDbg through WinGet so CDB is available for automated analysis.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Temporary debugger installation</h3>
+        <p>
+          When the script installed WinDbg only for this maintenance run, it attempts to remove that installation after dump analysis completes.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>BugCheck interpretation</h3>
+        <p>
+          The report can include the dump type, BugCheck name/code, a plain-language description, likely module or driver information, and analysis guidance when CDB returns usable data.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Microsoft symbols</h3>
+        <p>
+          CDB is configured to use a local symbol cache backed by Microsoft's public symbol server while analyzing the dump files.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Cleanup</p>
+    <h2>Browser and temporary-file cleanup</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Supported browsers</h3>
+        <p>
+          Browser Cleanup handles detected Chrome, Edge, Brave, Opera, Opera GX, and Firefox profiles. Browser processes are stopped before the cleanup runs.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Browser data cleared</h3>
+        <p>
+          Depending on the browser, the script clears cache, code cache, GPU cache, and history/download-history database files. It measures estimated space before and after cleanup.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Windows temporary locations</h3>
+        <p>
+          Temp Cleanup covers selected Windows/user temp and cache locations including Windows Temp, SoftwareDistribution downloads, Recent items, INetCache, Office web cache, D3D cache, Windows Error Reporting, Delivery Optimization cache, Panther logs, CBS logs, the Recycle Bin, and <code>Windows.old</code> when present.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Before/after totals</h3>
+        <p>
+          The script measures the configured cleanup locations before and after removal and records estimated total space freed.
+        </p>
+      </article>
+    </div>
+
+    <div class="warning-notice">
+      Browser Cleanup removes browser history/download-history databases for supported profiles. Temp Cleanup can also remove <code>Windows.old</code> and Windows Update download-cache contents when those locations exist. Run Maintenance only when you are comfortable clearing this data.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Updates</p>
+    <h2>Windows and application updates</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Windows Update</h3>
+        <p>
+          Maintenance installs the NuGet provider and PSWindowsUpdate module as needed, then requests Windows/Microsoft updates with <code>Install-WindowsUpdate</code>. Feature-upgrade titles containing “Upgrade” are excluded and update-triggered reboot is suppressed until Maintenance performs its own final restart.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Application updates</h3>
+        <p>
+          WinGet is used to upgrade installed applications with hidden/non-interactive options, source/package agreement acceptance, and support for packages whose installed version is unknown.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Battle.net handling</h3>
+        <p>
+          When a Battle.net update is available, Maintenance searches for the existing Battle.net installation location and tries to update it in place. Battle.net is temporarily pinned while the general WinGet update pass runs so it is not processed a second time.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Failure reporting</h3>
+        <p>
+          Windows Update and App Update failures are captured for the final report rather than silently presenting the section as successful.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Optimization &amp; Recovery</p>
+    <h2>Drive optimization and restore point</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Drive Optimization</h3>
+        <p>
+          <code>Optimize-Volume</code> is run for non-removable, non-optical volumes that have drive letters. Each drive receives its own success or error result in the report.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>System Protection</h3>
+        <p>
+          Maintenance attempts to ensure System Protection is enabled on the system drive before creating a restore point.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Restore-point verification</h3>
+        <p>
+          The latest restore point is recorded before and after the attempt so the script can verify whether a new Maintenance restore point was actually created.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <h3>24-hour Windows limit</h3>
+        <p>
+          If Windows reports that a restore point already exists within 1440 minutes (24 hours), the report treats that as a completed result rather than a failure.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">HTML Report</p>
+    <h2>System information and maintenance results</h2>
+    <p>
+      Maintenance builds a local HTML report containing a system-information header and individual status sections for the work performed. The report is finalized on the Desktop after the reboot/CHKDSK handoff completes.
+    </p>
+
+    <div class="report-grid">
+      <div class="report-item">Computer</div>
+      <div class="report-item">Operating System</div>
+      <div class="report-item">Battery Health</div>
+      <div class="report-item">Motherboard</div>
+      <div class="report-item">CPU</div>
+      <div class="report-item">GPU</div>
+      <div class="report-item">RAM</div>
+      <div class="report-item">Storage</div>
+    </div>
+
+    <div class="notice">
+      Laptop battery health is calculated from design capacity and full-charge capacity when that information is available. The script may temporarily generate a Windows battery report to obtain those values and removes that temporary helper report afterward.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Restart &amp; Finalization</p>
+    <h2>What happens after Maintenance finishes</h2>
+
+    <ol class="steps">
+      <li>The working HTML report is written under a hidden <strong>Maintenance Temp</strong> folder in LocalAppData.</li>
+      <li>A one-time <strong>RunOnce</strong> entry is created for the current user.</li>
+      <li>If the main run completed without a fatal error, Windows is restarted immediately.</li>
+      <li>CHKDSK can run during boot if Windows determines the scheduled check is needed.</li>
+      <li>At the next sign-in, the hidden helper retrieves the newest CHKDSK result or <code>Bootex.log</code> result and inserts the normalized result into the report.</li>
+      <li>The completed report is moved to the Desktop as <strong>Maintenance MM-DD-YY.html</strong> and opened automatically.</li>
+      <li>The helper removes its RunOnce entry and cleans the temporary Maintenance working folder.</li>
+    </ol>
+
+    <div class="notice">
+      The post-restart helper can also remove a recent <strong>Maintenance.zip</strong> from Downloads and a recent extracted <strong>Maintenance</strong> folder when that extracted folder carries the marker created by the script.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Launcher</p>
+    <h2>Administrator access and ExecutionPolicy</h2>
+    <p>
+      <strong>Run Me.bat</strong> launches a new elevated PowerShell process with UAC using <span class="code-line">-Verb RunAs</span> and uses <span class="code-line">-ExecutionPolicy Bypass</span> for the launched process. The PowerShell script itself also declares <span class="code-line">#requires -RunAsAdministrator</span>.
+    </p>
+  </section>
+<section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Will Maintenance restart my computer?</h3>
+        <p>Yes. When the main script finishes without a fatal error, it issues an immediate Windows restart. Save your work before starting.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does Maintenance run CHKDSK immediately?</h3>
+        <p>It schedules <code>CHKDSK /f /r</code> on the system drive for the next boot. The final HTML report is updated with the result after reboot and sign-in.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it analyze crash dumps?</h3>
+        <p>Yes. It checks <code>MEMORY.DMP</code> and the Windows Minidump folder and can use Microsoft's CDB debugger for automated analysis.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it clear browser history?</h3>
+        <p>Yes. The current Browser Cleanup removes history/download-history database files for supported browser profiles along with several cache types.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it update third-party apps?</h3>
+        <p>Yes. The App Updates section uses WinGet for installed application upgrades and includes special handling for Battle.net.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Where is the final report saved?</h3>
+        <p>After restart and the one-time CHKDSK result update, the completed HTML report is moved to the current user's Desktop.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it preserve my previous power plan?</h3>
+        <p>The script records the active power-plan GUID before Maintenance begins and attempts to restore that plan in its final cleanup block.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Can I stop at interactive prompts?</h3>
+        <p>The script's yes/no prompts accept <strong>qq</strong> as an exit command, allowing you to leave Maintenance during those interactive stages.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back">
+    <a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a>
+  </div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

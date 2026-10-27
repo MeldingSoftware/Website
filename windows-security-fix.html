@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523"
+     crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Windows Security Fix | Melding Software</title>
+<meta name="description" content="Windows Security Fix is a free PowerShell repair utility that restores Microsoft Defender and Windows Security components by removing conflicting policy settings, repairing SecHealthUI, setting core services to Automatic, and checking Defender WMI components."/>
+<meta name="keywords" content="Windows Security Fix, Microsoft Defender repair, Windows Security repair, SecHealthUI, DisableAntiSpyware, Defender WMI, PowerShell, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/windows-security-fix.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Windows Security Fix",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "A PowerShell repair utility that restores Microsoft Defender and Windows Security components by removing conflicting policy settings, repairing SecHealthUI, verifying service startup types, and checking Defender WMI components.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Windows%20Security%20Fix.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Security Repair Utility</p>
+    <h1 class="tool-title">Windows Security <span>Fix</span></h1>
+    <p class="tool-lead">
+      Windows Security Fix is a free PowerShell repair utility designed to restore Microsoft Defender and the Windows Security interface toward normal Windows operation when policy settings, app registration, service configuration, or Defender WMI components are damaged or misconfigured.
+    </p>
+
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Windows%20Security%20Fix.zip">Download Windows Security Fix</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows 10 / 11</div></div>
+    
+      <div class="meta-card"><div class="meta-label">Permission</div><div class="meta-value">Administrator</div></div>
+      <div class="meta-card"><div class="meta-label">Targets</div><div class="meta-value">Defender + SecHealthUI</div></div>
+      <div class="meta-card"><div class="meta-label">Restart</div><div class="meta-value">May Be Needed</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+
+    <div class="warning-notice">
+      This is an active repair/reset tool. It removes Microsoft Defender policy keys and changes service startup configuration. Review the behavior below before running it, especially on work, school, or otherwise managed PCs where security policy may be intentionally enforced.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/windows/windows_security_fix%20.png" alt="Windows Security Fix screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Windows Security Fix running on Windows.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Repair Sequence</p>
+    <h2>Five major repair stages</h2>
+
+    <div class="flow-grid">
+      <div class="flow-item"><span class="flow-number">01</span><span class="flow-name">Remove DisableAntiSpyware</span></div>
+      <div class="flow-item"><span class="flow-number">02</span><span class="flow-name">Repair SecHealthUI</span></div>
+      <div class="flow-item"><span class="flow-number">03</span><span class="flow-name">Set Services Automatic</span></div>
+      <div class="flow-item"><span class="flow-number">04</span><span class="flow-name">Clear Defender Policies</span></div>
+      <div class="flow-item"><span class="flow-number">05</span><span class="flow-name">Check Defender WMI</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Registry Repair</p>
+    <h2>Removes DisableAntiSpyware when present</h2>
+    <p>
+      The first repair step runs the Windows REG command against:
+    </p>
+
+    <div class="notice">
+      <span class="code-line">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\DisableAntiSpyware</span>
+    </div>
+
+    <p>
+      If the value exists, it is deleted. If the REG command reports that the value is not present, the script marks the step as skipped with no action needed.
+    </p>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Windows Security App</p>
+    <h2>Different repair logic for Windows 10 and Windows 11</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Windows 11</h3>
+        <p>The script identifies Windows 11 as build/version 10.0.22000 or newer and runs <span class="code-line">Get-AppxPackage Microsoft.SecHealthUI -AllUsers | Reset-AppxPackage</span>.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Windows 10</h3>
+        <p>The script first launches <code>windowsdefender:</code> and waits three seconds to see whether the Windows Security UI process starts successfully.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>If Windows 10 launches successfully</h3>
+        <p>If <code>SecHealthUI</code> is detected, the test instance is stopped and the reset/re-registration step is skipped.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>If Windows 10 launch fails</h3>
+        <p>The script searches <code>C:\Windows\SystemApps</code> for the Microsoft.SecHealthUI system-app folder and re-registers its <code>AppxManifest.xml</code> with <code>Add-AppxPackage</code>.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Defender Services</p>
+    <h2>Sets core security services to Automatic</h2>
+    <p>
+      Windows Security Fix attempts to set the startup type of three services to <strong>Automatic</strong>:
+    </p>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>WinDefend</h3>
+        <p>The Microsoft Defender Antivirus service.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>SecurityHealthService</h3>
+        <p>The Windows Security Health service used by Windows Security status and health reporting.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>wscsvc</h3>
+        <p>The Windows Security Center service.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Errors are suppressed</h3>
+        <p>Each <code>Set-Service</code> call uses <code>-ErrorAction SilentlyContinue</code>, so Windows can reject a protected or unsupported startup-type change without displaying that individual error.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      The script changes startup types but does not explicitly run <code>Start-Service</code> for these three services.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Group Policy Cleanup</p>
+    <h2>Removes Defender policy registry trees</h2>
+    <p>
+      After the individual DisableAntiSpyware value check, the current script recursively removes both of these policy locations when present:
+    </p>
+
+    <ul class="steps">
+      <li><span class="code-line">HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender</span></li>
+      <li><span class="code-line">HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender Antivirus</span></li>
+    </ul>
+
+    <div class="warning-notice">
+      This is broader than deleting one value. Any Defender configuration stored under those local policy registry trees can be removed. On a managed PC, organization-enforced settings may later return through Group Policy, MDM, or other management systems.
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Defender WMI</p>
+    <h2>Checks the Microsoft Defender WMI namespace</h2>
+    <p>
+      The script queries <code>root\Microsoft\Windows\Defender</code> with <code>Get-WmiObject -List</code>. If the namespace responds successfully, the script reports that WMI re-registration is not required.
+    </p>
+
+    <p>
+      If the WMI query fails, the repair path attempts to compile the Defender provider files with:
+    </p>
+
+    <ul class="steps">
+      <li><span class="code-line">mofcomp.exe "%programfiles%\Windows Defender\MpProvider.mof"</span></li>
+      <li><span class="code-line">mofcomp.exe "%programfiles%\Windows Defender\MpProvider.mfl"</span></li>
+    </ul>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How To Run</p>
+    <h2>Launching Windows Security Fix</h2>
+
+    <ol class="steps">
+      <li>Download and extract <strong>Windows Security Fix.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong>.</li>
+      <li>The launcher starts PowerShell with <span class="code-line">-ExecutionPolicy Bypass</span> and requests administrator elevation through UAC.</li>
+      <li>The DisableAntiSpyware policy value is removed if present.</li>
+      <li>The Windows Security app is reset or re-registered according to the detected Windows version and app state.</li>
+      <li>Core Windows security service startup types are set to Automatic where Windows permits the change.</li>
+      <li>Defender-related local policy registry trees are removed if present.</li>
+      <li>The Microsoft Defender WMI namespace is checked and the provider files are recompiled if the check fails.</li>
+      <li>The script reports completion and notes that a restart may be necessary.</li>
+      <li>Press Enter to close the PowerShell window.</li>
+    </ol>
+
+    <div class="notice">
+      The included Read Me notes that Windows 11 may display a “Windows protected your PC” SmartScreen message because the script was downloaded. Review the files before choosing “More info” and “Run anyway.”
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Transparency</p>
+    <h2>What the current script does and does not do</h2>
+
+    <div class="doc-grid">
+      <article class="feature-card">
+        <h3>Designed to restore Defender</h3>
+        <p>The script removes settings that can disable or interfere with Microsoft Defender and repairs Windows Security components. It is not designed to disable antivirus protection.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No third-party antivirus installation</h3>
+        <p>The current script does not install another antivirus product or security suite.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No web requests or uploads</h3>
+        <p>The PowerShell script contains no download, upload, API, or remote-communication logic.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>No automatic restart</h3>
+        <p>It may recommend restarting the PC, but it does not issue a restart command itself.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+
+    <div class="doc-grid">
+      <article class="faq-card">
+        <h3>Does this disable Microsoft Defender?</h3>
+        <p>No. The current repair logic removes disable/interference policies and repairs Defender/Windows Security components.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it remove only DisableAntiSpyware?</h3>
+        <p>No. That value is handled first, but the script later removes the broader Defender and Defender Antivirus policy registry trees as well.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>How is Windows 11 repaired?</h3>
+        <p>The Windows Security Appx package is reset with <code>Reset-AppxPackage</code>.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>How is Windows 10 repaired?</h3>
+        <p>The script first tests whether Windows Security launches. If that test fails, it attempts to re-register SecHealthUI from its Appx manifest.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it restart security services?</h3>
+        <p>No explicit <code>Start-Service</code> command is used. The script sets the startup type of WinDefend, SecurityHealthService, and wscsvc to Automatic where possible.</p>
+      </article>
+
+      <article class="faq-card">
+        <h3>Does it require a reboot?</h3>
+        <p>Not always, but the script reports that a restart may be needed after the repair.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a></div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K56WXLLXD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K56WXLLXD4');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835543403167523" crossorigin="anonymous"></script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Update Fix for Mac | Melding Software</title>
+<meta name="description" content="Stops the macOS software update service, clears removable /Library/Updates data, restarts the service, and explains protected-file cases."/>
+<meta name="keywords" content="Update Fix, macOS, shell script, Mac utility, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/mac/update-fix.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Update Fix",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"macOS",
+  "description":"Stops the macOS software update service, clears removable /Library/Updates data, restarts the service, and explains protected-file cases.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+<a href="../privacy.html">Privacy</a>
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+<a href="../privacy.html" onclick="toggleMenu()">Privacy</a>
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">macOS Software Update Reset</p>
+    <h1 class="tool-title">Update <span>Fix</span></h1>
+    <p class="tool-lead">Update Fix resets selected local macOS Software Update state by stopping the update service/processes, clearing removable contents under /Library/Updates, then restarting the software update service.</p>
+    <div class="tool-actions">
+      <a class="cta-button primary" href="../index.html#downloads">Mac Scripts</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts/tree/main/Mac" target="_blank" rel="noopener">GitHub Repository</a>
+    </div>
+    <div class="tool-meta"><div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">macOS</div></div>
+    
+<div class="meta-card"><div class="meta-label">Privilege</div><div class="meta-value">sudo</div></div>
+<div class="meta-card"><div class="meta-label">Target</div><div class="meta-value">/Library/Updates</div></div>
+<div class="meta-card"><div class="meta-label">Restart</div><div class="meta-value">Suggested if still stuck</div></div>
+</div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+      <span>MIT License</span>
+    </div>
+
+    
+    <div class="warning-notice"><strong>Important:</strong> The script contains troubleshooting guidance for files protected by SIP/system-immutable flags. Disabling System Integrity Protection reduces macOS security and is not performed automatically by the script. Avoid disabling SIP unless you understand the implications and have a specific recovery reason.</div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Screenshot</p>
+    <h2>Tool preview</h2>
+    <figure class="tool-screenshot">
+      <img src="../images/mac/update_fix.png" alt="Update Fix screenshot" loading="lazy" decoding="async" data-gallery="tool-screenshot"/>
+      <figcaption>Update Fix running on macOS.</figcaption>
+    </figure>
+  </section>
+
+
+  <section class="doc-section">
+    <p class="tool-kicker">Installation</p>
+    <h2>Using the Melding Software Mac installer</h2>
+    <div class="mac-install-panel">
+      <p class="mac-install-text">Copy and paste this command into Terminal to install the Melding Software Mac scripts.</p>
+      <p class="mac-install-text">After reopening Terminal, type MeldingSoftware anytime to load the list.</p>
+      <div class="command-copy-row">
+        <button class="copy-command-button" data-copy-target="macInstallCommand" type="button">Copy</button>
+        <code class="terminal-command" id="macInstallCommand">curl -fsSL https://raw.githubusercontent.com/MeldingSoftware/Scripts/main/Mac/install.sh | bash</code>
+      </div>
+    </div>
+    <p>Because this command downloads and immediately runs a shell installer, you can review <strong>install.sh</strong> in the GitHub repository before executing it. Individual scripts may also request permissions, administrator access, Keychain authorization, Full Disk Access, or other macOS approvals depending on what the selected tool needs.</p>
+  </section>
+
+  
+<section class="doc-section">
+  <p class="tool-kicker">Documentation</p>
+  <h2>Service reset</h2>
+  <div class="doc-grid">
+    <article class="feature-card"><h3>Stops update service</h3><p>Attempts launchctl bootout for com.apple.softwareupdate and terminates softwareupdated/softwareupdate processes.</p></article>
+<article class="feature-card"><h3>Version-tolerant behavior</h3><p>Stop commands ignore errors so the script can continue across macOS versions where service behavior differs.</p></article>
+<article class="feature-card"><h3>Restarts update service</h3><p>Uses launchctl bootstrap followed by kickstart against the software update service plist.</p></article>
+  </div>
+</section>
+<section class="doc-section">
+  <p class="tool-kicker">Documentation</p>
+  <h2>Update cache cleanup</h2>
+  <div class="doc-grid">
+    <article class="feature-card"><h3>/Library/Updates</h3><p>Ensures the directory exists, displays its state, clears immutable flags where permitted, and removes contents that macOS allows.</p></article>
+<article class="feature-card"><h3>Metadata plists</h3><p>Specifically attempts to remove index.plist and ProductMetadata.plist.</p></article>
+<article class="feature-card"><h3>Protected files</h3><p>If those files remain, the script explains that system-immutable flags or SIP/rootless protections may be responsible.</p></article>
+  </div>
+</section>
+<section class="doc-section">
+  <p class="tool-kicker">Documentation</p>
+  <h2>What the script does not do</h2>
+  <div class="doc-grid">
+    <article class="feature-card"><h3>No automatic SIP change</h3><p>It only prints Recovery commands as an advanced troubleshooting option; it does not run csrutil itself.</p></article>
+<article class="feature-card"><h3>No OS reinstall</h3><p>The script does not reinstall macOS.</p></article>
+<article class="feature-card"><h3>No automatic reboot</h3><p>It recommends rebooting if Software Update remains stuck but does not restart the Mac itself.</p></article>
+  </div>
+</section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+    <div class="doc-grid"><article class="faq-card"><h3>What folder does it clear?</h3><p>/Library/Updates.</p></article>
+<article class="faq-card"><h3>Does it stop the update service first?</h3><p>Yes. It attempts to stop the launch daemon and software update processes.</p></article>
+<article class="faq-card"><h3>Does it disable SIP?</h3><p>No. It can print instructions discussing SIP for stubborn protected files, but it does not execute csrutil.</p></article>
+<article class="faq-card"><h3>What should I do after it completes?</h3><p>If Software Update is still stuck, the script suggests rebooting once.</p></article></div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Mac Scripts</a></div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="../privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>
