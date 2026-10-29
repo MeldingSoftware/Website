@@ -66,8 +66,9 @@ window.addEventListener('resize', function() {
         }
         hamburger.style.display = 'none';  // Ensure hamburger is hidden in desktop view
     } else {
-        // Make sure the hamburger is visible when in mobile view
-        hamburger.style.display = 'block';
+        // Restore the flex layout used by the CSS so the three hamburger bars stay visible.
+        hamburger.style.display = 'flex';
+        if (closeButton) closeButton.style.display = '';
     }
 });
 
