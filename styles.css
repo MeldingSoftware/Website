@@ -1,3 +1,4 @@
+@import url('https://fonts.bunny.net/css?family=inter:400,500,600,700,800&display=swap');
 
 :root{
   --bg:#070708;
@@ -19,7 +20,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg);color:var(--text)}
-body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:
 radial-gradient(circle at 20% 0%,rgba(255,45,63,.08),transparent 30%),
 linear-gradient(180deg,#08080a 0%,#09090b 55%,#050506 100%);color:var(--text);overflow-x:hidden;min-height:100vh;display:flow-root}
 body.no-scroll{overflow:hidden}
