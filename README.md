@@ -14,7 +14,6 @@ The website provides direct access to Windows downloads, macOS installation inst
 ## Repository Contents
 
 - `index.html` — Main Melding Software website
-- `privacy.html` — Privacy Policy
 - `legal.html` — License, disclaimer, and legal information
 - `styles.css` — Website styling and responsive layout
 - `javascript.js` — Website navigation, galleries, copy controls, and other interactivity
@@ -22,7 +21,6 @@ The website provides direct access to Windows downloads, macOS installation inst
 - `mac/` — Detailed documentation pages for macOS utilities
 - `images/` — Logos, screenshots, QR codes, and other visual assets
 - `favicon.ico` — Website favicon
-- `ads.txt` — Authorized digital advertising seller information
 - `robots.txt` — Search engine crawler instructions
 - `sitemap.xml` — Sitemap containing the website's public pages
 - `CNAME` — Custom domain configuration for GitHub Pages
@@ -36,7 +34,7 @@ The website provides direct access to Windows downloads, macOS installation inst
 - Direct links to source code on GitHub
 - Screenshot galleries and tool previews
 - Responsive desktop and mobile design
-- Privacy Policy and Legal pages
+- Legal and license information
 - Donation and support options
 - Contact and About sections
 - Search engine sitemap and crawler configuration
@@ -83,11 +81,7 @@ The Windows and macOS scripts distributed through the website are maintained sep
 
 https://github.com/MeldingSoftware/Scripts
 
-## Privacy and Legal
-
-Privacy information is available at:
-
-https://meldingsoftware.com/privacy.html
+## Legal
 
 License, disclaimer, and other legal information is available at:
 
