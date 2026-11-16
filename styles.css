@@ -18,7 +18,7 @@
   --nav-h:76px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:auto;background:var(--bg);color:var(--text)}
+html{scroll-behavior:auto;scrollbar-gutter:stable;background:var(--bg);color:var(--text)}
 body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:
 radial-gradient(circle at 20% 0%,rgba(255,45,63,.08),transparent 30%),
 linear-gradient(180deg,#08080a 0%,#09090b 55%,#050506 100%);color:var(--text);overflow-x:hidden;min-height:100vh;display:flow-root}
