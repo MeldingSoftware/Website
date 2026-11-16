@@ -35,12 +35,22 @@ function setMobileMenuOpen(isOpen) {
     const logo = document.querySelector('.logo');
     if (!overlay) return;
 
+    // Hiding the scrollbar can shift a fixed navigation button in desktop browsers.
+    // Preserve its exact on-screen position while the menu is open.
+    const buttonRightBefore = hamburger ? hamburger.getBoundingClientRect().right : 0;
+
     overlay.classList.toggle('active', isOpen);
     overlay.setAttribute('aria-hidden', String(!isOpen));
     document.body.classList.toggle('no-scroll', isOpen);
 
     if (logo) logo.style.pointerEvents = isOpen ? 'none' : '';
     if (hamburger) {
+        if (isOpen) {
+            const shift = hamburger.getBoundingClientRect().right - buttonRightBefore;
+            hamburger.style.marginRight = shift + 'px';
+        } else {
+            hamburger.style.marginRight = '';
+        }
         hamburger.setAttribute('aria-expanded', String(isOpen));
         hamburger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     }
