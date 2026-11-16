@@ -84,32 +84,21 @@ window.addEventListener('touchend', function() {
 }, false);
 
 
-// SCROLL PROGRESS AND BACK TO TOP
-function updateScrollControls() {
+// SCROLL PROGRESS
+function updateScrollProgress() {
     const progress = document.getElementById('scrollProgress');
-    const backToTop = document.getElementById('scrollTopButton');
-    if (!progress && !backToTop) return;
+    if (!progress) return;
 
     const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-
-    if (backToTop) backToTop.classList.toggle('visible', scrollY > 260);
-
-    if (progress) {
-        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const percent = scrollableHeight > 0 ? Math.min(100, Math.max(0, scrollY / scrollableHeight * 100)) : 0;
-        progress.style.width = percent + '%';
-    }
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = scrollableHeight > 0 ? Math.min(100, Math.max(0, scrollY / scrollableHeight * 100)) : 0;
+    progress.style.width = percent + '%';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const backToTop = document.getElementById('scrollTopButton');
-    if (backToTop) {
-        backToTop.addEventListener('click', () => window.scrollTo(0, 0));
-    }
-
-    updateScrollControls();
-    window.addEventListener('scroll', updateScrollControls, { passive: true });
-    window.addEventListener('resize', updateScrollControls);
+    updateScrollProgress();
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    window.addEventListener('resize', updateScrollProgress);
 });
 
 
