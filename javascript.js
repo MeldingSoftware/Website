@@ -41,8 +41,8 @@ function setMobileMenuOpen(isOpen) {
 
     if (logo) logo.style.pointerEvents = isOpen ? 'none' : '';
     if (hamburger) {
-        hamburger.style.pointerEvents = isOpen ? 'none' : '';
         hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     }
 }
 
