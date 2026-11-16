@@ -27,49 +27,33 @@ window.addEventListener('pageshow', resetInitialHomeScroll);
 document.addEventListener('DOMContentLoaded', resetInitialHomeScroll);
 
 // HAMBURGER MENU
-function toggleMenu() {
-    var overlay = document.getElementById('menuOverlay');
-    var body = document.body;  // Reference to the body element
-    var logo = document.querySelector('.logo');  // Logo element
-    var hamburger = document.querySelector('.hamburger');  // Hamburger menu element
+// Let responsive CSS control the hamburger and overlay display.
+// Keep scrolling and accessibility attributes in sync when opening or closing.
+function setMobileMenuOpen(isOpen) {
+    const overlay = document.getElementById('menuOverlay');
+    const hamburger = document.querySelector('nav .hamburger');
+    const logo = document.querySelector('.logo');
+    if (!overlay) return;
 
-    // Check if the overlay is currently visible
-    if (overlay.classList.contains('active')) {
-        overlay.style.display = 'none';
-        overlay.classList.remove('active');  // Make sure to remove 'active' class
-        body.classList.remove('no-scroll');
-        logo.style.pointerEvents = 'auto';  // Re-enable pointer events on the logo
-        hamburger.style.pointerEvents = 'auto';  // Re-enable pointer events on the hamburger
-    } else {
-        overlay.style.display = 'block';
-        overlay.classList.add('active');  // Add 'active' class to overlay
-        body.classList.add('no-scroll');
-        logo.style.pointerEvents = 'none';  // Disable pointer events on the logo
-        hamburger.style.pointerEvents = 'none';  // Disable pointer events on the hamburger
+    overlay.classList.toggle('active', isOpen);
+    overlay.setAttribute('aria-hidden', String(!isOpen));
+    document.body.classList.toggle('no-scroll', isOpen);
+
+    if (logo) logo.style.pointerEvents = isOpen ? 'none' : '';
+    if (hamburger) {
+        hamburger.style.pointerEvents = isOpen ? 'none' : '';
+        hamburger.setAttribute('aria-expanded', String(isOpen));
     }
 }
 
+function toggleMenu() {
+    const overlay = document.getElementById('menuOverlay');
+    if (overlay) setMobileMenuOpen(!overlay.classList.contains('active'));
+}
 
-// CLOSE OVERYLAY WHEN EXCEEDING MOBILE SIZE
+// Closing the mobile menu when switching to desktop must also unlock scrolling.
 window.addEventListener('resize', function() {
-    var overlay = document.getElementById('menuOverlay');
-    var hamburger = document.querySelector('nav .hamburger');
-    var closeButton = document.querySelector('.close-button');
-
-    // Assuming 768px as the breakpoint for mobile to desktop transition
-    if (window.innerWidth > 900) {
-        // Close the overlay and hide both the hamburger and close button when transitioning to desktop view
-        if (overlay.classList.contains('active')) {
-            overlay.style.display = 'none';
-            overlay.classList.remove('active');
-            if (closeButton) closeButton.style.display = 'none';
-        }
-        hamburger.style.display = 'none';  // Ensure hamburger is hidden in desktop view
-    } else {
-        // Restore the flex layout used by the CSS so the three hamburger bars stay visible.
-        hamburger.style.display = 'flex';
-        if (closeButton) closeButton.style.display = '';
-    }
+    if (window.innerWidth > 900) setMobileMenuOpen(false);
 });
 
 
@@ -98,6 +82,35 @@ window.addEventListener('touchmove', function(event) {
 window.addEventListener('touchend', function() {
     startY = undefined;
 }, false);
+
+
+// SCROLL PROGRESS AND BACK TO TOP
+function updateScrollControls() {
+    const progress = document.getElementById('scrollProgress');
+    const backToTop = document.getElementById('scrollTopButton');
+    if (!progress && !backToTop) return;
+
+    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+
+    if (backToTop) backToTop.classList.toggle('visible', scrollY > 260);
+
+    if (progress) {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = scrollableHeight > 0 ? Math.min(100, Math.max(0, scrollY / scrollableHeight * 100)) : 0;
+        progress.style.width = percent + '%';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.getElementById('scrollTopButton');
+    if (backToTop) {
+        backToTop.addEventListener('click', () => window.scrollTo(0, 0));
+    }
+
+    updateScrollControls();
+    window.addEventListener('scroll', updateScrollControls, { passive: true });
+    window.addEventListener('resize', updateScrollControls);
+});
 
 
 // FADE-IN
