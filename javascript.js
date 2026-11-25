@@ -286,36 +286,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// TOOL SEARCH AND CATEGORY FILTERS
+// TOOL SEARCH
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-tool-filter]").forEach(panel => {
         const table = document.getElementById(panel.dataset.target);
         const search = panel.querySelector("[data-filter-search]");
-        const category = panel.querySelector("[data-filter-category]");
         const status = panel.querySelector("[data-filter-status]");
-        const empty = panel.querySelector("[data-filter-empty]");
-        if (!table || !search || !category || !status || !empty) return;
-
-        const rows = Array.from(table.querySelectorAll("tbody tr"));
-        const platform = panel.dataset.platform || "tools";
-
+        const empty = panel.nextElementSibling;
+        if (!table || !search) return;
+        const rows = Array.from(table.querySelectorAll("tbody tr[data-category]"));
+        const headings = Array.from(table.querySelectorAll("[data-category-heading]"));
         function filterTools() {
-            const query = search.value.trim().toLocaleLowerCase();
-            const selectedCategory = category.value;
+            const query = search.value.trim().toLowerCase();
+            const visibleCategories = new Set();
             let shown = 0;
             rows.forEach(row => {
-                const matchesText = !query || row.textContent.toLocaleLowerCase().includes(query);
-                const matchesCategory = selectedCategory === "all" || row.dataset.category === selectedCategory;
-                const visible = matchesText && matchesCategory;
+                const visible = row.textContent.toLowerCase().includes(query);
                 row.hidden = !visible;
-                if (visible) shown += 1;
+                if (visible) {
+                    shown++;
+                    visibleCategories.add(row.dataset.category);
+                }
             });
-            status.textContent = "Showing " + shown + " of " + rows.length + " " + platform + " tools";
-            empty.hidden = shown !== 0;
+            headings.forEach(heading => {
+                heading.hidden = !visibleCategories.has(heading.dataset.categoryHeading);
+            });
+            if (status) status.textContent = "Showing " + shown + " of " + rows.length + " " + panel.dataset.platform + " tools";
+            if (empty && empty.matches("[data-filter-empty]")) empty.hidden = shown !== 0;
         }
-
         search.addEventListener("input", filterTools);
-        category.addEventListener("change", filterTools);
+        search.addEventListener("search", filterTools);
+        search.addEventListener("keydown", event => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                filterTools();
+            }
+        });
         filterTools();
     });
 });

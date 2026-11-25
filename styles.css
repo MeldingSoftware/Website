@@ -2311,9 +2311,9 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
 /* Downloads: searchable tables without changing the existing table layout */
 .tool-filters{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:18px 0 14px}
 .tool-filter-field{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:.84rem;font-weight:700}
-.tool-filter-field input,.tool-filter-field select{height:44px;min-width:200px;padding:10px 14px;color:var(--text);background:#17171c;border:1px solid var(--border);border-radius:12px;outline:none}
+.tool-filter-field input{height:44px;min-width:200px;padding:10px 14px;color:var(--text);background:#17171c;border:1px solid var(--border);border-radius:12px;outline:none}
 .tool-filter-field input{min-width:min(300px,80vw)}
-.tool-filter-field input:focus-visible,.tool-filter-field select:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tool-filter-field input:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .tool-filter-field input::placeholder{color:var(--muted)}
 .tool-filter-status{margin-left:auto;color:var(--muted);font-size:.85rem;align-self:center}
 .tool-filter-empty{margin:10px 0 18px;color:var(--muted)}
@@ -2322,4 +2322,9 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
 .gallery-controls button[hidden]{display:none!important}
 .mac-install-disclosure{font-size:.85rem;line-height:1.65;color:var(--muted);margin:14px 0 0}
 .mac-install-disclosure a{color:#ff6573;text-decoration:underline;text-underline-offset:3px;font-weight:700}
-@media(max-width:640px){.tool-filters{align-items:stretch}.tool-filter-field,.tool-filter-field input,.tool-filter-field select{width:100%;min-width:0}.tool-filter-status{width:100%;margin-left:0;text-align:left}}
+@media(max-width:640px){.tool-filters{align-items:stretch}.tool-filter-field,.tool-filter-field input{width:100%;min-width:0}.tool-filter-status{width:100%;margin-left:0;text-align:left}}
+
+/* Static category headings in download tables */
+.downloads-table tbody tr.script-category th{background:#202027;color:var(--text);font-weight:700;text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
+.downloads-table tbody tr.script-category[hidden]{display:none!important}
+@media(max-width:640px){.downloads-table tbody tr.script-category{display:table-row}.downloads-table tbody tr.script-category th{display:table-cell;width:100%;text-align:left}}

@@ -28,13 +28,12 @@ The website provides direct access to Windows downloads, macOS installation inst
 ## Features
 
 - Windows PowerShell utility downloads with direct GitHub links
-- Search and category filters for Windows and macOS tools
+- Search and categorized tables for Windows and macOS tools
 - macOS Terminal installation instructions with a source-review link and installation details
 - Detailed documentation for Windows and macOS tools
 - Tool descriptions, requirements, operation details, and output information
 - Direct links to source code on GitHub
 - Keyboard-accessible screenshot galleries (Enter/Space, arrow keys, Escape)
-- Lazy-loaded below-the-fold images, asynchronous decoding, and image dimensions where verified
 - Responsive desktop and mobile design
 - Legal and license information
 - Donation and support options
