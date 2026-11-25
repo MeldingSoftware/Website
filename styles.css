@@ -2307,3 +2307,19 @@ p,li{font-size:clamp(1rem,.3vw + .92rem,1.08rem);line-height:1.72}
 .tool-meta + .tool-byline{
   margin-top:16px;
 }
+
+/* Downloads: searchable tables without changing the existing table layout */
+.tool-filters{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:18px 0 14px}
+.tool-filter-field{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:.84rem;font-weight:700}
+.tool-filter-field input,.tool-filter-field select{height:44px;min-width:200px;padding:10px 14px;color:var(--text);background:#17171c;border:1px solid var(--border);border-radius:12px;outline:none}
+.tool-filter-field input{min-width:min(300px,80vw)}
+.tool-filter-field input:focus-visible,.tool-filter-field select:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tool-filter-field input::placeholder{color:var(--muted)}
+.tool-filter-status{margin-left:auto;color:var(--muted);font-size:.85rem;align-self:center}
+.tool-filter-empty{margin:10px 0 18px;color:var(--muted)}
+.downloads-table tbody tr[hidden],.tool-filter-empty[hidden]{display:none!important}
+.download-button:focus-visible,.gallery-grid img:focus-visible,.tool-screenshot img:focus-visible,.gallery-controls button:focus-visible,.close-gallery:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.gallery-controls button[hidden]{display:none!important}
+.mac-install-disclosure{font-size:.85rem;line-height:1.65;color:var(--muted);margin:14px 0 0}
+.mac-install-disclosure a{color:#ff6573;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+@media(max-width:640px){.tool-filters{align-items:stretch}.tool-filter-field,.tool-filter-field input,.tool-filter-field select{width:100%;min-width:0}.tool-filter-status{width:100%;margin-left:0;text-align:left}}

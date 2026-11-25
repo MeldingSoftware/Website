@@ -23,7 +23,7 @@
 <div id="refreshContainer"></div>
 <nav class="site-nav" id="siteNav">
 <a href="https://www.meldingsoftware.com">
-<img alt="Melding Software Logo" class="logo" src="images/homepage/MSLogo.png"/>
+<img alt="Melding Software Logo" class="logo" src="images/homepage/MSLogo.png" decoding="async" fetchpriority="high" width="1300" height="200"/>
 </a>
 <!-- Hamburger Menu -->
 <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
@@ -69,7 +69,7 @@
 <div class="hero-orbit hero-orbit-one"></div>
 <div class="hero-orbit hero-orbit-two"></div>
 <div class="hero-glow"></div>
-<img alt="Powered by PowerShell and Terminal" class="powered-by" src="images/homepage/PoweredBy.png"/>
+<img alt="Powered by PowerShell and Terminal" class="powered-by" src="images/homepage/PoweredBy.png" decoding="async" width="400" height="400"/>
 <div class="hero-status"><span></span> Actively maintained</div>
 </div>
 </div>
@@ -90,7 +90,7 @@
 <p class="section-intro">Choose from Windows and macOS utilities built to simplify common PC tasks.</p>
 </div>
 <div class="fade-in script-platform-header">
-<img alt="Windows Logo" class="platform-header-logo" src="images/homepage/WindowsLogo.png"/>
+<img alt="Windows Logo" class="platform-header-logo" src="images/homepage/WindowsLogo.png" decoding="async" loading="lazy" width="100" height="100"/>
 <div class="platform-header-copy">
 <h2 class="platform-header-title">Windows Scripts</h2>
 <p class="platform-header-subtitle">PowerShell scripts for Windows systems.</p>
@@ -100,15 +100,21 @@
 <div class="gallery-container" id="windowsGallery">
 <h3>Gallery For Windows Scripts</h3>
 <div class="gallery-grid" data-gallery="windows">
-<img alt="Maintenance Windows" data-gallery="windows" src="images/windows/maintenance.png"/>
-<img alt="Melder Windows" data-gallery="windows" src="images/windows/melder.png"/>
-<img alt="Threat Inspection Windows" data-gallery="windows" src="images/windows/threat_inspection.png"/>
-<img alt="System Info Windows" data-gallery="windows" src="images/windows/system_info.png"/>
+<img alt="Maintenance Windows" data-gallery="windows" src="images/windows/maintenance.png" decoding="async" loading="lazy" width="1600" height="900"/>
+<img alt="Melder Windows" data-gallery="windows" src="images/windows/melder.png" decoding="async" loading="lazy" width="1600" height="900"/>
+<img alt="Threat Inspection Windows" data-gallery="windows" src="images/windows/threat_inspection.png" decoding="async" loading="lazy" width="1600" height="900"/>
+<img alt="System Info Windows" data-gallery="windows" src="images/windows/system_info.png" decoding="async" loading="lazy"/>
 </div>
 </div>
 <p> </p>
 <div class="fade-in">
-<div class="table-shell"><table class="downloads-table windows-downloads-table">
+<div class="tool-filters" data-tool-filter data-target="windowsToolTable" data-platform="Windows">
+<label class="tool-filter-field">Search Windows<input data-filter-search type="search" placeholder="Search Windows tools…" autocomplete="off"/></label>
+<label class="tool-filter-field">Category<select data-filter-category><option value="all">All categories</option><option value="maintenance">Maintenance</option><option value="repair">Repair</option><option value="security">Security</option><option value="setup">Setup</option><option value="information">Information</option><option value="backup">Backup</option><option value="utilities">Utilities</option></select></label>
+<p class="tool-filter-status" data-filter-status role="status" aria-live="polite"></p>
+</div>
+<p class="tool-filter-empty" data-filter-empty hidden>No matching Windows tools. Try another keyword or category.</p>
+<div class="table-shell"><table class="downloads-table windows-downloads-table" id="windowsToolTable">
 <thead>
 <tr>
 
@@ -117,114 +123,114 @@
 <th>Download</th><th>Scripts</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr>
+<tr data-category="information">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/BitLocker%20Recovery%20Key.zip'">Download</button></td><td>BitLocker Recovery Key</td><td>Get the BitLocker Recovery Key. Requires being inside Windows. <a class="script-learn-more" href="windows/bitlocker-recovery-key.html" title="Learn more about BitLocker Recovery Key">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/BitLocker%20Recovery%20Key.zip">Download</a></td><td>BitLocker Recovery Key</td><td>Get the BitLocker Recovery Key. Requires being inside Windows. <a class="script-learn-more" href="windows/bitlocker-recovery-key.html" title="Learn more about BitLocker Recovery Key">Learn more →</a></td></tr>
+<tr data-category="maintenance">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/DeBloater.zip'">Download</button></td><td>DeBloater</td><td>Removes selected optional Microsoft apps and provisioned promotional/OEM apps while preserving core Windows utilities. <a class="script-learn-more" href="windows/debloater.html" title="Learn more about DeBloater">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/DeBloater.zip">Download</a></td><td>DeBloater</td><td>Removes selected optional Microsoft apps and provisioned promotional/OEM apps while preserving core Windows utilities. <a class="script-learn-more" href="windows/debloater.html" title="Learn more about DeBloater">Learn more →</a></td></tr>
+<tr data-category="utilities">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Fun%20Commands.zip'">Download</button></td><td>Fun Commands</td><td>Entertainment-focused PowerShell tools including Cat Fact, Matrix, console songs, and Text To Speech. <a class="script-learn-more" href="windows/fun-commands.html" title="Learn more about Fun Commands">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Fun%20Commands.zip">Download</a></td><td>Fun Commands</td><td>Entertainment-focused PowerShell tools including Cat Fact, Matrix, console songs, and Text To Speech. <a class="script-learn-more" href="windows/fun-commands.html" title="Learn more about Fun Commands">Learn more →</a></td></tr>
+<tr data-category="setup">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Group%20Policy%20Editor.zip'">Download</button></td><td>Group Policy Editor</td><td>Adds the built-in Group Policy Client Tools and Extensions packages to Windows 10/11 Home using DISM. <a class="script-learn-more" href="windows/group-policy-editor.html" title="Learn more about Group Policy Editor">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Group%20Policy%20Editor.zip">Download</a></td><td>Group Policy Editor</td><td>Adds the built-in Group Policy Client Tools and Extensions packages to Windows 10/11 Home using DISM. <a class="script-learn-more" href="windows/group-policy-editor.html" title="Learn more about Group Policy Editor">Learn more →</a></td></tr>
+<tr data-category="information">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Installed%20Apps.zip'">Download</button></td><td>Installed Apps</td><td>Creates a software inventory from traditional programs and Appx packages, then saves CSV and Excel copies to the Desktop. <a class="script-learn-more" href="windows/installed-apps.html" title="Learn more about Installed Apps">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Installed%20Apps.zip">Download</a></td><td>Installed Apps</td><td>Creates a software inventory from traditional programs and Appx packages, then saves CSV and Excel copies to the Desktop. <a class="script-learn-more" href="windows/installed-apps.html" title="Learn more about Installed Apps">Learn more →</a></td></tr>
+<tr data-category="information">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Largest%20Files.zip'">Download</button></td><td>Largest Files</td><td>Scans drive-letter file-system drives, excludes the Windows folder, and lists the 10 largest accessible files. <a class="script-learn-more" href="windows/largest-files.html" title="Learn more about Largest Files">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Largest%20Files.zip">Download</a></td><td>Largest Files</td><td>Scans drive-letter file-system drives, excludes the Windows folder, and lists the 10 largest accessible files. <a class="script-learn-more" href="windows/largest-files.html" title="Learn more about Largest Files">Learn more →</a></td></tr>
+<tr data-category="maintenance">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Maintenance.zip'">Download</button></td><td>Maintenance</td><td>Comprehensive Windows maintenance with repair checks, cleanup, updates, crash-dump analysis, optimization, restore-point handling, and HTML reporting. <a class="script-learn-more" href="windows/maintenance.html" title="Learn more about Maintenance">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Maintenance.zip">Download</a></td><td>Maintenance</td><td>Comprehensive Windows maintenance with repair checks, cleanup, updates, crash-dump analysis, optimization, restore-point handling, and HTML reporting. <a class="script-learn-more" href="windows/maintenance.html" title="Learn more about Maintenance">Learn more →</a></td></tr>
+<tr data-category="utilities">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Media%20Player.zip'">Download</button></td><td>Media Player</td><td>WPF media player for local video and audio with playback controls, seeking, volume, playback time, fullscreen, and auto-hiding controls. <a class="script-learn-more" href="windows/media-player.html" title="Learn more about Media Player">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Media%20Player.zip">Download</a></td><td>Media Player</td><td>WPF media player for local video and audio with playback controls, seeking, volume, playback time, fullscreen, and auto-hiding controls. <a class="script-learn-more" href="windows/media-player.html" title="Learn more about Media Player">Learn more →</a></td></tr>
+<tr data-category="setup">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Melder.zip'">Download</button></td><td>Melder</td><td>Streamline your PC setup with this GUI tool to automate App installs, updates, enable/disable settings, shortcuts, and cleanup. <a class="script-learn-more" href="windows/melder.html" title="Learn more about Melder">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Melder.zip">Download</a></td><td>Melder</td><td>Streamline your PC setup with this GUI tool to automate App installs, updates, enable/disable settings, shortcuts, and cleanup. <a class="script-learn-more" href="windows/melder.html" title="Learn more about Melder">Learn more →</a></td></tr>
+<tr data-category="utilities">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Mouse%20Jiggler.zip'">Download</button></td><td>Mouse Jiggler</td><td>Moves the mouse pointer automatically every 5 seconds. Press Esc to exit. <a class="script-learn-more" href="windows/mouse-jiggler.html" title="Learn more about Mouse Jiggler">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Mouse%20Jiggler.zip">Download</a></td><td>Mouse Jiggler</td><td>Moves the mouse pointer automatically every 5 seconds. Press Esc to exit. <a class="script-learn-more" href="windows/mouse-jiggler.html" title="Learn more about Mouse Jiggler">Learn more →</a></td></tr>
+<tr data-category="repair">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Network%20Fix.zip'">Download</button></td><td>Network Fix</td><td>Tests connectivity, resets Windows networking, runs DNS Jumper and Ookla Speedtest, reports DNS servers, and saves a transcript. <a class="script-learn-more" href="windows/network-fix.html" title="Learn more about Network Fix">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Network%20Fix.zip">Download</a></td><td>Network Fix</td><td>Tests connectivity, resets Windows networking, runs DNS Jumper and Ookla Speedtest, reports DNS servers, and saves a transcript. <a class="script-learn-more" href="windows/network-fix.html" title="Learn more about Network Fix">Learn more →</a></td></tr>
+<tr data-category="backup">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/OneDrive%20Backup.zip'">Download</button></td><td>OneDrive Backup</td><td>Backs up OneDrive to external USB storage, including online-only files through temporary hydration, with Robocopy logs and state restoration. <a class="script-learn-more" href="windows/onedrive-backup.html" title="Learn more about OneDrive Backup">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/OneDrive%20Backup.zip">Download</a></td><td>OneDrive Backup</td><td>Backs up OneDrive to external USB storage, including online-only files through temporary hydration, with Robocopy logs and state restoration. <a class="script-learn-more" href="windows/onedrive-backup.html" title="Learn more about OneDrive Backup">Learn more →</a></td></tr>
+<tr data-category="repair">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Print%20Spooler%20Fix.zip'">Download</button></td><td>Print Spooler Fix</td><td>Stops the Windows Print Spooler, clears all queued print-job files, and starts the service again. <a class="script-learn-more" href="windows/print-spooler-fix.html" title="Learn more about Print Spooler Fix">Learn more →</a></td></tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Print%20Spooler%20Fix.zip">Download</a></td><td>Print Spooler Fix</td><td>Stops the Windows Print Spooler, clears all queued print-job files, and starts the service again. <a class="script-learn-more" href="windows/print-spooler-fix.html" title="Learn more about Print Spooler Fix">Learn more →</a></td></tr>
 
-<tr>
-
-
-
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Repair%20Tool.zip'">Download</button></td><td>Repair Tool</td><td>Runs DISM component-store analysis, cleanup and repair followed by SFC, then saves the full results to the Desktop. <a class="script-learn-more" href="windows/repair-tool.html" title="Learn more about Repair Tool">Learn more →</a></td></tr>
-<tr>
+<tr data-category="repair">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Start%20My%20Day.zip'">Download</button></td><td>Start My Day</td><td>Console daily briefing with history, quote, weather, news, sports, lottery, market, and cryptocurrency information. Some API setup required. <a class="script-learn-more" href="windows/start-my-day.html" title="Learn more about Start My Day">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Repair%20Tool.zip">Download</a></td><td>Repair Tool</td><td>Runs DISM component-store analysis, cleanup and repair followed by SFC, then saves the full results to the Desktop. <a class="script-learn-more" href="windows/repair-tool.html" title="Learn more about Repair Tool">Learn more →</a></td></tr>
+<tr data-category="utilities">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/System%20Info.zip'">Download</button></td><td>System Info</td><td>Creates Desktop reports with Windows, hardware, network, memory, storage, BIOS, motherboard, and battery information. <a class="script-learn-more" href="windows/system-info.html" title="Learn more about System Info">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Start%20My%20Day.zip">Download</a></td><td>Start My Day</td><td>Console daily briefing with history, quote, weather, news, sports, lottery, market, and cryptocurrency information. Some API setup required. <a class="script-learn-more" href="windows/start-my-day.html" title="Learn more about Start My Day">Learn more →</a></td></tr>
+<tr data-category="information">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Windows/Threat%20Inspection.zip'">Download</button></td><td>Threat Inspection</td><td>Inspects Windows for common security concerns and suspicious activity, then generates an HTML report for review. <a class="script-learn-more" href="windows/threat-inspection.html" title="Learn more about Threat Inspection">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/System%20Info.zip">Download</a></td><td>System Info</td><td>Creates Desktop reports with Windows, hardware, network, memory, storage, BIOS, motherboard, and battery information. <a class="script-learn-more" href="windows/system-info.html" title="Learn more about System Info">Learn more →</a></td></tr>
+<tr data-category="security">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Update%20Fix.zip'">Download</button></td><td>Update Fix</td><td>Resets Windows Update services and cache folders, then runs DISM and SFC to repair update and system corruption issues. <a class="script-learn-more" href="windows/update-fix.html" title="Learn more about Update Fix">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/refs/heads/main/Windows/Threat%20Inspection.zip">Download</a></td><td>Threat Inspection</td><td>Inspects Windows for common security concerns and suspicious activity, then generates an HTML report for review. <a class="script-learn-more" href="windows/threat-inspection.html" title="Learn more about Threat Inspection">Learn more →</a></td></tr>
+<tr data-category="repair">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Wi-Fi%20Info.zip'">Download</button></td><td>Wi-Fi Info</td><td>Displays saved Wi-Fi profiles and passwords from the local Windows installation and saves the results to a text file. Intended for devices you own or are authorized to manage. <a class="script-learn-more" href="windows/wi-fi-info.html" title="Learn more about Wi-Fi Info">Learn more →</a></td></tr>
-<tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Update%20Fix.zip">Download</a></td><td>Update Fix</td><td>Resets Windows Update services and cache folders, then runs DISM and SFC to repair update and system corruption issues. <a class="script-learn-more" href="windows/update-fix.html" title="Learn more about Update Fix">Learn more →</a></td></tr>
+<tr data-category="information">
 
 
 
-<td><button class="download-button" onclick="window.location.href='https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Windows%20Security%20Fix.zip'">Download</button></td><td>Windows Security Fix</td><td>Restores Microsoft Defender and Windows Security toward normal Windows defaults by repairing SecHealthUI, clearing conflicting Defender policies, and checking core services and WMI components. <a class="script-learn-more" href="windows/windows-security-fix.html" title="Learn more about Windows Security Fix">Learn more →</a></td></tr>
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Wi-Fi%20Info.zip">Download</a></td><td>Wi-Fi Info</td><td>Displays saved Wi-Fi profiles and passwords from the local Windows installation and saves the results to a text file. Intended for devices you own or are authorized to manage. <a class="script-learn-more" href="windows/wi-fi-info.html" title="Learn more about Wi-Fi Info">Learn more →</a></td></tr>
+<tr data-category="repair">
+
+
+
+<td><a class="download-button" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Windows%20Security%20Fix.zip">Download</a></td><td>Windows Security Fix</td><td>Restores Microsoft Defender and Windows Security toward normal Windows defaults by repairing SecHealthUI, clearing conflicting Defender policies, and checking core services and WMI components. <a class="script-learn-more" href="windows/windows-security-fix.html" title="Learn more about Windows Security Fix">Learn more →</a></td></tr>
 </tbody>
 </table></div>
 </div>
 <p> </p>
 <div class="divider"></div>
 <div class="fade-in script-platform-header">
-<img alt="Apple Logo" class="platform-header-logo apple-platform-logo" src="images/homepage/AppleLogo.png"/>
+<img alt="Apple Logo" class="platform-header-logo apple-platform-logo" src="images/homepage/AppleLogo.png" decoding="async" loading="lazy" width="100" height="100"/>
 <div class="platform-header-copy">
 <h2 class="platform-header-title">Mac Scripts</h2>
 <p class="platform-header-subtitle">Shell scripts for macOS.</p>
@@ -234,20 +240,20 @@
 <div class="gallery-container" id="macGallery">
 <h3>Gallery For Mac Scripts</h3>
 <div class="gallery-grid" data-gallery="mac">
-<img alt="Maintenance Mac" data-gallery="mac" src="images/mac/maintenance.png"/>
-<img alt="Melder Mac" data-gallery="mac" src="images/mac/melder.png"/>
-<img alt="Threat Inspection Mac" data-gallery="mac" src="images/mac/threat_inspection.png"/>
-<img alt="System Info Mac" data-gallery="mac" src="images/mac/system_info.png"/>
+<img alt="Maintenance Mac" data-gallery="mac" src="images/mac/maintenance.png" decoding="async" loading="lazy" width="1440" height="810"/>
+<img alt="Melder Mac" data-gallery="mac" src="images/mac/melder.png" decoding="async" loading="lazy" width="2832" height="1592"/>
+<img alt="Threat Inspection Mac" data-gallery="mac" src="images/mac/threat_inspection.png" decoding="async" loading="lazy" width="1440" height="810"/>
+<img alt="System Info Mac" data-gallery="mac" src="images/mac/system_info.png" decoding="async" loading="lazy"/>
 </div>
 </div>
 <!-- Fullscreen Gallery Overlay -->
-<div class="gallery-overlay" id="galleryOverlay">
+<div class="gallery-overlay" id="galleryOverlay" role="dialog" aria-modal="true" aria-label="Screenshot gallery" aria-hidden="true">
 <div class="gallery-controls">
-<button id="prevImage">&lt;</button>
-<img alt="Full Image" id="fullImage" src=""/>
-<button id="nextImage">&gt;</button>
+<button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+<img alt="Enlarged screenshot" id="fullImage"/>
+<button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
 </div>
-<button class="close-gallery" id="closeGallery">X</button>
+<button class="close-gallery" id="closeGallery" type="button" aria-label="Close gallery">×</button>
 </div>
 <p> </p>
 <div class="fade-in mac-install-panel">
@@ -257,9 +263,16 @@
 <button class="copy-command-button" data-copy-target="macInstallCommand" type="button">Copy</button>
 <code class="terminal-command" id="macInstallCommand">curl -fsSL https://raw.githubusercontent.com/MeldingSoftware/Scripts/main/Mac/install.sh | bash</code>
 </div>
+<p class="mac-install-disclosure">This command downloads and runs an installer. <a href="https://github.com/MeldingSoftware/Scripts/blob/main/Mac/install.sh" target="_blank" rel="noopener">View installer source</a> before running it. The installer saves scripts under <code>~/.MeldingSoftware</code>, creates a launcher in <code>~/.local/bin</code>, and may update your shell PATH.</p>
 </div>
 <div class="fade-in">
-<div class="table-shell"><table class="downloads-table mac-downloads-table">
+<div class="tool-filters" data-tool-filter data-target="macToolTable" data-platform="Mac">
+<label class="tool-filter-field">Search Mac<input data-filter-search type="search" placeholder="Search Mac tools…" autocomplete="off"/></label>
+<label class="tool-filter-field">Category<select data-filter-category><option value="all">All categories</option><option value="maintenance">Maintenance</option><option value="repair">Repair</option><option value="security">Security</option><option value="setup">Setup</option><option value="information">Information</option><option value="utilities">Utilities</option></select></label>
+<p class="tool-filter-status" data-filter-status role="status" aria-live="polite"></p>
+</div>
+<p class="tool-filter-empty" data-filter-empty hidden>No matching Mac tools. Try another keyword or category.</p>
+<div class="table-shell"><table class="downloads-table mac-downloads-table" id="macToolTable">
 <colgroup>
 <col class="mac-script-column"/>
 <col class="mac-description-column"/>
@@ -271,40 +284,40 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr data-category="maintenance">
 <td>DeBloater</td>
 <td>Removes a curated list of normally removable apps from /Applications while skipping SIP-protected system apps. <a class="script-learn-more" href="mac/debloater.html" title="Learn more about DeBloater">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="utilities">
 <td>Fun Commands</td>
 <td>Interactive Terminal menu with Matrix rain, ASCII effects, quotes, banners, historical events, Cowsay, text-to-speech, and more. <a class="script-learn-more" href="mac/fun-commands.html" title="Learn more about Fun Commands">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="information">
 <td>Installed Apps</td>
 <td>Lists apps from /Applications and /System/Applications and saves the inventory to the Desktop. <a class="script-learn-more" href="mac/installed-apps.html" title="Learn more about Installed Apps">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="information">
 <td>Largest Files</td>
 <td>Scans the current user&#x27;s home folder for the 10 largest items, checks likely Full Disk Access, and saves the results to the Desktop. <a class="script-learn-more" href="mac/largest-files.html" title="Learn more about Largest Files">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="maintenance">
 <td>Maintenance</td>
 <td>Runs macOS updates, DNS flush, cleanup, Time Machine snapshot thinning, Homebrew/App Store updates, disk checks, cache cleanup, and creates an HTML report. <a class="script-learn-more" href="mac/maintenance.html" title="Learn more about Maintenance">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="setup">
 <td>Melder</td>
 <td>GUI setup utility using swiftDialog and Homebrew to install selected apps, search additional casks, and apply macOS tweaks. <a class="script-learn-more" href="mac/melder.html" title="Learn more about Melder">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="repair">
 <td>Print Spooler Fix</td>
 <td>Restarts the macOS CUPS print spooler service to recover from a stalled printing service. <a class="script-learn-more" href="mac/print-spooler-fix.html" title="Learn more about Print Spooler Fix">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="repair">
 <td>Repair Tool</td>
 <td>Verifies and repairs the macOS system volume and disk, records SMART/APFS information, and provides Recovery-specific repair guidance. <a class="script-learn-more" href="mac/repair-tool.html" title="Learn more about Repair Tool">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="information">
 <td>System Info</td>
 <td>Creates a local report covering macOS, hardware, storage, network, battery/power, security checks, update history, and top CPU processes. <a class="script-learn-more" href="mac/system-info.html" title="Learn more about System Info">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="security">
 <td>Threat Inspection</td>
 <td>Read-only technician inspection of remote access/RMM, PUP/PUA, persistence, suspicious files, browsers, network, and macOS security with an HTML report. <a class="script-learn-more" href="mac/threat-inspection.html" title="Learn more about Threat Inspection">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="repair">
 <td>Update Fix</td>
 <td>Stops the macOS software update service, clears removable /Library/Updates data, restarts the service, and explains protected-file cases. <a class="script-learn-more" href="mac/update-fix.html" title="Learn more about Update Fix">Learn more →</a></td>
-</tr><tr>
+</tr><tr data-category="information">
 <td>Wi-Fi Info</td>
 <td>Displays the current Wi-Fi SSID, retrieves its saved password from macOS Keychain when authorized, and saves the result beside the script. <a class="script-learn-more" href="mac/wi-fi-info.html" title="Learn more about Wi-Fi Info">Learn more →</a></td>
 </tr>
@@ -334,7 +347,7 @@
 </div>
 <div class="fade-in donation-row">
 <!-- Mel Image -->
-<img alt="The Blacksmith Image" class="image-with-shadow" src="images/homepage/Mel.png"/>
+<img alt="The Blacksmith Image" class="image-with-shadow" src="images/homepage/Mel.png" decoding="async" loading="lazy"/>
 <!-- Center Column: Paragraph and Donation Buttons -->
 <div class="center-column">
 <p class="medium-text">
@@ -345,15 +358,15 @@
 			</p>
 <div id="donation-buttons">
 <a href="https://www.paypal.com/donate?business=meldingsoftware@gmail.com">
-<img alt="Donate with PayPal" class="donate-button" src="images/homepage/Paypal.png"/>
+<img alt="Donate with PayPal" class="donate-button" src="images/homepage/Paypal.png" decoding="async" loading="lazy" width="564" height="168"/>
 </a>
 <a href="https://www.buymeacoffee.com/MeldingSoftware">
-<img alt="Donate with Buy Me a Coffee" class="donate-button" src="images/homepage/BuyMeACoffee.png"/>
+<img alt="Donate with Buy Me a Coffee" class="donate-button" src="images/homepage/BuyMeACoffee.png" decoding="async" loading="lazy" width="564" height="168"/>
 </a>
 </div>
 </div>
 <!-- QR Code -->
-<img alt="Buy Me A Coffee QR" class="image-with-shadow" src="images/homepage/BMC_QR.png"/>
+<img alt="Buy Me A Coffee QR" class="image-with-shadow" src="images/homepage/BMC_QR.png" decoding="async" loading="lazy" width="250" height="250"/>
 </div>
 </section>
 <section class="contact-section" id="contact">

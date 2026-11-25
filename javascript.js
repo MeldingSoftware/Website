@@ -169,73 +169,156 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-// GALLERY
+// GALLERY — keyboard-accessible lightbox on home and individual tool pages
 document.addEventListener("DOMContentLoaded", () => {
-    const galleryOverlay = document.getElementById("galleryOverlay");
-    const fullImage = document.getElementById("fullImage");
-    const closeGallery = document.getElementById("closeGallery");
-    const prevImage = document.getElementById("prevImage");
-    const nextImage = document.getElementById("nextImage");
+    const images = Array.from(document.querySelectorAll(".gallery-grid img, .tool-screenshot img"));
+    if (!images.length) return;
 
-    let currentImageIndex = 0;
-    let currentGallery = [];
-    let currentGalleryName = "";
-
-    if (!galleryOverlay || !fullImage || !closeGallery || !prevImage || !nextImage) {
-        return;
+    // The homepage already has the markup; tool pages get the same lightbox automatically.
+    let overlay = document.getElementById("galleryOverlay");
+    if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.id = "galleryOverlay";
+        overlay.className = "gallery-overlay";
+        overlay.innerHTML = '<div class="gallery-controls"><button id="prevImage" type="button" aria-label="Previous screenshot">&#8249;</button><img id="fullImage" alt="Enlarged screenshot"/><button id="nextImage" type="button" aria-label="Next screenshot">&#8250;</button></div><button id="closeGallery" class="close-gallery" type="button" aria-label="Close gallery">×</button>';
+        document.body.appendChild(overlay);
     }
 
-    // Open Gallery
-    const galleryImages = document.querySelectorAll(".gallery-grid img, .tool-screenshot img");
-    galleryImages.forEach((image, index) => {
-        image.addEventListener("click", () => {
-            currentGalleryName = image.dataset.gallery; // Determine the gallery type
-            currentGallery = Array.from(
-                document.querySelectorAll(`.gallery-grid img[data-gallery="${currentGalleryName}"], .tool-screenshot img[data-gallery="${currentGalleryName}"]`)
-            );
-            currentImageIndex = currentGallery.indexOf(image);
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Screenshot gallery");
+    overlay.setAttribute("aria-hidden", "true");
 
-            openGallery(image.src);
+    const fullImage = overlay.querySelector("#fullImage");
+    const closeButton = overlay.querySelector("#closeGallery");
+    const previousButton = overlay.querySelector("#prevImage");
+    const nextButton = overlay.querySelector("#nextImage");
+    if (!fullImage || !closeButton || !previousButton || !nextButton) return;
+
+    previousButton.type = nextButton.type = closeButton.type = "button";
+    previousButton.setAttribute("aria-label", "Previous screenshot");
+    nextButton.setAttribute("aria-label", "Next screenshot");
+    closeButton.setAttribute("aria-label", "Close gallery");
+    fullImage.removeAttribute("src");
+
+    let group = [];
+    let currentIndex = 0;
+    let trigger = null;
+
+    function updateImage() {
+        const selected = group[currentIndex];
+        if (!selected) return;
+        fullImage.src = selected.currentSrc || selected.src;
+        fullImage.alt = selected.alt || "Screenshot";
+        previousButton.hidden = nextButton.hidden = group.length <= 1;
+    }
+
+    function openGallery(image) {
+        trigger = image;
+        const groupName = image.dataset.gallery || "tool-screenshot";
+        group = images.filter(candidate => (candidate.dataset.gallery || "tool-screenshot") === groupName);
+        currentIndex = Math.max(0, group.indexOf(image));
+        updateImage();
+        overlay.classList.add("active");
+        overlay.setAttribute("aria-hidden", "false");
+        closeButton.focus({ preventScroll: true });
+    }
+
+    function closeGallery() {
+        if (!overlay.classList.contains("active")) return;
+        overlay.classList.remove("active");
+        overlay.setAttribute("aria-hidden", "true");
+        fullImage.removeAttribute("src");
+        if (trigger) trigger.focus({ preventScroll: true });
+        trigger = null;
+        group = [];
+    }
+
+    function changeImage(step) {
+        if (group.length <= 1) return;
+        currentIndex = (currentIndex + step + group.length) % group.length;
+        updateImage();
+    }
+
+    for (const image of images) {
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", "Enlarge " + (image.alt || "screenshot"));
+        image.addEventListener("click", () => openGallery(image));
+        image.addEventListener("keydown", event => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openGallery(image);
+            }
         });
-    });
-
-    function openGallery(src) {
-        fullImage.src = src;
-        galleryOverlay.classList.add("active");
     }
 
-    // Close Gallery
-    closeGallery.addEventListener("click", closeGalleryOverlay);
-    galleryOverlay.addEventListener("click", (e) => {
-        if (e.target === galleryOverlay || e.target === closeGallery) {
-            closeGalleryOverlay();
-        }
+    closeButton.addEventListener("click", closeGallery);
+    previousButton.addEventListener("click", () => changeImage(-1));
+    nextButton.addEventListener("click", () => changeImage(1));
+    overlay.addEventListener("click", event => {
+        if (event.target === overlay) closeGallery();
     });
 
-    function closeGalleryOverlay() {
-        galleryOverlay.classList.remove("active");
-        currentImageIndex = 0;
-        currentGallery = [];
-        currentGalleryName = "";
-    }
-
-    // Navigate Gallery
-    prevImage.addEventListener("click", () => {
-        if (currentGallery.length > 0) {
-            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
-            fullImage.src = currentGallery[currentImageIndex].src;
-        }
-    });
-
-    nextImage.addEventListener("click", () => {
-        if (currentGallery.length > 0) {
-            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
-            fullImage.src = currentGallery[currentImageIndex].src;
+    document.addEventListener("keydown", event => {
+        if (!overlay.classList.contains("active")) return;
+        if (event.key === "Escape") {
+            event.preventDefault();
+            closeGallery();
+        } else if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            changeImage(-1);
+        } else if (event.key === "ArrowRight") {
+            event.preventDefault();
+            changeImage(1);
+        } else if (event.key === "Tab") {
+            const focusable = [previousButton, nextButton, closeButton].filter(button => !button.hidden);
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         }
     });
 });
 
+// TOOL SEARCH AND CATEGORY FILTERS
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-tool-filter]").forEach(panel => {
+        const table = document.getElementById(panel.dataset.target);
+        const search = panel.querySelector("[data-filter-search]");
+        const category = panel.querySelector("[data-filter-category]");
+        const status = panel.querySelector("[data-filter-status]");
+        const empty = panel.querySelector("[data-filter-empty]");
+        if (!table || !search || !category || !status || !empty) return;
 
+        const rows = Array.from(table.querySelectorAll("tbody tr"));
+        const platform = panel.dataset.platform || "tools";
+
+        function filterTools() {
+            const query = search.value.trim().toLocaleLowerCase();
+            const selectedCategory = category.value;
+            let shown = 0;
+            rows.forEach(row => {
+                const matchesText = !query || row.textContent.toLocaleLowerCase().includes(query);
+                const matchesCategory = selectedCategory === "all" || row.dataset.category === selectedCategory;
+                const visible = matchesText && matchesCategory;
+                row.hidden = !visible;
+                if (visible) shown += 1;
+            });
+            status.textContent = "Showing " + shown + " of " + rows.length + " " + platform + " tools";
+            empty.hidden = shown !== 0;
+        }
+
+        search.addEventListener("input", filterTools);
+        category.addEventListener("change", filterTools);
+        filterTools();
+    });
+});
 
 // COPY TERMINAL COMMAND
 document.addEventListener("DOMContentLoaded", () => {
