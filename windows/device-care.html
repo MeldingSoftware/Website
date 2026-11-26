@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Device Care | Melding Software</title>
+<meta name="description" content="Device Care combines Windows Maintenance and Threat Inspection, downloads current scripts, and displays both HTML reports after restart."/>
+<meta name="keywords" content="Device Care, Windows maintenance, Threat Inspection, PowerShell, Melding Software"/>
+<meta name="author" content="Kevin King"/>
+<link rel="canonical" href="https://meldingsoftware.com/windows/device-care.html"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Device Care",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "A combined Windows maintenance and threat inspection workflow with post-restart HTML reports.",
+  "author":{"@type":"Person","name":"Kevin King","url":"https://meldingsoftware.com/#about"},
+  "publisher":{"@type":"Organization","name":"Melding Software","url":"https://meldingsoftware.com/"},
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Device%20Care.zip"
+}
+</script>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<div id="refreshContainer"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="../index.html#home"><img alt="Melding Software Logo" class="logo" src="../images/homepage/MSLogo.png"/></a>
+  <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()" type="button"><span></span><span></span><span></span></button>
+  <div class="nav-links desktop-links">
+<a href="../index.html#home">Home</a>
+<a href="../index.html#downloads">Downloads</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#donate">Donate</a>
+<a href="../index.html#contact">Contact</a>
+<a href="../legal.html">Legal</a>
+
+</div>
+  <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
+    <button aria-label="Close navigation" class="close-button" onclick="toggleMenu()" type="button">×</button>
+    <div class="nav-links mobile-links">
+<a href="../index.html#home" onclick="toggleMenu()">Home</a>
+<a href="../index.html#downloads" onclick="toggleMenu()">Downloads</a>
+<a href="../index.html#about" onclick="toggleMenu()">About</a>
+<a href="../index.html#donate" onclick="toggleMenu()">Donate</a>
+<a href="../index.html#contact" onclick="toggleMenu()">Contact</a>
+<a href="../legal.html" onclick="toggleMenu()">Legal</a>
+
+</div>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <section class="tool-hero">
+    <p class="tool-kicker">Windows Combo Utility</p>
+    <h1 class="tool-title">Device <span>Care</span></h1>
+    <p class="tool-lead">Device Care combines <a href="maintenance.html">Maintenance</a> and <a href="threat-inspection.html">Threat Inspection</a> into a single workflow. It downloads the current versions from GitHub, collects the Deep Scan choice before maintenance starts, and coordinates a restart so both HTML reports can be reviewed after signing in.</p>
+    <div class="tool-actions">
+      <a class="cta-button primary" href="https://github.com/MeldingSoftware/Scripts/raw/main/Windows/Device%20Care.zip">Download Device Care</a>
+      <a class="cta-button secondary" href="https://github.com/MeldingSoftware/Scripts" target="_blank" rel="noopener">GitHub Repository</a>
+      <a class="cta-button secondary" href="../index.html#downloads">All Downloads</a>
+    </div>
+    <div class="tool-meta">
+      <div class="meta-card"><div class="meta-label">Platform</div><div class="meta-value">Windows 10 / 11</div></div>
+      <div class="meta-card"><div class="meta-label">PowerShell</div><div class="meta-value">5.1+</div></div>
+      <div class="meta-card"><div class="meta-label">Run Mode</div><div class="meta-value">Administrator</div></div>
+      <div class="meta-card"><div class="meta-label">Output</div><div class="meta-value">Two HTML Reports</div></div>
+    </div>
+    <div class="tool-byline" aria-label="Page information">
+      <span>Developed &amp; documented by Kevin King</span>
+      <span>Release: current GitHub build</span>
+    </div>
+    <div class="warning-notice"><strong>Save your work before running Device Care.</strong> An internet connection and administrator access are required. The workflow includes system maintenance and an automatic restart when both tools finish successfully.</div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Workflow</p>
+    <h2>How Device Care works</h2>
+    <div class="flow-grid">
+      <div class="flow-item"><span class="flow-number">01</span><span class="flow-name">Check &amp; Download Scripts</span></div>
+      <div class="flow-item"><span class="flow-number">02</span><span class="flow-name">Choose Deep Scan</span></div>
+      <div class="flow-item"><span class="flow-number">03</span><span class="flow-name">Run Maintenance</span></div>
+      <div class="flow-item"><span class="flow-number">04</span><span class="flow-name">Run Threat Inspection</span></div>
+      <div class="flow-item"><span class="flow-number">05</span><span class="flow-name">Restart Windows</span></div>
+      <div class="flow-item"><span class="flow-number">06</span><span class="flow-name">Open Both Reports</span></div>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Included Tools</p>
+    <h2>Two utilities, one workflow</h2>
+    <div class="doc-grid">
+      <article class="feature-card"><h3>Maintenance</h3><p>Runs the interactive startup and software checks first, followed by the maintenance operations supported by the current release. <a href="maintenance.html">Learn more about Maintenance →</a></p></article>
+      <article class="feature-card"><h3>Threat Inspection</h3><p>Runs the security inspection using the previously selected Deep Scan option, without opening its report immediately. <a href="threat-inspection.html">Learn more about Threat Inspection →</a></p></article>
+      <article class="feature-card"><h3>Current downloads</h3><p>Device Care retrieves the current component packages from GitHub instead of bundling fixed copies of both tools.</p></article>
+      <article class="feature-card"><h3>Compatibility checks</h3><p>The combined workflow checks downloaded scripts for compatible integration points before proceeding.</p></article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">Reports &amp; Cleanup</p>
+    <h2>After the restart</h2>
+    <div class="doc-grid">
+      <article class="feature-card"><h3>HTML reporting</h3><p>Device Care is designed to open both the Maintenance and Threat Inspection HTML reports after Windows sign-in and post-restart processing.</p></article>
+      <article class="feature-card"><h3>Report links</h3><p>The Threat Inspection report-link helper is preserved during temporary-file cleanup and uses a fixed filename to avoid accumulating copies.</p></article>
+      <article class="feature-card"><h3>Downloads cleanup</h3><p>The workflow attempts to remove eligible Device Care ZIP and extracted folder items in Downloads using 24-hour safeguards.</p></article>
+      <article class="feature-card"><h3>Separate reports</h3><p>Maintenance and Threat Inspection remain separate tools and generate their own reports.</p></article>
+    </div>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">How To Run</p>
+    <h2>Launching Device Care</h2>
+    <ol class="steps">
+      <li>Save open work and ensure the PC has an internet connection.</li>
+      <li>Download and extract <strong>Device Care.zip</strong>.</li>
+      <li>Run <strong>Run Me.bat</strong> and approve administrator access.</li>
+      <li>Choose whether to perform a Deep Scan.</li>
+      <li>Complete the interactive Maintenance prompts.</li>
+      <li>Allow Maintenance and Threat Inspection to finish and the PC to restart.</li>
+      <li>Sign back in and review both HTML reports.</li>
+    </ol>
+  </section>
+
+  <section class="doc-section">
+    <p class="tool-kicker">FAQ</p>
+    <h2>Frequently asked questions</h2>
+    <div class="doc-grid">
+      <article class="faq-card"><h3>Do I need to download both individual tools first?</h3><p>No. Device Care downloads the current component packages when it runs.</p></article>
+      <article class="faq-card"><h3>When is the Deep Scan question asked?</h3><p>Before Maintenance begins, so the choice can be reused during Threat Inspection.</p></article>
+      <article class="faq-card"><h3>Will Device Care restart my computer?</h3><p>Yes, the intended workflow restarts after both tools finish successfully. Save your work beforehand.</p></article>
+      <article class="faq-card"><h3>Is Threat Inspection an antivirus replacement?</h3><p>No. It is a technician inspection tool intended to identify items for review, not replace antivirus protection.</p></article>
+      <article class="faq-card"><h3>Can I still run either tool separately?</h3><p>Yes. Maintenance and Threat Inspection remain available independently in the Windows downloads table.</p></article>
+      <article class="faq-card"><h3>What if a downloaded script changes?</h3><p>Compatibility checks may stop the workflow if a component no longer supports the expected integration.</p></article>
+    </div>
+  </section>
+
+  <div class="page-back"><a class="cta-button secondary" href="../index.html#downloads">← Back to Downloads</a></div>
+</main>
+
+<div class="copyright-notice site-footer">
+<p>© 2026 Melding Software. All rights reserved.</p>
+<p class="site-footer-links"><a href="../legal.html">Legal</a><span aria-hidden="true">·</span><a href="https://github.com/MeldingSoftware" rel="noopener" target="_blank">GitHub</a></p>
+</div>
+<button aria-label="Back to top" class="scroll-top" id="scrollTopButton" type="button">↑</button>
+<script defer src="../javascript.js"></script>
+
+  <div class="gallery-overlay" id="galleryOverlay">
+    <div class="gallery-controls">
+      <button id="prevImage" type="button" aria-label="Previous screenshot">&lt;</button>
+      <img alt="Full screenshot" id="fullImage" src=""/>
+      <button id="nextImage" type="button" aria-label="Next screenshot">&gt;</button>
+    </div>
+    <button class="close-gallery" id="closeGallery" type="button" aria-label="Close screenshot">X</button>
+  </div>
+
+</body>
+</html>
