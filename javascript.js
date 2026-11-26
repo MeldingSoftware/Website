@@ -296,12 +296,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!table || !search) return;
         const rows = Array.from(table.querySelectorAll("tbody tr[data-category]"));
         const headings = Array.from(table.querySelectorAll("[data-category-heading]"));
+        const categoryNames = new Map(headings.map(heading => [heading.dataset.categoryHeading, heading.textContent.trim().toLowerCase()]));
         function filterTools() {
             const query = search.value.trim().toLowerCase();
             const visibleCategories = new Set();
             let shown = 0;
             rows.forEach(row => {
-                const visible = row.textContent.toLowerCase().includes(query);
+                const category = (row.dataset.category || "").toLowerCase();
+                const categoryName = categoryNames.get(row.dataset.category) || category;
+                const visible = row.textContent.toLowerCase().includes(query) || category.includes(query) || categoryName.includes(query);
                 row.hidden = !visible;
                 if (visible) {
                     shown++;
